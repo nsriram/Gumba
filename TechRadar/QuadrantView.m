@@ -1,4 +1,7 @@
 #import "QuadrantView.h"
+#import <QuartzCore/QuartzCore.h>
+#import "BackgroundLayer.h"
+
 
 @interface QuadrantView()
 @property (nonatomic, assign) CGPoint frameOrigin;
@@ -25,7 +28,7 @@
         self.frameOrigin=self.frame.origin;
         self.center = point;
         self.rotation = arcRotation;
-
+        
         UITapGestureRecognizer *doubleTap = 
         [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];
         
@@ -33,7 +36,7 @@
         [doubleTap setNumberOfTouchesRequired:1];
         
         [self addGestureRecognizer:doubleTap];
-
+        
     }
     return self;
 }
@@ -59,6 +62,26 @@
     UIGraphicsPopContext();
 }   
 
+-(void) drawTriangleAtPoint1:(CGPoint)p1 point2:(CGPoint)p2 point3:(CGPoint)p3 inContext:(CGContextRef)context{
+
+    CGMutablePathRef a_path = CGPathCreateMutable();
+    CGContextBeginPath(context);
+    [[UIColor whiteColor] setStroke];    
+    
+    CGContextMoveToPoint(context, p1.x, p1.y); 
+    CGContextAddLineToPoint(context, p2.x,p2.y);
+    CGContextAddLineToPoint(context, p3.x,p3.y);
+    CGContextAddLineToPoint(context, p1.x, p1.y);
+    
+    CGContextClosePath(context);
+    CGContextAddPath(context, a_path);
+    
+    // Fill the path
+    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextFillPath(context);
+    CGPathRelease(a_path);    
+}
+
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -76,6 +99,9 @@
     [self drawCircleAtPoint:self.center withRadius:200 inContext:context];
     [self drawCircleAtPoint:self.center withRadius:275 inContext:context];    
     [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
+
+    [self drawTriangleAtPoint1:CGPointMake(300, 380) point2:CGPointMake(310, 390) point3:CGPointMake(290,390) inContext:context];
+    [self drawTriangleAtPoint1:CGPointMake(260, 380) point2:CGPointMake(270, 390) point3:CGPointMake(250,390) inContext:context];
 }
 
 @end
