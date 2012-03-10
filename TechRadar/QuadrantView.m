@@ -43,6 +43,14 @@
 
 - (void)resizeQuadrant
 {
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.75];
+	
+	[UIView setAnimationTransition:([self superview] ? UIViewAnimationOptionTransitionCurlUp : UIViewAnimationOptionTransitionCurlDown)
+                           forView:self
+                             cache:YES];
     CGRect resized;
     if(self.frame.size.height == 1004){
         resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, 384, 502);
@@ -51,6 +59,9 @@
         [self.superview bringSubviewToFront:self];
     }
     self.frame = resized;
+	
+	[UIView commitAnimations];
+	
 }
 
 - (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context

@@ -44,11 +44,11 @@
                                                          AndRotation:NO];
     [self.view insertSubview:quadrantView4 atIndex:1];    
 
-
-    [quadrantView1 setBackgroundColor:[UIColor grayColor]];
-    [quadrantView2 setBackgroundColor:[UIColor grayColor]];
-    [quadrantView3 setBackgroundColor:[UIColor grayColor]];
-    [quadrantView4 setBackgroundColor:[UIColor grayColor]];
+    [self.view setBackgroundColor:[UIColor grayColor]];
+    [quadrantView1 setBackgroundColor:[UIColor lightGrayColor]];
+    [quadrantView2 setBackgroundColor:[UIColor lightGrayColor]];
+    [quadrantView3 setBackgroundColor:[UIColor lightGrayColor]];
+    [quadrantView4 setBackgroundColor:[UIColor lightGrayColor]];
 }
 
 - (void)viewDidUnload
