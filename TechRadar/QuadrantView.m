@@ -28,15 +28,17 @@
         self.frameOrigin=self.frame.origin;
         self.center = point;
         self.rotation = arcRotation;
-        
-        UITapGestureRecognizer *doubleTap = 
+
+        UITapGestureRecognizer *singleTap = 
         [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];
         
-        [doubleTap setNumberOfTapsRequired:2];
-        [doubleTap setNumberOfTouchesRequired:1];
+        [singleTap setNumberOfTapsRequired:1];
+        [singleTap setNumberOfTouchesRequired:1];
+        
         
         [self addGestureRecognizer:doubleTap];
-        
+        [self addGestureRecognizer:singleTap];        
+
     }
     return self;
 }
@@ -48,9 +50,9 @@
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];
 	
-	[UIView setAnimationTransition:([self superview] ? UIViewAnimationOptionTransitionCurlUp : UIViewAnimationOptionTransitionCurlDown)
+	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
                            forView:self
-                             cache:YES];
+                             cache:NO];
     CGRect resized;
     if(self.frame.size.height == 1004){
         resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, 384, 502);
