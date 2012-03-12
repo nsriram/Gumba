@@ -35,8 +35,6 @@
         [singleTap setNumberOfTapsRequired:1];
         [singleTap setNumberOfTouchesRequired:1];
         
-        
-        [self addGestureRecognizer:doubleTap];
         [self addGestureRecognizer:singleTap];        
 
     }
