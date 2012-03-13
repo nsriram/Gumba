@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C301ABCE150B129100272284 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C301ABCD150B129100272284 /* BackgroundLayer.m */; };
 		C301ABD1150B12B700272284 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C301ABD0150B12B700272284 /* QuartzCore.framework */; };
 		C310A8D115011447003BF6B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D015011447003BF6B7 /* UIKit.framework */; };
 		C310A8D315011447003BF6B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D215011447003BF6B7 /* Foundation.framework */; };
@@ -21,8 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C301ABCC150B129100272284 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
-		C301ABCD150B129100272284 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		C301ABD0150B12B700272284 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C310A8CC15011447003BF6B7 /* TechRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310A8D015011447003BF6B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -95,8 +92,6 @@
 				C310A8E515011447003BF6B7 /* ViewController.h */,
 				C310A8E615011447003BF6B7 /* ViewController.m */,
 				C310A8D715011447003BF6B7 /* Supporting Files */,
-				C301ABCC150B129100272284 /* BackgroundLayer.h */,
-				C301ABCD150B129100272284 /* BackgroundLayer.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -179,7 +174,6 @@
 				C310A8E115011447003BF6B7 /* AppDelegate.m in Sources */,
 				C310A8E715011447003BF6B7 /* ViewController.m in Sources */,
 				C310A8EF15011503003BF6B7 /* QuadrantView.m in Sources */,
-				C301ABCE150B129100272284 /* BackgroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

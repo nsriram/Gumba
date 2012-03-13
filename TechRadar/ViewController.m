@@ -1,7 +1,6 @@
 #import "ViewController.h"
 #import "QuadrantView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "BackgroundLayer.h"
 
 @implementation ViewController
 
@@ -45,10 +44,10 @@
     [self.view insertSubview:quadrantView4 atIndex:1];    
 
     [self.view setBackgroundColor:[UIColor grayColor]];
-    [quadrantView1 setBackgroundColor:[UIColor lightGrayColor]];
-    [quadrantView2 setBackgroundColor:[UIColor lightGrayColor]];
-    [quadrantView3 setBackgroundColor:[UIColor lightGrayColor]];
-    [quadrantView4 setBackgroundColor:[UIColor lightGrayColor]];
+//    [quadrantView1 setBackgroundColor:[UIColor lightGrayColor]];
+//    [quadrantView2 setBackgroundColor:[UIColor lightGrayColor]];
+//    [quadrantView3 setBackgroundColor:[UIColor lightGrayColor]];
+//    [quadrantView4 setBackgroundColor:[UIColor lightGrayColor]];
 }
 
 - (void)viewDidUnload

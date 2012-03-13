@@ -1,6 +1,5 @@
 #import "QuadrantView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "BackgroundLayer.h"
 
 
 @interface QuadrantView()
@@ -46,9 +45,9 @@
 	[UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.75];
+	[UIView setAnimationDuration:0.50];
 	
-	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
+	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromLeft)
                            forView:self
                              cache:NO];
     CGRect resized;
@@ -96,12 +95,22 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGRect    myFrame = self.bounds;
-    CGContextSetLineWidth(context, 2);
-    CGRectInset(myFrame, 2, 2);
-    [[UIColor blackColor] set];
-    UIRectFrame(myFrame);
+
+    size_t num_locations = 3;
+    CGFloat locations[3] = { 0.0, 0.5, 1.0};
+    CGFloat components[12] = {  0.7, 0.7, 0.7, 1.0,        
+        0.5, 0.5, 0.5, 1.0,        
+        0.7, 0.7, 0.7, 0.7 };
+    CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
+                                                                    components,locations, 
+                                                                    num_locations);
+    CGPoint myStartPoint, myEndPoint;    
+    myStartPoint.x = 0.0;    
+    myStartPoint.y = 0.0;
+    myEndPoint.x = self.frame.size.width;    
+    myEndPoint.y = self.frame.size.height;    
+    CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
     
     CGContextSetLineWidth(context, 5.0);
     [[UIColor whiteColor] setStroke];
@@ -113,6 +122,12 @@
 
     [self drawTriangleAtPoint1:CGPointMake(300, 380) point2:CGPointMake(310, 390) point3:CGPointMake(290,390) inContext:context];
     [self drawTriangleAtPoint1:CGPointMake(260, 380) point2:CGPointMake(270, 390) point3:CGPointMake(250,390) inContext:context];
+
+    CGRect    myFrame = self.bounds;
+    CGContextSetLineWidth(context, 2);
+    CGRectInset(myFrame, 2, 2);
+    [[UIColor blackColor] set];
+    UIRectFrame(myFrame);
 }
 
 @end
