@@ -96,5 +96,119 @@
                    },
                    "movement": "c"
                    }
-                   ]
+                   ],
+    "languages": [
+                  {
+                  "name": "Care about languages",
+                  "pc": {
+                  "r": 75,
+                  "t": 285
+                  },
+                  "movement": "t"
+                  },
+                  {
+                  "name": "HTML 5",
+                  "pc": {
+                  "r": 140,
+                  "t": 330
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Javascript as a first class language",
+                  "pc": {
+                  "r": 80,
+                  "t": 300
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Clojure",
+                  "pc": {
+                  "r": 170,
+                  "t": 292
+                  },
+                  "movement": "t"
+                  },
+                  {
+                  "name": "Coffeescript",
+                  "pc": {
+                  "r": 240,
+                  "t": 340
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Domain-Specific Languages",
+                  "pc": {
+                  "r": 170,
+                  "t": 320
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "SASS, SCSS, and LESS",
+                  "pc": {
+                  "r": 210,
+                  "t": 350
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Scala",
+                  "pc": {
+                  "r": 155,
+                  "t": 300
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Clojurescript",
+                  "pc": {
+                  "r": 260,
+                  "t": 286
+                  },
+                  "movement": "t"
+                  },
+                  {
+                  "name": "F#",
+                  "pc": {
+                  "r": 290,
+                  "t": 320
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Functional java",
+                  "pc": {
+                  "r": 212,
+                  "t": 356
+                  },
+                  "movement": "t"
+                  },
+                  {
+                  "name": "Future of Java",
+                  "pc": {
+                  "r": 325,
+                  "t": 330
+                  },
+                  "movement": "c"
+                  },
+                  {
+                  "name": "Google Dart",
+                  "pc": {
+                  "r": 375,
+                  "t": 294
+                  },
+                  "movement": "t"
+                  },
+                  {
+                  "name": "Logic in stored Procedures",
+                  "pc": {
+                  "r": 375,
+                  "t": 315
+                  },
+                  "movement": "c"
+                  }
+                  ]
 }

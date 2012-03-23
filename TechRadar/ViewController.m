@@ -1,12 +1,11 @@
 #import "ViewController.h"
 #import "QuadrantView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SBJson.h"
 
-
-#define GUMBA @"gumba"
-#define JSON @"json"
 #define TECHNIQUES @"techniques"
+#define LANGUAGES @"languages"
+#define TOOLS @"tools"
+#define PLATFORMS @"platforms"
 
 @implementation ViewController
 
@@ -16,42 +15,10 @@
 
 #pragma mark - View lifecycle
 
--(CGPoint) rasterFromAngle:(int) angle AndRadius:(int)radius {
-    CGFloat x = radius * cos((angle * M_PI/180));
-    CGFloat y = radius * sin((angle * M_PI/180));  
-    return CGPointMake(x,y);
-}
-
-+(NSString *)fetchGumbaData {
-    NSString *gumbaJSON = @"";
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:GUMBA ofType:JSON];  
-    if (filePath) {
-        gumbaJSON = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];  
-    }
-    return gumbaJSON;
-}
-
--(NSMutableDictionary *) parseGumbaJSON:(NSString *) gumbaJSON {
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    return [parser objectWithString:gumbaJSON error:nil];    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *gumbaJSON = [ViewController fetchGumbaData];
-    NSMutableDictionary *allQuadrants = [self parseGumbaJSON:gumbaJSON];
-    NSMutableArray *names = [allQuadrants objectForKey:TECHNIQUES];
 
-    for(NSMutableDictionary *technology in names){
-        NSString *technologyName = [technology objectForKey:@"name"];
-        NSMutableDictionary *pcMap = [technology objectForKey:@"pc"];
-        NSString *r = [pcMap objectForKey:@"r"];
-        NSString *t = [pcMap objectForKey:@"t"];
-        CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
-        NSLog(@"%@,%f,%f",technologyName,point.x,point.y);
-    }
-    
 	CGPoint midPoint; // center of our bounds in our coordinate system
     midPoint.x = self.view.bounds.origin.x + self.view.bounds.size.width/2;
     midPoint.y = self.view.bounds.origin.y + self.view.bounds.size.height/2;
@@ -60,23 +27,23 @@
     
     QuadrantView *quadrantView1 = [[QuadrantView alloc]initWithFrame:CGRectMake(0, 0, midPoint.x, midPoint.y) 
                                                           WithCenter:CGPointMake(midPoint.x, midPoint.y)
-                                                        AndRotation:YES];
+                                                        AndRotation:YES AndName:TECHNIQUES];
     [self.view insertSubview:quadrantView1 atIndex:1];
     
     QuadrantView *quadrantView2 = [[QuadrantView alloc]initWithFrame:CGRectMake(midPoint.x, 0, midPoint.x, midPoint.y) 
                                                           WithCenter:CGPointMake(0, midPoint.y)
-                                                         AndRotation:YES];
+                                                         AndRotation:YES AndName:TOOLS];
     [self.view insertSubview:quadrantView2 atIndex:1];
 
     
     QuadrantView *quadrantView3 = [[QuadrantView alloc]initWithFrame:CGRectMake(0, midPoint.y, midPoint.x, midPoint.y) 
                                                           WithCenter:CGPointMake(midPoint.x, 0)
-                                                         AndRotation:NO];
+                                                         AndRotation:NO AndName:PLATFORMS];
     [self.view insertSubview:quadrantView3 atIndex:1];
     
     QuadrantView *quadrantView4 = [[QuadrantView alloc]initWithFrame:CGRectMake(midPoint.x, midPoint.y, midPoint.x, midPoint.y) 
                                                           WithCenter:CGPointMake(0, 0)
-                                                         AndRotation:NO];
+                                                         AndRotation:NO AndName:LANGUAGES];
     [self.view insertSubview:quadrantView4 atIndex:1];    
 
     [self.view setBackgroundColor:[UIColor grayColor]];

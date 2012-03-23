@@ -1,32 +1,56 @@
 #import "QuadrantView.h"
+#import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "SBJson.h"
 
 @interface QuadrantView()
 @property (nonatomic, assign) CGPoint frameOrigin;
 @end
 
+#define GUMBA @"gumba"
+#define JSON @"json"
+
 @implementation QuadrantView
 
 @synthesize center,rotation;
 @synthesize frameOrigin;
+@synthesize quadrantName;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndRotation:(BOOL)arcRotation
-{
+-(CGPoint) rasterFromAngle:(int) angle AndRadius:(int)radius {
+    CGFloat x = radius * cos((angle * M_PI/180));
+    CGFloat y = radius * sin((angle * M_PI/180));  
+    return CGPointMake(x,y);
+}
+
++(NSString *)fetchGumbaData {
+    NSString *gumbaJSON = @"";
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:GUMBA ofType:JSON];  
+    if (filePath) {
+        gumbaJSON = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];  
+    }
+    return gumbaJSON;
+}
+
+-(NSMutableDictionary *) parseGumbaJSON:(NSString *) gumbaJSON {
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    return [parser objectWithString:gumbaJSON error:nil];    
+}
+
+- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndRotation:(BOOL)arcRotation AndName:(NSString*) quadName {
     self = [super initWithFrame:frame];
     if (self) {
         self.frameOrigin=self.frame.origin;
         self.center = point;
         self.rotation = arcRotation;
+        self.quadrantName = quadName;
 
         UITapGestureRecognizer *singleTap = 
         [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];
@@ -46,7 +70,6 @@
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.50];
-	
 	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromLeft)
                            forView:self
                              cache:NO];
@@ -91,11 +114,32 @@
     CGContextFillPath(context);
     CGPathRelease(a_path);    
 }
+-(void) drawLineInContext:(CGContextRef)context{
+    CGContextBeginPath(context);
+    CGContextSetLineWidth(context, 5.0);
+    [[UIColor whiteColor] setStroke];   
+    CGContextMoveToPoint(context, frameOrigin.x, frameOrigin.y);
+    CGContextAddLineToPoint(context, 120, 150);
+    CGContextAddLineToPoint(context, 140, 180);
+    CGContextStrokePath(context);
+}
 
 - (void)drawRect:(CGRect)rect
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
+    CGContextRef context = UIGraphicsGetCurrentContext(); 
+    
+    NSString *gumbaJSON = [QuadrantView fetchGumbaData];
+    NSMutableDictionary *allQuadrants = [self parseGumbaJSON:gumbaJSON];
+    NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
+    for(NSMutableDictionary *blip in names){
+        NSString *blipName = [blip objectForKey:@"name"];
+        NSMutableDictionary *pcMap = [blip objectForKey:@"pc"];
+        NSString *r = [pcMap objectForKey:@"r"];
+        NSString *t = [pcMap objectForKey:@"t"];
+        CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
+        NSLog(@"%@,%f,%f",blipName,point.x,point.y);
+    }
+    [self drawLineInContext:context];
     size_t num_locations = 3;
     CGFloat locations[3] = { 0.0, 0.5, 1.0};
     CGFloat components[12] = {  0.7, 0.7, 0.7, 1.0,        
@@ -120,8 +164,8 @@
     [self drawCircleAtPoint:self.center withRadius:275 inContext:context];    
     [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
 
-    [self drawTriangleAtPoint1:CGPointMake(300, 380) point2:CGPointMake(310, 390) point3:CGPointMake(290,390) inContext:context];
-    [self drawTriangleAtPoint1:CGPointMake(260, 380) point2:CGPointMake(270, 390) point3:CGPointMake(250,390) inContext:context];
+//    [self drawTriangleAtPoint1:CGPointMake(300, 380) point2:CGPointMake(310, 390) point3:CGPointMake(290,390) inContext:context];
+//    [self drawTriangleAtPoint1:CGPointMake(260, 380) point2:CGPointMake(270, 390) point3:CGPointMake(250,390) inContext:context];
 
     CGRect    myFrame = self.bounds;
     CGContextSetLineWidth(context, 2);

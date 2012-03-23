@@ -3,6 +3,7 @@
 @interface QuadrantView : UIView
 @property (nonatomic, assign) CGPoint center;
 @property (nonatomic, assign) BOOL rotation;
+@property (nonatomic, assign) NSString* quadrantName;
 
-- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndRotation:(BOOL)rotation;
+- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndRotation:(BOOL)rotation AndName:(NSString*)quadName;
 @end
