@@ -41,8 +41,15 @@
     [super viewDidLoad];
     NSString *gumbaJSON = [ViewController fetchGumbaData];
     NSMutableDictionary *allQuadrants = [self parseGumbaJSON:gumbaJSON];
-    for(NSString *quadrant in [allQuadrants allKeys]){
-        NSLog(@"%@",quadrant);
+    NSMutableArray *names = [allQuadrants objectForKey:TECHNIQUES];
+
+    for(NSMutableDictionary *technology in names){
+        NSString *technologyName = [technology objectForKey:@"name"];
+        NSMutableDictionary *pcMap = [technology objectForKey:@"pc"];
+        NSString *r = [pcMap objectForKey:@"r"];
+        NSString *t = [pcMap objectForKey:@"t"];
+        CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
+        NSLog(@"%@,%f,%f",technologyName,point.x,point.y);
     }
     
 	CGPoint midPoint; // center of our bounds in our coordinate system
