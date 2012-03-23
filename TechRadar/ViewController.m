@@ -48,7 +48,22 @@
 //    [quadrantView2 setBackgroundColor:[UIColor lightGrayColor]];
 //    [quadrantView3 setBackgroundColor:[UIColor lightGrayColor]];
 //    [quadrantView4 setBackgroundColor:[UIColor lightGrayColor]];
+    
+    UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] 
+                                                initWithTarget:self 
+                                                action:@selector(twoFingerPinch:)];
+    
+    [[self view] addGestureRecognizer:twoFingerPinch];
 }
+
+- (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer 
+{
+    NSLog(@"Pinch scale: %f", recognizer.scale);
+    if (recognizer.scale < 1.0) return;
+    CGAffineTransform transform = CGAffineTransformMakeScale(recognizer.scale, recognizer.scale);
+    self.view.transform = transform;
+} 
+
 
 - (void)viewDidUnload
 {
