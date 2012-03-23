@@ -1,20 +1,49 @@
 #import "ViewController.h"
 #import "QuadrantView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SBJson.h"
+
+
+#define GUMBA @"gumba"
+#define JSON @"json"
+#define TECHNIQUES @"techniques"
 
 @implementation ViewController
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
+-(CGPoint) rasterFromAngle:(int) angle AndRadius:(int)radius {
+    CGFloat x = radius * cos((angle * M_PI/180));
+    CGFloat y = radius * sin((angle * M_PI/180));  
+    return CGPointMake(x,y);
+}
+
++(NSString *)fetchGumbaData {
+    NSString *gumbaJSON = @"";
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:GUMBA ofType:JSON];  
+    if (filePath) {
+        gumbaJSON = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];  
+    }
+    return gumbaJSON;
+}
+
+-(NSMutableDictionary *) parseGumbaJSON:(NSString *) gumbaJSON {
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    return [parser objectWithString:gumbaJSON error:nil];    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *gumbaJSON = [ViewController fetchGumbaData];
+    NSMutableDictionary *allQuadrants = [self parseGumbaJSON:gumbaJSON];
+    for(NSString *quadrant in [allQuadrants allKeys]){
+        NSLog(@"%@",quadrant);
+    }
     
 	CGPoint midPoint; // center of our bounds in our coordinate system
     midPoint.x = self.view.bounds.origin.x + self.view.bounds.size.width/2;

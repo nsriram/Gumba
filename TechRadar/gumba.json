@@ -1,0 +1,100 @@
+{
+    "techniques": [
+                   {
+                   "name": "App health check pages",
+                   "pc": {
+                   "r": 75,
+                   "t": 115
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "appropriate depth of tests",
+                   "pc": {
+                   "r": 75,
+                   "t": 92
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Automate Database Deployment",
+                   "pc": {
+                   "r": 90,
+                   "t": 135
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Coding architects",
+                   "pc": {
+                   "r": 70,
+                   "t": 175
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Continuous Delivery",
+                   "pc": {
+                   "r": 145,
+                   "t": 175
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "DevOps",
+                   "pc": {
+                   "r": 90,
+                   "t": 157
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Emergent design",
+                   "pc": {
+                   "r": 75,
+                   "t": 100
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Evolutionary architecture",
+                   "pc": {
+                   "r": 140,
+                   "t": 112
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Evolutionary database",
+                   "pc": {
+                   "r": 50,
+                   "t": 158
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Simple Performance Trending",
+                   "pc": {
+                   "r": 70,
+                   "t": 130
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Visualization and metrics",
+                   "pc": {
+                   "r": 75,
+                   "t": 148
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Acceptance Test of Journeys",
+                   "pc": {
+                   "r": 265,
+                   "t": 135
+                   },
+                   "movement": "c"
+                   }
+                   ]
+}
