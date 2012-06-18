@@ -23,9 +23,8 @@
 }
 
 -(CGPoint) rasterFromAngle:(int) angle AndRadius:(int)radius {
-    float scaledRadius = radius;
-    CGFloat x = scaledRadius * cos((angle * M_PI/180));
-    CGFloat y = scaledRadius * sin((angle * M_PI/180));  
+    CGFloat x = radius * cos((angle * M_PI/180));
+    CGFloat y = radius * sin((angle * M_PI/180));  
     return CGPointMake(x,y);
 }
 
@@ -145,8 +144,7 @@
     NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
 
     for(NSMutableDictionary *blip in names){
-
-//        NSString *blipName = [blip objectForKey:@"name"];
+        NSString *blipName = [blip objectForKey:@"name"];
         NSString *movement = [blip objectForKey:@"movement"];
 
         NSMutableDictionary *pcMap = [blip objectForKey:@"pc"];
@@ -156,32 +154,30 @@
 
         if(point.x < 0){
             point.x = 384.0 + point.x;
-            if(point.y <0){
-                point.y = (point.y * -2)/2;
-            } else {
-                point.y = 502.0 - point.y;
-            }
-            
-            if([movement isEqualToString:@"t"]){
-                [self drawTriangleAtPoint:point inContext:context];                
-            }else {
-                NSLog(@"%f,%f",point.x,point.y);
-                [self drawFilledCircleAtPoint:point withRadius:10.0 inContext:context];                
-            }
+        } 
+
+
+        if(point.y <0){
+            point.y = (point.y * -2)/2;
+        } else {
+            point.y = 502.0 - point.y;
         }
+
+        if([movement isEqualToString:@"t"]){
+            [self drawTriangleAtPoint:point inContext:context];                
+        }else {
+            [self drawFilledCircleAtPoint:point withRadius:10.0 inContext:context];                
+        }        
     }
     [self drawBackgroundGradient:context];
 
-    CGContextSetLineWidth(context, 5.0);
+    CGContextSetLineWidth(context, 3.0);
     [[UIColor whiteColor] setStroke];
     
-    [self drawCircleAtPoint:self.center withRadius:125 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:200 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
     [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
-
-//    [self drawTriangleAtPoint1:CGPointMake(300, 380) point2:CGPointMake(310, 390) point3:CGPointMake(290,390) inContext:context];
-//    [self drawTriangleAtPoint1:CGPointMake(260, 380) point2:CGPointMake(270, 390) point3:CGPointMake(250,390) inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
 
     CGRect    myFrame = self.bounds;
     CGContextSetLineWidth(context, 2);

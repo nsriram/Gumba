@@ -44,13 +44,8 @@
     QuadrantView *quadrantView4 = [[QuadrantView alloc]initWithFrame:CGRectMake(midPoint.x, midPoint.y, midPoint.x, midPoint.y) 
                                                           WithCenter:CGPointMake(0, 0)
                                                          AndRotation:NO AndName:LANGUAGES];
-    [self.view insertSubview:quadrantView4 atIndex:1];    
-
+    [self.view insertSubview:quadrantView4 atIndex:1];
     [self.view setBackgroundColor:[UIColor grayColor]];
-//    [quadrantView1 setBackgroundColor:[UIColor lightGrayColor]];
-//    [quadrantView2 setBackgroundColor:[UIColor lightGrayColor]];
-//    [quadrantView3 setBackgroundColor:[UIColor lightGrayColor]];
-//    [quadrantView4 setBackgroundColor:[UIColor lightGrayColor]];
     
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] 
                                                 initWithTarget:self 

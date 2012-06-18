@@ -1,276 +1,115 @@
 {
-    "techniques": [
-                   {
-                   "name": "App health check pages",
-                   "pc": {
-                   "r": 75,
-                   "t": 115
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "appropriate depth of tests",
-                   "pc": {
-                   "r": 75,
-                   "t": 92
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Automate Database Deployment",
-                   "pc": {
-                   "r": 90,
-                   "t": 135
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Coding architects",
-                   "pc": {
-                   "r": 70,
-                   "t": 175
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Continuous Delivery",
-                   "pc": {
-                   "r": 145,
-                   "t": 175
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "DevOps",
-                   "pc": {
-                   "r": 90,
-                   "t": 157
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Emergent design",
-                   "pc": {
-                   "r": 75,
-                   "t": 100
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Evolutionary architecture",
-                   "pc": {
-                   "r": 140,
-                   "t": 112
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Evolutionary database",
-                   "pc": {
-                   "r": 50,
-                   "t": 158
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Simple Performance Trending",
-                   "pc": {
-                   "r": 70,
-                   "t": 130
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Visualization and metrics",
-                   "pc": {
-                   "r": 75,
-                   "t": 148
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Acceptance Test of Journeys",
-                   "pc": {
-                   "r": 265,
-                   "t": 135
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Agile Analytics",
-                   "pc": {
-                   "r": 212,
-                   "t": 132
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Build your own radar",
-                   "pc": {
-                   "r": 200,
-                   "t": 162
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Categorization & Prioritization of Technical Debt",
-                   "pc": {
-                   "r": 265,
-                   "t": 95
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "deploy on demand",
-                   "pc": {
-                   "r": 312,
-                   "t": 91
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "embedded Containerless web apps",
-                   "pc": {
-                   "r": 285,
-                   "t": 122
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Event API's",
-                   "pc": {
-                   "r": 255,
-                   "t": 170
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "First class performance testing",
-                   "pc": {
-                   "r": 295,
-                   "t": 95
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Infrastructure automation for developer workstations",
-                   "pc": {
-                   "r": 312,
-                   "t": 133
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Infrastructure automation in windows",
-                   "pc": {
-                   "r": 290,
-                   "t": 102
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Out of container functional tests",
-                   "pc": {
-                   "r": 285,
-                   "t": 129
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Thoughtful Caching",
-                   "pc": {
-                   "r": 200,
-                   "t": 144
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "XD",
-                   "pc": {
-                   "r": 312,
-                   "t": 119
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Event Sourcing",
-                   "pc": {
-                   "r": 290,
-                   "t": 144
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Mechanical sympathy",
-                   "pc": {
-                   "r": 212,
-                   "t": 116
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Micro-services",
-                   "pc": {
-                   "r": 212,
-                   "t": 177
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Production immune system",
-                   "pc": {
-                   "r": 260,
-                   "t": 112
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "App container end of life. Server/application containers",
-                   "pc": {
-                   "r": 375,
-                   "t": 98
-                   },
-                   "movement": "t"
-                   },
-                   {
-                   "name": "Database based integration",
-                   "pc": {
-                   "r": 375,
-                   "t": 120
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Feature branching",
-                   "pc": {
-                   "r": 375,
-                   "t": 150
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Manual infrastructure management",
-                   "pc": {
-                   "r": 375,
-                   "t": 165
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Scrum certification",
-                   "pc": {
-                   "r": 375,
-                   "t": 105
-                   },
-                   "movement": "c"
-                   },
-                   {
-                   "name": "Test recorders",
-                   "pc": {
-                   "r": 375,
-                   "t": 127
-                   },
-                   "movement": "t"
-                   }
-                   ]
+    "techniques":[
+                  {"name":"App health check pages", "pc":{"r":75,"t":115},"movement":"t"},
+                  {"name":"appropriate depth of tests", "pc":{"r":75,"t":92},"movement":"t"},
+                  {"name":"Automate Database Deployment", "pc":{"r":90,"t":135},"movement":"c"},
+                  {"name":"Coding architects", "pc":{"r":70,"t":175},"movement":"c"},
+                  {"name":"Continuous Delivery", "pc":{"r":145,"t":175},"movement":"c"},
+                  {"name":"DevOps", "pc":{"r":90,"t":157},"movement":"c"},
+                  {"name":"Emergent design", "pc":{"r":75,"t":100},"movement":"c"},
+                  {"name":"Evolutionary architecture", "pc":{"r":140,"t":112},"movement":"c"},
+                  {"name":"Evolutionary database", "pc":{"r":50,"t":158},"movement":"c"},
+                  {"name":"Simple Performance Trending", "pc":{"r":70,"t":130},"movement":"c"},
+                  {"name":"Visualization and metrics", "pc":{"r":75,"t":148},"movement":"c"},
+                  {"name":"Acceptance Test of Journeys", "pc":{"r":265,"t":135},"movement":"c"},
+                  {"name":"Agile Analytics", "pc":{"r":212,"t":132},"movement":"t"},
+                  {"name":"Build your own radar", "pc":{"r":200,"t":162},"movement":"c"},
+                  {"name":"Categorization & Prioritization of Technical Debt", "pc":{"r":265,"t":95},"movement":"c"},
+                  {"name":"deploy on demand", "pc":{"r":312,"t":91},"movement":"t"},
+                  {"name":"embedded Containerless web apps", "pc":{"r":285,"t":122},"movement":"t"},
+                  {"name":"Event API's", "pc":{"r":255,"t":170},"movement":"c"},
+                  {"name":"First class performance testing", "pc":{"r":295,"t":95},"movement":"t"},
+                  {"name":"Infrastructure automation for developer workstations", "pc":{"r":312,"t":133},"movement":"t"},
+                  {"name":"Infrastructure automation in windows", "pc":{"r":290,"t":102},"movement":"t"},
+                  {"name":"Out of container functional tests", "pc":{"r":285,"t":129},"movement":"t"},
+                  {"name":"Thoughtful Caching", "pc":{"r":200,"t":144},"movement":"c"},
+                  {"name":"XD", "pc":{"r":312,"t":119},"movement":"t"},
+                  {"name":"Event Sourcing", "pc":{"r":290,"t":144},"movement":"c"},
+                  {"name":"Mechanical sympathy", "pc":{"r":212,"t":116},"movement":"t"},
+                  {"name":"Micro-services", "pc":{"r":212,"t":177},"movement":"t"},
+                  {"name":"Production immune system", "pc":{"r":260,"t":112},"movement":"t"},
+                  {"name":"App container end of life. Server/application containers", "pc":{"r":375,"t":98},"movement":"t"},
+                  {"name":"Database based integration", "pc":{"r":375,"t":120},"movement":"c"},
+                  {"name":"Feature branching", "pc":{"r":375,"t":150},"movement":"c"},
+                  {"name":"Manual infrastructure management", "pc":{"r":375,"t":165},"movement":"c"},
+                  {"name":"Scrum certification", "pc":{"r":375,"t":105},"movement":"c"},
+                  {"name":"Test recorders", "pc":{"r":375,"t":127},"movement":"t"}	
+     ],
+    "tools":[
+             {"name":"Git", "pc":{"r":140,"t":70},"movement":"c"},
+             {"name":"Github", "pc":{"r":140,"t":65},"movement":"c"},
+             {"name":"Infrastructure as Code", "pc":{"r":75,"t":45},"movement":"c"},
+             {"name":"Backbone.js", "pc":{"r":295,"t":55},"movement":"c"},
+             {"name":"FPM", "pc":{"r":312,"t":24},"movement":"t"},
+             {"name":"Frank", "pc":{"r":312,"t":12},"movement":"t"},
+             {"name":"Jade", "pc":{"r":312,"t":34},"movement":"t"},
+             {"name":"Javascript micro frameworks", "pc":{"r":285,"t":57},"movement":"t"},
+             {"name":"Javascript tooling", "pc":{"r":280,"t":29},"movement":"t"},
+             {"name":"Log aggregation & indexing (was Splunk)", "pc":{"r":170,"t":45},"movement":"c"},
+             {"name":"Message Buses without smarts", "pc":{"r":170,"t":85},"movement":"c"},
+             {"name":"NuGet", "pc":{"r":312,"t":27},"movement":"t"},
+             {"name":"Polyglot Persistence", "pc":{"r":312,"t":7},"movement":"c"},
+             {"name":"Powershell", "pc":{"r":160,"t":18},"movement":"c"},
+             {"name":"psake", "pc":{"r":312,"t":40},"movement":"t"},
+             {"name":"Vagrant", "pc":{"r":315,"t":45},"movement":"c"},
+             {"name":"Gradle", "pc":{"r":310,"t":80},"movement":"t"},
+             {"name":"jQuery Mobile", "pc":{"r":345,"t":40},"movement":"c"},
+             {"name":"Logic-free markup", "pc":{"r":212,"t":55},"movement":"t"},
+             {"name":"Open Source BI/ETL tools", "pc":{"r":310,"t":18},"movement":"c"},
+             {"name":"Riak", "pc":{"r":212,"t":24},"movement":"t"},
+             {"name":"Sonar", "pc":{"r":290,"t":75},"movement":"c"},
+             {"name":"Code in Configuration", "pc":{"r":375,"t":72},"movement":"c"},
+             {"name":"Cross Platform Mobile Toolkits", "pc":{"r":375,"t":18},"movement":"c"},
+             {"name":"Enterprise Service Bus", "pc":{"r":375,"t":36},"movement":"c"},
+             {"name":"Maven", "pc":{"r":375,"t":29},"movement":"t"},
+             {"name":"VCS with \"implicit workflow\"", "pc":{"r":375,"t":54},"movement":"c"}
+    ],
+    "platforms":[
+                 {"name":"ATOM", "pc":{"r":30,"t":202},"movement":"c"},
+                 {"name":"AWS", "pc":{"r":145,"t":235},"movement":"c"},
+                 {"name":"Care about hardware", "pc":{"r":75,"t":250},"movement":"t"},
+                 {"name":"KVM", "pc":{"r":25,"t":245},"movement":"c"},
+                 {"name":"Mobile Web", "pc":{"r":85,"t":210},"movement":"c"},
+                 {"name":"SW and HW people talk to each other", "pc":{"r":75,"t":265},"movement":"t"},
+                 {"name":"Domain Specific PAAS", "pc":{"r":312,"t":258},"movement":"t"},
+                 {"name":"Heroku", "pc":{"r":277,"t":254},"movement":"c"},
+                 {"name":"Linux containers", "pc":{"r":312,"t":195},"movement":"t"},
+                 {"name":"Offline mobile Webapps (just html5)", "pc":{"r":270,"t":240},"movement":"c"},
+                 {"name":"Private cloud", "pc":{"r":312,"t":195},"movement":"t"},
+                 {"name":"Tablet", "pc":{"r":170,"t":216},"movement":"c"},
+                 {"name":"Ubiquitous computing", "pc":{"r":280,"t":260},"movement":"c"},
+                 {"name":"Windows Phone 7", "pc":{"r":312,"t":211},"movement":"t"},
+                 {"name":"App harbor", "pc":{"r":212,"t":186},"movement":"t"},
+                 {"name":"Cloud foundry", "pc":{"r":310,"t":252},"movement":"c"},
+                 {"name":"Data as a Service", "pc":{"r":212,"t":215},"movement":"t"},
+                 {"name":"Datacenter computing", "pc":{"r":212,"t":226},"movement":"t"},
+                 {"name":"GPGPU", "pc":{"r":300,"t":190},"movement":"c"},
+                 {"name":"Node.js", "pc":{"r":277,"t":202},"movement":"c"},
+                 {"name":"Open Social gadgets", "pc":{"r":212,"t":248},"movement":"t"},
+                 {"name":"Single threaded async servers", "pc":{"r":270,"t":197},"movement":"t"},
+                 {"name":"vFabric", "pc":{"r":345,"t":192},"movement":"c"},
+                 {"name":"Buying solutions you can only afford one of", "pc":{"r":375,"t":232},"movement":"t"},
+                 {"name":"GWT", "pc":{"r":375,"t":224},"movement":"c"},
+                 {"name":"Java portal servers", "pc":{"r":375,"t":235},"movement":"c"},
+                 {"name":"RIA", "pc":{"r":375,"t":247},"movement":"t"},
+                 {"name":"Treating VM's like physical infrastructure", "pc":{"r":375,"t":261},"movement":"t"},
+                 {"name":"WS-*", "pc":{"r":375,"t":190},"movement":"c"},
+                 {"name":"zero coding packages", "pc":{"r":375,"t":201},"movement":"t"}
+     ],
+    "languages":[
+                 {"name":"Care about languages", "pc":{"r":75,"t":285},"movement":"t"},
+                 {"name":"HTML 5", "pc":{"r":140,"t":330},"movement":"c"},
+                 {"name":"Javascript as a first class language", "pc":{"r":80,"t":300},"movement":"c"},
+                 {"name":"Clojure", "pc":{"r":170,"t":292},"movement":"t"},
+                 {"name":"Coffeescript", "pc":{"r":240,"t":340},"movement":"c"},
+                 {"name":"Domain-Specific Languages", "pc":{"r":170,"t":320},"movement":"c"},
+                 {"name":"SASS, SCSS, and LESS", "pc":{"r":210,"t":350},"movement":"c"},
+                 {"name":"Scala", "pc":{"r":155,"t":300},"movement":"c"},
+                 {"name":"Clojurescript", "pc":{"r":260,"t":286},"movement":"t"},
+                 {"name":"F#", "pc":{"r":290,"t":320},"movement":"c"},
+                 {"name":"Functional java", "pc":{"r":212,"t":356},"movement":"t"},
+                 {"name":"Future of Java", "pc":{"r":325,"t":330},"movement":"c"},
+                 {"name":"Google Dart", "pc":{"r":375,"t":294},"movement":"t"},
+                 {"name":"Logic in stored Procedures", "pc":{"r":375,"t":315},"movement":"c"}
+    ]
 }
