@@ -25,8 +25,9 @@
 }
 
 -(CGPoint) rasterFromAngle:(int) angle AndRadius:(int)radius {
-    CGFloat x = radius * cos((angle * M_PI/180));
-    CGFloat y = radius * sin((angle * M_PI/180));  
+    float scaledRadius = radius * 1.2;
+    CGFloat x = scaledRadius * cos((angle * M_PI/180));
+    CGFloat y = scaledRadius * sin((angle * M_PI/180));  
     return CGPointMake(x,y);
 }
 
@@ -86,6 +87,17 @@
 	
 }
 
+- (void)drawFilledCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
+{
+    UIGraphicsPushContext(context);
+    CGContextBeginPath(context);
+    CGContextAddArc(context, p.x, p.y, radius, 0, 2*M_PI, YES);
+    CGContextStrokePath(context);
+    CGContextSetFillColorWithColor(context, [UIColor yellowColor].CGColor);
+    CGContextFillPath(context);
+    UIGraphicsPopContext();
+}   
+
 - (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
 {
     UIGraphicsPushContext(context);
@@ -95,25 +107,26 @@
     UIGraphicsPopContext();
 }   
 
--(void) drawTriangleAtPoint1:(CGPoint)p1 point2:(CGPoint)p2 point3:(CGPoint)p3 inContext:(CGContextRef)context{
+-(void) drawTriangleAtPoint1:(CGPoint)p1 inContext:(CGContextRef)context{
 
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);
-    [[UIColor whiteColor] setStroke];    
+    [[UIColor yellowColor] setStroke];    
     
     CGContextMoveToPoint(context, p1.x, p1.y); 
-    CGContextAddLineToPoint(context, p2.x,p2.y);
-    CGContextAddLineToPoint(context, p3.x,p3.y);
+    CGContextAddLineToPoint(context, p1.x + 15.0,p1.y + 15.0);
+    CGContextAddLineToPoint(context, p1.x - 15.0,p1.y + 15.0);
     CGContextAddLineToPoint(context, p1.x, p1.y);
     
     CGContextClosePath(context);
     CGContextAddPath(context, a_path);
     
     // Fill the path
-    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
     CGContextFillPath(context);
     CGPathRelease(a_path);    
 }
+
 -(void) drawLineInContext:(CGContextRef)context{
     CGContextBeginPath(context);
     CGContextSetLineWidth(context, 5.0);
@@ -134,10 +147,27 @@
     for(NSMutableDictionary *blip in names){
         NSString *blipName = [blip objectForKey:@"name"];
         NSMutableDictionary *pcMap = [blip objectForKey:@"pc"];
+
         NSString *r = [pcMap objectForKey:@"r"];
         NSString *t = [pcMap objectForKey:@"t"];
+        NSString *movement = [blip objectForKey:@"movement"];
+        
         CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
-        NSLog(@"%@,%f,%f",blipName,point.x,point.y);
+        NSLog(@"%@,%@,%f,%f",blipName,movement,point.x,point.y);
+        if(point.x < 0){
+            point.x = 384.0 + point.x;
+            if(point.y <0){
+                point.y = (point.y * -2)/2;
+            } else {
+                point.y = 502.0 - point.y;
+            }
+            
+            if([movement isEqualToString:@"t"]){
+                [self drawTriangleAtPoint1:point inContext:context];                
+            }else {
+                [self drawFilledCircleAtPoint:point withRadius:10.0 inContext:context];                
+            }
+        }
     }
     [self drawLineInContext:context];
     size_t num_locations = 3;

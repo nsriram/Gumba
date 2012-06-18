@@ -95,120 +95,182 @@
                    "t": 135
                    },
                    "movement": "c"
+                   },
+                   {
+                   "name": "Agile Analytics",
+                   "pc": {
+                   "r": 212,
+                   "t": 132
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Build your own radar",
+                   "pc": {
+                   "r": 200,
+                   "t": 162
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Categorization & Prioritization of Technical Debt",
+                   "pc": {
+                   "r": 265,
+                   "t": 95
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "deploy on demand",
+                   "pc": {
+                   "r": 312,
+                   "t": 91
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "embedded Containerless web apps",
+                   "pc": {
+                   "r": 285,
+                   "t": 122
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Event API's",
+                   "pc": {
+                   "r": 255,
+                   "t": 170
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "First class performance testing",
+                   "pc": {
+                   "r": 295,
+                   "t": 95
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Infrastructure automation for developer workstations",
+                   "pc": {
+                   "r": 312,
+                   "t": 133
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Infrastructure automation in windows",
+                   "pc": {
+                   "r": 290,
+                   "t": 102
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Out of container functional tests",
+                   "pc": {
+                   "r": 285,
+                   "t": 129
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Thoughtful Caching",
+                   "pc": {
+                   "r": 200,
+                   "t": 144
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "XD",
+                   "pc": {
+                   "r": 312,
+                   "t": 119
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Event Sourcing",
+                   "pc": {
+                   "r": 290,
+                   "t": 144
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Mechanical sympathy",
+                   "pc": {
+                   "r": 212,
+                   "t": 116
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Micro-services",
+                   "pc": {
+                   "r": 212,
+                   "t": 177
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Production immune system",
+                   "pc": {
+                   "r": 260,
+                   "t": 112
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "App container end of life. Server/application containers",
+                   "pc": {
+                   "r": 375,
+                   "t": 98
+                   },
+                   "movement": "t"
+                   },
+                   {
+                   "name": "Database based integration",
+                   "pc": {
+                   "r": 375,
+                   "t": 120
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Feature branching",
+                   "pc": {
+                   "r": 375,
+                   "t": 150
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Manual infrastructure management",
+                   "pc": {
+                   "r": 375,
+                   "t": 165
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Scrum certification",
+                   "pc": {
+                   "r": 375,
+                   "t": 105
+                   },
+                   "movement": "c"
+                   },
+                   {
+                   "name": "Test recorders",
+                   "pc": {
+                   "r": 375,
+                   "t": 127
+                   },
+                   "movement": "t"
                    }
-                   ],
-    "languages": [
-                  {
-                  "name": "Care about languages",
-                  "pc": {
-                  "r": 75,
-                  "t": 285
-                  },
-                  "movement": "t"
-                  },
-                  {
-                  "name": "HTML 5",
-                  "pc": {
-                  "r": 140,
-                  "t": 330
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Javascript as a first class language",
-                  "pc": {
-                  "r": 80,
-                  "t": 300
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Clojure",
-                  "pc": {
-                  "r": 170,
-                  "t": 292
-                  },
-                  "movement": "t"
-                  },
-                  {
-                  "name": "Coffeescript",
-                  "pc": {
-                  "r": 240,
-                  "t": 340
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Domain-Specific Languages",
-                  "pc": {
-                  "r": 170,
-                  "t": 320
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "SASS, SCSS, and LESS",
-                  "pc": {
-                  "r": 210,
-                  "t": 350
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Scala",
-                  "pc": {
-                  "r": 155,
-                  "t": 300
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Clojurescript",
-                  "pc": {
-                  "r": 260,
-                  "t": 286
-                  },
-                  "movement": "t"
-                  },
-                  {
-                  "name": "F#",
-                  "pc": {
-                  "r": 290,
-                  "t": 320
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Functional java",
-                  "pc": {
-                  "r": 212,
-                  "t": 356
-                  },
-                  "movement": "t"
-                  },
-                  {
-                  "name": "Future of Java",
-                  "pc": {
-                  "r": 325,
-                  "t": 330
-                  },
-                  "movement": "c"
-                  },
-                  {
-                  "name": "Google Dart",
-                  "pc": {
-                  "r": 375,
-                  "t": 294
-                  },
-                  "movement": "t"
-                  },
-                  {
-                  "name": "Logic in stored Procedures",
-                  "pc": {
-                  "r": 375,
-                  "t": 315
-                  },
-                  "movement": "c"
-                  }
-                  ]
+                   ]
 }
