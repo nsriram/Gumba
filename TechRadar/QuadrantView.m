@@ -136,6 +136,16 @@
     CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
 }
 
+- (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
+    UIFont *font = [UIFont systemFontOfSize:24];
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, self.center.x +width, self.center.y+distance);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
+    CGContextConcatCTM(context, textTransform);
+    CGContextTranslateCTM(context, -(self.center.x +width), -(self.center.y+distance));
+    [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
+    CGContextRestoreGState(context);
+}
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();     
@@ -182,6 +192,10 @@
     CGRectInset(myFrame, 2, 2);
     [[UIColor blackColor] set];
     UIRectFrame(myFrame);
-}
 
+    [self drawArcTitles:context withTitle:@"Hold" Width:100.0 Height:120.0];
+    [self drawArcTitles:context withTitle:@"Assess" Width:175.0 Height:220.0];
+    [self drawArcTitles:context withTitle:@"Trial" Width:240.0 Height:270.0];
+    [self drawArcTitles:context withTitle:@"Adopt" Width:265.0 Height:305.0];
+}
 @end
