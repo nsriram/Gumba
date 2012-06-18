@@ -82,9 +82,9 @@
     UIGraphicsPushContext(context);
     CGContextBeginPath(context);
     CGContextAddArc(context, p.x, p.y, radius, 0, 2*M_PI, YES);
-    CGContextStrokePath(context);
-    CGContextSetFillColorWithColor(context, [UIColor yellowColor].CGColor);
-    CGContextFillPath(context);
+    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);    
+    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextDrawPath(context, kCGPathFillStroke);
     UIGraphicsPopContext();
 }   
 
@@ -95,8 +95,8 @@
     [[UIColor yellowColor] setStroke];    
     
     CGContextMoveToPoint(context, p1.x, p1.y); 
-    CGContextAddLineToPoint(context, p1.x + 15.0,p1.y + 15.0);
-    CGContextAddLineToPoint(context, p1.x - 15.0,p1.y + 15.0);
+    CGContextAddLineToPoint(context, p1.x + 12.0,p1.y + 12.0);
+    CGContextAddLineToPoint(context, p1.x - 12.0,p1.y + 12.0);
     CGContextAddLineToPoint(context, p1.x, p1.y);
     
     CGContextClosePath(context);
@@ -122,8 +122,8 @@
     size_t num_locations = 3;
     CGFloat locations[3] = { 0.0, 0.0, 0.3};
     CGFloat components[12] = {  0.6, 0.6, 0.6, 1.0,        
-        0.5, 0.5, 0.5, 1.0,
-        0.7, 0.7, 0.7, 0.7 };
+    0.5, 0.5, 0.5, 1.0,
+    0.7, 0.7, 0.7, 0.7 };
     CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
                                                                     components,locations, 
@@ -155,8 +155,6 @@
         if(point.x < 0){
             point.x = 384.0 + point.x;
         } 
-
-
         if(point.y <0){
             point.y = (point.y * -2)/2;
         } else {
@@ -166,7 +164,7 @@
         if([movement isEqualToString:@"t"]){
             [self drawTriangleAtPoint:point inContext:context];                
         }else {
-            [self drawFilledCircleAtPoint:point withRadius:10.0 inContext:context];                
+            [self drawFilledCircleAtPoint:point withRadius:8.0 inContext:context];                
         }        
     }
     [self drawBackgroundGradient:context];
