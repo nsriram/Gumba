@@ -19,30 +19,34 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-    }
     return self;
 }
 
 -(CGPoint) rasterFromAngle:(int) angle AndRadius:(int)radius {
-    float scaledRadius = radius * 1.2;
+    float scaledRadius = radius;
     CGFloat x = scaledRadius * cos((angle * M_PI/180));
     CGFloat y = scaledRadius * sin((angle * M_PI/180));  
     return CGPointMake(x,y);
 }
 
-+(NSString *)fetchGumbaData {
-    NSString *gumbaJSON = @"";
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:GUMBA ofType:JSON];  
-    if (filePath) {
-        gumbaJSON = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];  
+- (void)resizeQuadrant
+{
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.50];
+	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromLeft)
+                           forView:self
+                             cache:NO];
+    CGRect resized;
+    if(self.frame.size.height == 1004){
+        resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, 384, 502);
+    } else {
+        resized = CGRectMake(0, 0, 768, 1004);
+        [self.superview bringSubviewToFront:self];
     }
-    return gumbaJSON;
-}
-
--(NSMutableDictionary *) parseGumbaJSON:(NSString *) gumbaJSON {
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    return [parser objectWithString:gumbaJSON error:nil];    
+    self.frame = resized;	
+	[UIView commitAnimations];	
 }
 
 - (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndRotation:(BOOL)arcRotation AndName:(NSString*) quadName {
@@ -65,27 +69,14 @@
     return self;
 }
 
-- (void)resizeQuadrant
+- (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
 {
-	[UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.50];
-	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromLeft)
-                           forView:self
-                             cache:NO];
-    CGRect resized;
-    if(self.frame.size.height == 1004){
-        resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, 384, 502);
-    } else {
-        resized = CGRectMake(0, 0, 768, 1004);
-        [self.superview bringSubviewToFront:self];
-    }
-    self.frame = resized;
-	
-	[UIView commitAnimations];
-	
-}
+    UIGraphicsPushContext(context);
+    CGContextBeginPath(context);
+    CGContextAddArc(context, p.x, p.y, radius, 0, M_PI, self.rotation);
+    CGContextStrokePath(context);
+    UIGraphicsPopContext();
+}   
 
 - (void)drawFilledCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
 {
@@ -98,16 +89,7 @@
     UIGraphicsPopContext();
 }   
 
-- (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
-{
-    UIGraphicsPushContext(context);
-    CGContextBeginPath(context);
-    CGContextAddArc(context, p.x, p.y, radius, 0, M_PI, self.rotation);
-    CGContextStrokePath(context);
-    UIGraphicsPopContext();
-}   
-
--(void) drawTriangleAtPoint1:(CGPoint)p1 inContext:(CGContextRef)context{
+-(void) drawTriangleAtPoint:(CGPoint)p1 inContext:(CGContextRef)context{
 
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);
@@ -127,33 +109,51 @@
     CGPathRelease(a_path);    
 }
 
--(void) drawLineInContext:(CGContextRef)context{
-    CGContextBeginPath(context);
-    CGContextSetLineWidth(context, 5.0);
-    [[UIColor whiteColor] setStroke];   
-    CGContextMoveToPoint(context, frameOrigin.x, frameOrigin.y);
-    CGContextAddLineToPoint(context, 120, 150);
-    CGContextAddLineToPoint(context, 140, 180);
-    CGContextStrokePath(context);
++(NSMutableDictionary *)readJSON {
+    NSString *gumbaJSON = @"";
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:GUMBA ofType:JSON];  
+    if (filePath) {
+        gumbaJSON = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];  
+    }
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    return [parser objectWithString:gumbaJSON error:nil];    
+}
+
+-(void) drawBackgroundGradient : (CGContextRef) context{
+    size_t num_locations = 3;
+    CGFloat locations[3] = { 0.0, 0.0, 0.3};
+    CGFloat components[12] = {  0.6, 0.6, 0.6, 1.0,        
+        0.5, 0.5, 0.5, 1.0,
+        0.7, 0.7, 0.7, 0.7 };
+    CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
+                                                                    components,locations, 
+                                                                    num_locations);
+    CGPoint myStartPoint, myEndPoint;    
+    myStartPoint.x = 0.0;    
+    myStartPoint.y = 0.0;
+    myEndPoint.x = self.frame.size.width;
+    myEndPoint.y = self.frame.size.height;    
+    CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    CGContextRef context = UIGraphicsGetCurrentContext(); 
-    
-    NSString *gumbaJSON = [QuadrantView fetchGumbaData];
-    NSMutableDictionary *allQuadrants = [self parseGumbaJSON:gumbaJSON];
-    NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
-    for(NSMutableDictionary *blip in names){
-        NSString *blipName = [blip objectForKey:@"name"];
-        NSMutableDictionary *pcMap = [blip objectForKey:@"pc"];
+    CGContextRef context = UIGraphicsGetCurrentContext();     
 
+    NSMutableDictionary *allQuadrants = [QuadrantView readJSON];
+    NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
+
+    for(NSMutableDictionary *blip in names){
+
+//        NSString *blipName = [blip objectForKey:@"name"];
+        NSString *movement = [blip objectForKey:@"movement"];
+
+        NSMutableDictionary *pcMap = [blip objectForKey:@"pc"];
         NSString *r = [pcMap objectForKey:@"r"];
         NSString *t = [pcMap objectForKey:@"t"];
-        NSString *movement = [blip objectForKey:@"movement"];
-        
         CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
-        NSLog(@"%@,%@,%f,%f",blipName,movement,point.x,point.y);
+
         if(point.x < 0){
             point.x = 384.0 + point.x;
             if(point.y <0){
@@ -163,29 +163,15 @@
             }
             
             if([movement isEqualToString:@"t"]){
-                [self drawTriangleAtPoint1:point inContext:context];                
+                [self drawTriangleAtPoint:point inContext:context];                
             }else {
+                NSLog(@"%f,%f",point.x,point.y);
                 [self drawFilledCircleAtPoint:point withRadius:10.0 inContext:context];                
             }
         }
     }
-    [self drawLineInContext:context];
-    size_t num_locations = 3;
-    CGFloat locations[3] = { 0.0, 0.5, 1.0};
-    CGFloat components[12] = {  0.7, 0.7, 0.7, 1.0,        
-        0.5, 0.5, 0.5, 1.0,        
-        0.7, 0.7, 0.7, 0.7 };
-    CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
-    CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
-                                                                    components,locations, 
-                                                                    num_locations);
-    CGPoint myStartPoint, myEndPoint;    
-    myStartPoint.x = 0.0;    
-    myStartPoint.y = 0.0;
-    myEndPoint.x = self.frame.size.width;    
-    myEndPoint.y = self.frame.size.height;    
-    CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
-    
+    [self drawBackgroundGradient:context];
+
     CGContextSetLineWidth(context, 5.0);
     [[UIColor whiteColor] setStroke];
     
