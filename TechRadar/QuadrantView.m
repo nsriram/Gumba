@@ -95,8 +95,8 @@
     [[UIColor yellowColor] setStroke];    
     
     CGContextMoveToPoint(context, p1.x, p1.y); 
-    CGContextAddLineToPoint(context, p1.x + 12.0,p1.y + 12.0);
-    CGContextAddLineToPoint(context, p1.x - 12.0,p1.y + 12.0);
+    CGContextAddLineToPoint(context, p1.x + 10.0,p1.y + 10.0);
+    CGContextAddLineToPoint(context, p1.x - 10.0,p1.y + 10.0);
     CGContextAddLineToPoint(context, p1.x, p1.y);
     
     CGContextClosePath(context);
@@ -163,14 +163,14 @@
         CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
 
         if(point.x < 0){
-            point.x = 384.0 + point.x;
+            point.x = 378.0 + point.x;
         } 
         if(point.y <0){
-            point.y = (point.y * -2)/2;
+            point.y = (point.y * -1);
         } else {
-            point.y = 502.0 - point.y;
+            point.y = (494.0 - point.y);
         }
-
+        NSLog(@"%@,%f,%f",blipName,point.x,point.y);
         if([movement isEqualToString:@"t"]){
             [self drawTriangleAtPoint:point inContext:context];                
         }else {
