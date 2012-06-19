@@ -151,7 +151,8 @@
 }
 
 - (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
-    UIFont *font = [UIFont systemFontOfSize:24];
+    [[UIColor whiteColor] set];
+    UIFont *font = [UIFont systemFontOfSize:18];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x +width, self.center.y+distance);
     CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
@@ -185,11 +186,6 @@
     [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
     [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
     [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
-
-    [self drawArcTitles:context withTitle:@"Adopt" Width:90.0 Height:120.0];
-    [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:220.0];
-    [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
-    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
 
     CGRect    myFrame = self.bounds;
     CGContextSetLineWidth(context, 1);
@@ -226,5 +222,10 @@
         }        
         rangeBegin = rangeBegin +1;
     }
+
+    [self drawArcTitles:context withTitle:@"Adopt" Width:80.0 Height:130.0];
+    [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:225.0];
+    [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
+    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
 }
 @end
