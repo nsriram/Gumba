@@ -193,9 +193,9 @@
     [[UIColor blackColor] set];
     UIRectFrame(myFrame);
 
-    [self drawArcTitles:context withTitle:@"Adopt" Width:100.0 Height:120.0];
-    [self drawArcTitles:context withTitle:@"Trial" Width:175.0 Height:220.0];
-    [self drawArcTitles:context withTitle:@"Assess" Width:240.0 Height:270.0];
-    [self drawArcTitles:context withTitle:@"Hold" Width:265.0 Height:305.0];
+    [self drawArcTitles:context withTitle:@"Adopt" Width:90.0 Height:120.0];
+    [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:220.0];
+    [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
+    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
 }
 @end
