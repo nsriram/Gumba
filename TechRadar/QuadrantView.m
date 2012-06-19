@@ -77,7 +77,7 @@
     UIGraphicsPopContext();
 }   
 
-- (void)drawFilledCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
+- (void)drawFilledCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context withEntry:(NSInteger)entry
 {
     UIGraphicsPushContext(context);
     CGContextBeginPath(context);
@@ -86,18 +86,22 @@
     CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
     CGContextDrawPath(context, kCGPathFillStroke);
     UIGraphicsPopContext();
+
+    UIFont *font = [UIFont systemFontOfSize:16];
+    NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
+    [entryString drawAtPoint:CGPointMake((p.x-radius+1.0), (p.y+radius-2.0)) withFont:font];
 }   
 
--(void) drawTriangleAtPoint:(CGPoint)p1 inContext:(CGContextRef)context{
+-(void) drawTriangleAtPoint:(CGPoint)point inContext:(CGContextRef)context withEntry:(NSInteger)entry{
 
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);
-    [[UIColor yellowColor] setStroke];    
+    [[UIColor yellowColor] setStroke];
     
-    CGContextMoveToPoint(context, p1.x, p1.y); 
-    CGContextAddLineToPoint(context, p1.x + 10.0,p1.y + 10.0);
-    CGContextAddLineToPoint(context, p1.x - 10.0,p1.y + 10.0);
-    CGContextAddLineToPoint(context, p1.x, p1.y);
+    CGContextMoveToPoint(context, point.x, point.y); 
+    CGContextAddLineToPoint(context, point.x + 10.0,point.y + 10.0);
+    CGContextAddLineToPoint(context, point.x - 10.0,point.y + 10.0);
+    CGContextAddLineToPoint(context, point.x, point.y);
     
     CGContextClosePath(context);
     CGContextAddPath(context, a_path);
@@ -106,6 +110,10 @@
     CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
     CGContextFillPath(context);
     CGPathRelease(a_path);    
+
+    UIFont *font = [UIFont systemFontOfSize:15];
+    NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
+    [entryString drawAtPoint:CGPointMake((point.x-7.0), (point.y+7.0)) withFont:font];
 }
 
 +(NSMutableDictionary *)readJSON {
@@ -121,7 +129,7 @@
 -(void) drawBackgroundGradient : (CGContextRef) context{
     size_t num_locations = 3;
     CGFloat locations[3] = { 0.0, 0.0, 0.3};
-    CGFloat components[12] = {  0.6, 0.6, 0.6, 1.0,        
+    CGFloat components[12] = {  0.6, 0.6, 0.6, 1.0, 
     0.5, 0.5, 0.5, 1.0,
     0.7, 0.7, 0.7, 0.7 };
     CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
@@ -146,13 +154,27 @@
     [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
     CGContextRestoreGState(context);
 }
+
+-(NSInteger) rangeBegin :(NSMutableDictionary*) allQuadrants {
+    NSMutableArray *allRanges = [allQuadrants objectForKey:@"radar_quadrants"];
+    NSInteger rangeBegin;
+    for(NSMutableDictionary *range in allRanges){
+        NSString *name =  [range objectForKey:@"name"];
+        if([[name lowercaseString] isEqualToString:quadrantName]){
+            rangeBegin = [[range objectForKey:@"start"] integerValue];
+        }
+    }
+    return rangeBegin + 1;
+}
+
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();     
 
     NSMutableDictionary *allQuadrants = [QuadrantView readJSON];
     NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
-
+    NSInteger rangeBegin = [self rangeBegin:allQuadrants];
+    
     for(NSMutableDictionary *blip in names){
         NSString *blipName = [blip objectForKey:@"name"];
         NSString *movement = [blip objectForKey:@"movement"];
@@ -170,12 +192,12 @@
         } else {
             point.y = (494.0 - point.y);
         }
-        NSLog(@"%@,%f,%f",blipName,point.x,point.y);
         if([movement isEqualToString:@"t"]){
-            [self drawTriangleAtPoint:point inContext:context];                
+            [self drawTriangleAtPoint:point inContext:context withEntry:rangeBegin];
         }else {
-            [self drawFilledCircleAtPoint:point withRadius:8.0 inContext:context];                
+            [self drawFilledCircleAtPoint:point withRadius:7.0 inContext:context withEntry:rangeBegin];
         }        
+        rangeBegin = rangeBegin +1;
     }
     [self drawBackgroundGradient:context];
 
