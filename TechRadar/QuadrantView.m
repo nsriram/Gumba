@@ -56,13 +56,10 @@
         self.rotation = arcRotation;
         self.quadrantName = quadName;
 
-        UITapGestureRecognizer *singleTap = 
-        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];
-        
-        [singleTap setNumberOfTapsRequired:1];
-        [singleTap setNumberOfTouchesRequired:1];
-        
-        [self addGestureRecognizer:singleTap];        
+        UITapGestureRecognizer *doubleTap = 
+        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];        
+        [doubleTap setNumberOfTapsRequired:2];
+        [self addGestureRecognizer:doubleTap];        
 
     }
     return self;
@@ -80,27 +77,29 @@
 - (void)drawFilledCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context withEntry:(NSInteger)entry
 {
     UIColor *lightBlue = [UIColor colorWithRed: 0.0/255.0 
-                                         green: 154.0/255.0 
-                                          blue: 205.0/255.0
+                                         green: 191.0/255.0 
+                                          blue: 255.0/255.0
                                          alpha: 1.0];
     UIGraphicsPushContext(context);
     CGContextBeginPath(context);
     CGContextAddArc(context, p.x, p.y, radius, 0, 2*M_PI, YES);
-    CGContextSetFillColorWithColor(context, [lightBlue CGColor]);    
+    CGContextSetFillColorWithColor(context, [lightBlue CGColor]);
     CGContextSetStrokeColorWithColor(context, [lightBlue CGColor]);
     CGContextDrawPath(context, kCGPathFillStroke);
-    UIGraphicsPopContext();
 
-    UIFont *font = [UIFont systemFontOfSize:16];
+    [[UIColor whiteColor] set]; 
+    UIFont *font = [UIFont systemFontOfSize:14];
     NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
     [entryString drawAtPoint:CGPointMake((p.x-radius+1.0), (p.y+radius-2.0)) withFont:font];
+    UIGraphicsPopContext();
 }   
 
 -(void) drawTriangleAtPoint:(CGPoint)point inContext:(CGContextRef)context withEntry:(NSInteger)entry{
     UIColor *lightBlue = [UIColor colorWithRed: 0.0/255.0 
-                                         green: 154.0/255.0 
-                                          blue: 205.0/255.0
+                                         green: 191.0/255.0 
+                                          blue: 255.0/255.0
                                          alpha: 1.0];
+
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);
     [lightBlue setStroke];
@@ -118,7 +117,8 @@
     CGContextFillPath(context);
     CGPathRelease(a_path);    
 
-    UIFont *font = [UIFont systemFontOfSize:15];
+    [[UIColor whiteColor] set]; 
+    UIFont *font = [UIFont systemFontOfSize:14];
     NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
     [entryString drawAtPoint:CGPointMake((point.x-7.0), (point.y+14.0)) withFont:font];
 }
@@ -134,11 +134,10 @@
 }
 
 -(void) drawBackgroundGradient : (CGContextRef) context{
-    size_t num_locations = 3;
-    CGFloat locations[3] = { 0.0, 0.0, 0.3};
-    CGFloat components[12] = {  1.0, 1.0, 1.0, 1.0, 
-        1.0, 1.0, 1.0, 1.0,
-        1.0, 1.0, 1.0, 1.0 };
+    size_t num_locations = 2;
+    CGFloat locations[2] = { 0.0, 0.8};
+    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8, 
+        70.0/255.0, 130.0/255.0, 170.0/255.0, 1.0 };
     CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
                                                                     components,locations, 
@@ -180,7 +179,7 @@
 
     [self drawBackgroundGradient:context];
     CGContextSetLineWidth(context, 3.0);
-    [[UIColor grayColor] setStroke];
+    [[UIColor whiteColor] setStroke];
 
     [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
     [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
@@ -193,9 +192,9 @@
     [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
 
     CGRect    myFrame = self.bounds;
-    CGContextSetLineWidth(context, 2);
+    CGContextSetLineWidth(context, 1);
     CGRectInset(myFrame, 2, 2);
-    [[UIColor blackColor] set];
+    [[UIColor whiteColor] set];
     UIRectFrame(myFrame);
 
 

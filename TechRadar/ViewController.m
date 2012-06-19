@@ -45,7 +45,12 @@
                                                           WithCenter:CGPointMake(0, 0)
                                                          AndRotation:NO AndName:LANGUAGES];
     [self.view insertSubview:quadrantView4 atIndex:1];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+
+    UIColor *lightBlue = [UIColor colorWithRed: 70.0/255.0 
+                                         green: 130.0/255.0 
+                                          blue: 170.0/255.0
+                                         alpha: 1.0]; 
+    [self.view setBackgroundColor:lightBlue];
     
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] 
                                                 initWithTarget:self 

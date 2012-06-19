@@ -349,6 +349,7 @@
 				GCC_PREFIX_HEADER = "TechRadar/TechRadar-Prefix.pch";
 				INFOPLIST_FILE = "TechRadar/TechRadar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -360,6 +361,7 @@
 				GCC_PREFIX_HEADER = "TechRadar/TechRadar-Prefix.pch";
 				INFOPLIST_FILE = "TechRadar/TechRadar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
