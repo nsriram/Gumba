@@ -45,7 +45,7 @@
                                                           WithCenter:CGPointMake(0, 0)
                                                          AndRotation:NO AndName:LANGUAGES];
     [self.view insertSubview:quadrantView4 atIndex:1];
-    [self.view setBackgroundColor:[UIColor grayColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] 
                                                 initWithTarget:self 
@@ -92,9 +92,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if(UIInterfaceOrientationIsPortrait(interfaceOrientation))
-        return YES;
-    return NO;
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 @end

@@ -79,11 +79,15 @@
 
 - (void)drawFilledCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context withEntry:(NSInteger)entry
 {
+    UIColor *lightBlue = [UIColor colorWithRed: 0.0/255.0 
+                                         green: 154.0/255.0 
+                                          blue: 205.0/255.0
+                                         alpha: 1.0];
     UIGraphicsPushContext(context);
     CGContextBeginPath(context);
     CGContextAddArc(context, p.x, p.y, radius, 0, 2*M_PI, YES);
-    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);    
-    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [lightBlue CGColor]);    
+    CGContextSetStrokeColorWithColor(context, [lightBlue CGColor]);
     CGContextDrawPath(context, kCGPathFillStroke);
     UIGraphicsPopContext();
 
@@ -93,27 +97,30 @@
 }   
 
 -(void) drawTriangleAtPoint:(CGPoint)point inContext:(CGContextRef)context withEntry:(NSInteger)entry{
-
+    UIColor *lightBlue = [UIColor colorWithRed: 0.0/255.0 
+                                         green: 154.0/255.0 
+                                          blue: 205.0/255.0
+                                         alpha: 1.0];
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);
-    [[UIColor yellowColor] setStroke];
+    [lightBlue setStroke];
     
     CGContextMoveToPoint(context, point.x, point.y); 
-    CGContextAddLineToPoint(context, point.x + 10.0,point.y + 10.0);
-    CGContextAddLineToPoint(context, point.x - 10.0,point.y + 10.0);
+    CGContextAddLineToPoint(context, point.x + 10.0,point.y + 16.0);
+    CGContextAddLineToPoint(context, point.x - 10.0,point.y + 16.0);
     CGContextAddLineToPoint(context, point.x, point.y);
     
     CGContextClosePath(context);
     CGContextAddPath(context, a_path);
     
     // Fill the path
-    CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [lightBlue CGColor]);
     CGContextFillPath(context);
     CGPathRelease(a_path);    
 
     UIFont *font = [UIFont systemFontOfSize:15];
     NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
-    [entryString drawAtPoint:CGPointMake((point.x-7.0), (point.y+7.0)) withFont:font];
+    [entryString drawAtPoint:CGPointMake((point.x-7.0), (point.y+14.0)) withFont:font];
 }
 
 +(NSMutableDictionary *)readJSON {
@@ -129,9 +136,9 @@
 -(void) drawBackgroundGradient : (CGContextRef) context{
     size_t num_locations = 3;
     CGFloat locations[3] = { 0.0, 0.0, 0.3};
-    CGFloat components[12] = {  0.6, 0.6, 0.6, 1.0, 
-    0.5, 0.5, 0.5, 1.0,
-    0.7, 0.7, 0.7, 0.7 };
+    CGFloat components[12] = {  1.0, 1.0, 1.0, 1.0, 
+        1.0, 1.0, 1.0, 1.0,
+        1.0, 1.0, 1.0, 1.0 };
     CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
                                                                     components,locations, 
@@ -171,6 +178,27 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();     
 
+    [self drawBackgroundGradient:context];
+    CGContextSetLineWidth(context, 3.0);
+    [[UIColor grayColor] setStroke];
+
+    [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
+
+    [self drawArcTitles:context withTitle:@"Adopt" Width:90.0 Height:120.0];
+    [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:220.0];
+    [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
+    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
+
+    CGRect    myFrame = self.bounds;
+    CGContextSetLineWidth(context, 2);
+    CGRectInset(myFrame, 2, 2);
+    [[UIColor blackColor] set];
+    UIRectFrame(myFrame);
+
+
     NSMutableDictionary *allQuadrants = [QuadrantView readJSON];
     NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
     NSInteger rangeBegin = [self rangeBegin:allQuadrants];
@@ -178,12 +206,12 @@
     for(NSMutableDictionary *blip in names){
         NSString *blipName = [blip objectForKey:@"name"];
         NSString *movement = [blip objectForKey:@"movement"];
-
+        
         NSMutableDictionary *pcMap = [blip objectForKey:@"pc"];
         NSString *r = [pcMap objectForKey:@"r"];
         NSString *t = [pcMap objectForKey:@"t"];
         CGPoint point = [self rasterFromAngle:[t intValue] AndRadius:[r intValue]];
-
+        
         if(point.x < 0){
             point.x = 378.0 + point.x;
         } 
@@ -199,25 +227,5 @@
         }        
         rangeBegin = rangeBegin +1;
     }
-    [self drawBackgroundGradient:context];
-
-    CGContextSetLineWidth(context, 3.0);
-    [[UIColor whiteColor] setStroke];
-    
-    [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
-    [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
-
-    CGRect    myFrame = self.bounds;
-    CGContextSetLineWidth(context, 2);
-    CGRectInset(myFrame, 2, 2);
-    [[UIColor blackColor] set];
-    UIRectFrame(myFrame);
-
-    [self drawArcTitles:context withTitle:@"Adopt" Width:90.0 Height:120.0];
-    [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:220.0];
-    [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
-    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
 }
 @end
