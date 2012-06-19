@@ -111,5 +111,11 @@
                  {"name":"Future of Java", "pc":{"r":325,"t":330},"movement":"c"},
                  {"name":"Google Dart", "pc":{"r":375,"t":294},"movement":"t"},
                  {"name":"Logic in stored Procedures", "pc":{"r":375,"t":315},"movement":"c"}
+    ],
+    "radar_quadrants" : [
+                           {"name":"Techniques", "start":0, "end":34},
+                           {"name":"Tools", "start":34, "end":61},
+                           {"name":"Platforms", "start":61, "end":91},
+                           {"name":"Languages", "start":91, "end":105} 
     ]
 }
