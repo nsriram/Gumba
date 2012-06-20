@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38EEBFB61590F41F00367FEA /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEBFB51590F41F00367FEA /* CircleView.m */; };
 		C301ABD1150B12B700272284 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C301ABD0150B12B700272284 /* QuartzCore.framework */; };
 		C310A8D115011447003BF6B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D015011447003BF6B7 /* UIKit.framework */; };
 		C310A8D315011447003BF6B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D215011447003BF6B7 /* Foundation.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38EEBFB41590F41F00367FEA /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		38EEBFB51590F41F00367FEA /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		C301ABD0150B12B700272284 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C310A8CC15011447003BF6B7 /* TechRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310A8D015011447003BF6B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 				C310A8E615011447003BF6B7 /* ViewController.m */,
 				C310A8D715011447003BF6B7 /* Supporting Files */,
 				C3760247151CC3D500D26B46 /* gumba.json */,
+				38EEBFB41590F41F00367FEA /* CircleView.h */,
+				38EEBFB51590F41F00367FEA /* CircleView.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				C3760271151CC66D00D26B46 /* SBJsonTokeniser.m in Sources */,
 				C3760272151CC66D00D26B46 /* SBJsonUTF8Stream.m in Sources */,
 				C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */,
+				38EEBFB61590F41F00367FEA /* CircleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

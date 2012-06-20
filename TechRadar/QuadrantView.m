@@ -1,4 +1,5 @@
 #import "QuadrantView.h"
+#import "CircleView.h"
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SBJson.h"
@@ -88,9 +89,18 @@
     CGContextDrawPath(context, kCGPathFillStroke);
 
     [[UIColor whiteColor] set]; 
-    UIFont *font = [UIFont systemFontOfSize:14];
+    UIFont *font = [UIFont systemFontOfSize:10];
     NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
-    [entryString drawAtPoint:CGPointMake((p.x-radius+1.0), (p.y+radius-2.0)) withFont:font];
+
+    CGPoint textPoint = CGPointMake((p.x-radius+3.0), (p.y + radius - 1.0));
+    
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, textPoint.x, textPoint.y);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-0.098125);
+    CGContextConcatCTM(context, textTransform);
+    CGContextTranslateCTM(context, -(textPoint.x), -(textPoint.y));
+    [entryString drawAtPoint:textPoint withFont:font];
+    CGContextRestoreGState(context);
     UIGraphicsPopContext();
 }   
 
@@ -105,8 +115,8 @@
     [lightBlue setStroke];
     
     CGContextMoveToPoint(context, point.x, point.y); 
-    CGContextAddLineToPoint(context, point.x + 10.0,point.y + 16.0);
-    CGContextAddLineToPoint(context, point.x - 10.0,point.y + 16.0);
+    CGContextAddLineToPoint(context, point.x + 8.0,point.y + 11.0);
+    CGContextAddLineToPoint(context, point.x - 6.0,point.y + 13.0);
     CGContextAddLineToPoint(context, point.x, point.y);
     
     CGContextClosePath(context);
@@ -118,9 +128,18 @@
     CGPathRelease(a_path);    
 
     [[UIColor whiteColor] set]; 
-    UIFont *font = [UIFont systemFontOfSize:14];
+    UIFont *font = [UIFont systemFontOfSize:10];
     NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
-    [entryString drawAtPoint:CGPointMake((point.x-7.0), (point.y+14.0)) withFont:font];
+    CGPoint textPoint = CGPointMake((point.x-5.0), (point.y+12.0));
+
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, textPoint.x, textPoint.y);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-0.098125);
+    CGContextConcatCTM(context, textTransform);
+    CGContextTranslateCTM(context, -(textPoint.x), -(textPoint.y));
+    [entryString drawAtPoint:textPoint withFont:font];
+    CGContextRestoreGState(context);
+
 }
 
 +(NSMutableDictionary *)readJSON {
@@ -179,7 +198,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();     
 
     [self drawBackgroundGradient:context];
-    CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineWidth(context, 1.0);
     [[UIColor whiteColor] setStroke];
 
     [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
@@ -228,4 +247,12 @@
     [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
     [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
 }
+
+- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
+{
+    UITouch *touch=[[event allTouches]anyObject];
+    CGPoint point= [touch locationInView:touch.view];
+    NSLog(@"%f,%f",point.x,point.y);
+}
+
 @end
