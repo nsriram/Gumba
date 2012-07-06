@@ -32,6 +32,7 @@
 		C3760272151CC66D00D26B46 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760265151CC66D00D26B46 /* SBJsonUTF8Stream.m */; };
 		C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760267151CC66D00D26B46 /* SBJsonWriter.m */; };
 		C3BCFF311590D9A600502AD2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3BCFF301590D9A600502AD2 /* icon.png */; };
+		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		C3760266151CC66D00D26B46 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		C3760267151CC66D00D26B46 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		C3BCFF301590D9A600502AD2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C3E0ACEC159E2FEF00F051C9 /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleView.h; sourceTree = "<group>"; };
+		C3E0ACED159E2FEF00F051C9 /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				C3760247151CC3D500D26B46 /* gumba.json */,
 				38EEBFB41590F41F00367FEA /* CircleView.h */,
 				38EEBFB51590F41F00367FEA /* CircleView.m */,
+				C3E0ACEC159E2FEF00F051C9 /* TriangleView.h */,
+				C3E0ACED159E2FEF00F051C9 /* TriangleView.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				C3760272151CC66D00D26B46 /* SBJsonUTF8Stream.m in Sources */,
 				C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */,
 				38EEBFB61590F41F00367FEA /* CircleView.m in Sources */,
+				C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 {
-    "techniques":[
+    "Techniques":[
                   {"name":"App health check pages", "pc":{"r":75,"t":115},"movement":"t"},
                   {"name":"appropriate depth of tests", "pc":{"r":75,"t":92},"movement":"t"},
                   {"name":"Automate Database Deployment", "pc":{"r":90,"t":135},"movement":"c"},
@@ -35,7 +35,7 @@
                   {"name":"Scrum certification", "pc":{"r":375,"t":105},"movement":"c"},
                   {"name":"Test recorders", "pc":{"r":375,"t":127},"movement":"t"}	
      ],
-    "tools":[
+    "Tools":[
              {"name":"Git", "pc":{"r":140,"t":70},"movement":"c"},
              {"name":"Github", "pc":{"r":140,"t":65},"movement":"c"},
              {"name":"Infrastructure as Code", "pc":{"r":75,"t":45},"movement":"c"},
@@ -64,7 +64,7 @@
              {"name":"Maven", "pc":{"r":375,"t":29},"movement":"t"},
              {"name":"VCS with \"implicit workflow\"", "pc":{"r":375,"t":54},"movement":"c"}
     ],
-    "platforms":[
+    "Platforms":[
                  {"name":"ATOM", "pc":{"r":30,"t":202},"movement":"c"},
                  {"name":"AWS", "pc":{"r":145,"t":235},"movement":"c"},
                  {"name":"Care about hardware", "pc":{"r":75,"t":250},"movement":"t"},
@@ -96,7 +96,7 @@
                  {"name":"WS-*", "pc":{"r":375,"t":190},"movement":"c"},
                  {"name":"zero coding packages", "pc":{"r":375,"t":201},"movement":"t"}
      ],
-    "languages":[
+    "Languages":[
                  {"name":"Care about languages", "pc":{"r":75,"t":285},"movement":"t"},
                  {"name":"HTML 5", "pc":{"r":140,"t":330},"movement":"c"},
                  {"name":"Javascript as a first class language", "pc":{"r":80,"t":300},"movement":"c"},

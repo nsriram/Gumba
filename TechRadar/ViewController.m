@@ -2,10 +2,10 @@
 #import "QuadrantView.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define TECHNIQUES @"techniques"
-#define LANGUAGES @"languages"
-#define TOOLS @"tools"
-#define PLATFORMS @"platforms"
+#define TECHNIQUES @"Techniques"
+#define LANGUAGES @"Languages"
+#define TOOLS @"Tools"
+#define PLATFORMS @"Platforms"
 
 @implementation ViewController
 
@@ -45,6 +45,7 @@
                                                           WithCenter:CGPointMake(0, 0)
                                                          AndRotation:NO AndName:LANGUAGES];
     [self.view insertSubview:quadrantView4 atIndex:1];
+    
 
     UIColor *lightBlue = [UIColor colorWithRed: 70.0/255.0 
                                          green: 130.0/255.0 

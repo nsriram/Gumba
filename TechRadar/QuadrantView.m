@@ -1,5 +1,6 @@
 #import "QuadrantView.h"
 #import "CircleView.h"
+#import "TriangleView.h"
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SBJson.h"
@@ -40,8 +41,16 @@
                              cache:NO];
     CGRect resized;
     if(self.frame.size.height == 1004){
+        for(CircleView *subView in self.subviews){
+            CGRect currentFrame = subView.frame;
+            [subView setFrame:CGRectMake(currentFrame.origin.x/2.0, currentFrame.origin.y/2.0, currentFrame.size.width/2.0, currentFrame.size.height/2.0)];
+        }
         resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, 384, 502);
     } else {
+        for(CircleView *subView in self.subviews){
+            CGRect currentFrame = subView.frame;
+            [subView setFrame:CGRectMake(currentFrame.origin.x*2.0, currentFrame.origin.y*2.0, currentFrame.size.width*2.0, currentFrame.size.height*2.0)];
+        }
         resized = CGRectMake(0, 0, 768, 1004);
         [self.superview bringSubviewToFront:self];
     }
@@ -56,7 +65,6 @@
         self.center = point;
         self.rotation = arcRotation;
         self.quadrantName = quadName;
-
         UITapGestureRecognizer *doubleTap = 
         [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];        
         [doubleTap setNumberOfTapsRequired:2];
@@ -115,8 +123,8 @@
     [lightBlue setStroke];
     
     CGContextMoveToPoint(context, point.x, point.y); 
-    CGContextAddLineToPoint(context, point.x + 8.0,point.y + 11.0);
-    CGContextAddLineToPoint(context, point.x - 6.0,point.y + 13.0);
+    CGContextAddLineToPoint(context, point.x - 6.0,point.y + 12.0);
+    CGContextAddLineToPoint(context, point.x + 12.0,point.y + 6.0);
     CGContextAddLineToPoint(context, point.x, point.y);
     
     CGContextClosePath(context);
@@ -130,11 +138,11 @@
     [[UIColor whiteColor] set]; 
     UIFont *font = [UIFont systemFontOfSize:10];
     NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
-    CGPoint textPoint = CGPointMake((point.x-5.0), (point.y+12.0));
+    CGPoint textPoint = CGPointMake((point.x), (point.y+10.0));
 
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, textPoint.x, textPoint.y);
-    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-0.098125);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-0.25);
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(textPoint.x), -(textPoint.y));
     [entryString drawAtPoint:textPoint withFont:font];
@@ -154,9 +162,9 @@
 
 -(void) drawBackgroundGradient : (CGContextRef) context{
     size_t num_locations = 2;
-    CGFloat locations[2] = { 0.0, 0.8};
+    CGFloat locations[2] = { 0.0, 1.0};
     CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8, 
-        70.0/255.0, 130.0/255.0, 170.0/255.0, 1.0 };
+        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8 };
     CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
                                                                     components,locations, 
@@ -186,11 +194,30 @@
     NSInteger rangeBegin;
     for(NSMutableDictionary *range in allRanges){
         NSString *name =  [range objectForKey:@"name"];
-        if([[name lowercaseString] isEqualToString:quadrantName]){
+        if([name isEqualToString:quadrantName]){
             rangeBegin = [[range objectForKey:@"start"] integerValue];
         }
     }
     return rangeBegin + 1;
+}
+
+-(void) drawQuadrantLabelInContext:(CGContextRef)context{
+    float labelX = self.frame.size.width/3.0;
+    float labelYDelta = 60.0;
+    float labelY=0;
+    
+    if(self.frameOrigin.y == 0){
+        labelY = labelYDelta;
+    } else {
+        labelY = self.frame.size.height - labelYDelta;
+    }
+    
+    UIGraphicsPushContext(context);
+    [[UIColor whiteColor] set]; 
+    UIFont *font = [UIFont systemFontOfSize:20];
+    CGPoint textPoint = CGPointMake(labelX,labelY);
+    [self.quadrantName drawAtPoint:textPoint withFont:font];
+    UIGraphicsPopContext();
 }
 
 - (void)drawRect:(CGRect)rect
@@ -198,20 +225,6 @@
     CGContextRef context = UIGraphicsGetCurrentContext();     
 
     [self drawBackgroundGradient:context];
-    CGContextSetLineWidth(context, 1.0);
-    [[UIColor whiteColor] setStroke];
-
-    [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
-    [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
-
-    CGRect    myFrame = self.bounds;
-    CGContextSetLineWidth(context, 1);
-    CGRectInset(myFrame, 2, 2);
-    [[UIColor whiteColor] set];
-    UIRectFrame(myFrame);
-
 
     NSMutableDictionary *allQuadrants = [QuadrantView readJSON];
     NSMutableArray *names = [allQuadrants objectForKey:quadrantName];
@@ -235,24 +248,37 @@
             point.y = (494.0 - point.y);
         }
         if([movement isEqualToString:@"t"]){
-            [self drawTriangleAtPoint:point inContext:context withEntry:rangeBegin];
+            CGRect someRect = CGRectMake(point.x, point.y, 18.0, 18.0);
+            TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:rangeBegin AndBlip:blipName];
+            [self insertSubview:triangleView atIndex:1];
         }else {
-            [self drawFilledCircleAtPoint:point withRadius:7.0 inContext:context withEntry:rangeBegin];
+            CGRect someRect = CGRectMake(point.x, point.y, 18.0, 18.0);
+            CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:rangeBegin AndBlip:blipName];
+            [self insertSubview:circleView atIndex:1];
         }        
         rangeBegin = rangeBegin +1;
     }
 
+
+    CGContextSetLineWidth(context, 2.0);
+    [[UIColor whiteColor] setStroke];
+    
+    [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
+    
+    CGRect    myFrame = self.bounds;
+    CGContextSetLineWidth(context, 1);
+    CGRectInset(myFrame, 2, 2);
+    [[UIColor whiteColor] set];
+    UIRectFrame(myFrame);
+
     [self drawArcTitles:context withTitle:@"Adopt" Width:80.0 Height:130.0];
     [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:225.0];
     [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
-    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];
-}
+    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];    
 
-- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
-    UITouch *touch=[[event allTouches]anyObject];
-    CGPoint point= [touch locationInView:touch.view];
-    NSLog(@"%f,%f",point.x,point.y);
+    [self drawQuadrantLabelInContext:context];
 }
-
 @end

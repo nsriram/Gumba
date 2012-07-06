@@ -1,20 +1,14 @@
-#import "CircleView.h"
+#import "TriangleView.h"
 
-@implementation CircleView
-@synthesize entry;
-@synthesize blipName;
+@implementation TriangleView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    return self;
-}
+@synthesize entry, blipName;
 
-- (id)initWithFrame:(CGRect)frame AndEntry:(NSInteger)entryVal AndBlip: (NSString*)blip {
+- (id)initWithFrame:(CGRect)frame AndEntry:(NSInteger)entry AndBlip:(NSString*)blipName{
     self = [super initWithFrame:frame];
     if (self) {
-        self.entry = entryVal;
-        self.blipName = blip;
+        self.entry = entry;
+        self.blipName = blipName;
     }
     return self;
 }
@@ -36,42 +30,44 @@
     CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
 }
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();     
     [self drawBackgroundGradient:context];
     UIColor *lightBlue = [UIColor colorWithRed: 0.0/255.0 
                                          green: 191.0/255.0 
                                           blue: 255.0/255.0
                                          alpha: 1.0];
-
+    CGMutablePathRef a_path = CGPathCreateMutable();
+    CGContextBeginPath(context);    
+    CGContextMoveToPoint(context, 0.0, 0.0); 
+    CGContextAddLineToPoint(context, 9.0,18.0);
+    CGContextAddLineToPoint(context, 18.0,0.0);
+    CGContextAddLineToPoint(context, 0.0, 0.0);
     
-    UIGraphicsPushContext(context);
-    CGContextBeginPath(context);
-    CGContextAddArc(context, 9.0,9.0, 8.0, 0, 2*M_PI, YES);
+    CGContextClosePath(context);
+    CGContextAddPath(context, a_path);
+    
+    // Fill the path
     CGContextSetFillColorWithColor(context, [lightBlue CGColor]);
-    CGContextSetStrokeColorWithColor(context, [lightBlue CGColor]);
-    CGContextDrawPath(context, kCGPathFillStroke);
+    CGContextFillPath(context);
+    CGPathRelease(a_path);    
     
     [[UIColor blackColor] set]; 
     UIFont *font = [UIFont systemFontOfSize:9];
-    NSString *entryString = [NSString stringWithFormat:@"%d", self.entry]; 
-    CGPoint textPoint = CGPointMake(1.0,7.0);
+    NSString *entryString = [NSString stringWithFormat:@"%d", entry]; 
+    CGPoint textPoint = CGPointMake(1.0, 7.0);
     
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, textPoint.x, textPoint.y);
-    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-0.785);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.046666666666667);
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(textPoint.x), -(textPoint.y));
     [entryString drawAtPoint:textPoint withFont:font];
     CGContextRestoreGState(context);
-    UIGraphicsPopContext();
 }
 
-- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
+- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     UITouch *touch=[[event allTouches]anyObject];
     CGPoint point= [touch locationInView:touch.view];
-    NSLog(@"Circle View %f,%f,%@",point.x,point.y,self.blipName);
 }
 @end
