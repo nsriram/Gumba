@@ -18,6 +18,10 @@
 		C310A8E415011447003BF6B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */; };
 		C310A8E715011447003BF6B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C310A8E615011447003BF6B7 /* ViewController.m */; };
 		C310A8EF15011503003BF6B7 /* QuadrantView.m in Sources */ = {isa = PBXBuildFile; fileRef = C310A8EE15011503003BF6B7 /* QuadrantView.m */; };
+		C3500CE415B59BD9006465C5 /* Quadrant.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CE315B59BD9006465C5 /* Quadrant.m */; };
+		C3500CE915B5ADB8006465C5 /* Radar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CE815B5ADB8006465C5 /* Radar.m */; };
+		C3500CEB15B5B8A3006465C5 /* radar.json in Resources */ = {isa = PBXBuildFile; fileRef = C3500CEA15B5B8A3006465C5 /* radar.json */; };
+		C3500CEE15B5C6E7006465C5 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CED15B5C6E7006465C5 /* Item.m */; };
 		C3760248151CC3D500D26B46 /* gumba.json in Resources */ = {isa = PBXBuildFile; fileRef = C3760247151CC3D500D26B46 /* gumba.json */; };
 		C3760268151CC66D00D26B46 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760250151CC66D00D26B46 /* NSObject+SBJson.m */; };
 		C3760269151CC66D00D26B46 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760253151CC66D00D26B46 /* SBJsonParser.m */; };
@@ -54,6 +58,13 @@
 		C310A8E615011447003BF6B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C310A8ED15011503003BF6B7 /* QuadrantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadrantView.h; sourceTree = "<group>"; };
 		C310A8EE15011503003BF6B7 /* QuadrantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadrantView.m; sourceTree = "<group>"; };
+		C3500CE215B59BD9006465C5 /* Quadrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadrant.h; sourceTree = "<group>"; };
+		C3500CE315B59BD9006465C5 /* Quadrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quadrant.m; sourceTree = "<group>"; };
+		C3500CE715B5ADB8006465C5 /* Radar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radar.h; sourceTree = "<group>"; };
+		C3500CE815B5ADB8006465C5 /* Radar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Radar.m; sourceTree = "<group>"; };
+		C3500CEA15B5B8A3006465C5 /* radar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = radar.json; sourceTree = "<group>"; };
+		C3500CEC15B5C6E7006465C5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		C3500CED15B5C6E7006465C5 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		C3760247151CC3D500D26B46 /* gumba.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gumba.json; sourceTree = "<group>"; };
 		C376024F151CC66D00D26B46 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		C3760250151CC66D00D26B46 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -131,6 +142,7 @@
 		C310A8D615011447003BF6B7 /* TechRadar */ = {
 			isa = PBXGroup;
 			children = (
+				C3500CE615B5AD19006465C5 /* model */,
 				C3BCFF301590D9A600502AD2 /* icon.png */,
 				C376024E151CC63700D26B46 /* json-framework */,
 				C310A8ED15011503003BF6B7 /* QuadrantView.h */,
@@ -142,6 +154,7 @@
 				C310A8E615011447003BF6B7 /* ViewController.m */,
 				C310A8D715011447003BF6B7 /* Supporting Files */,
 				C3760247151CC3D500D26B46 /* gumba.json */,
+				C3500CEA15B5B8A3006465C5 /* radar.json */,
 				38EEBFB41590F41F00367FEA /* CircleView.h */,
 				38EEBFB51590F41F00367FEA /* CircleView.m */,
 				C3E0ACEC159E2FEF00F051C9 /* TriangleView.h */,
@@ -159,6 +172,19 @@
 				C310A8DE15011447003BF6B7 /* TechRadar-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3500CE615B5AD19006465C5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C3500CEC15B5C6E7006465C5 /* Item.h */,
+				C3500CED15B5C6E7006465C5 /* Item.m */,
+				C3500CE715B5ADB8006465C5 /* Radar.h */,
+				C3500CE815B5ADB8006465C5 /* Radar.m */,
+				C3500CE215B59BD9006465C5 /* Quadrant.h */,
+				C3500CE315B59BD9006465C5 /* Quadrant.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		C376024E151CC63700D26B46 /* json-framework */ = {
@@ -248,6 +274,7 @@
 				C310A8E415011447003BF6B7 /* MainStoryboard.storyboard in Resources */,
 				C3760248151CC3D500D26B46 /* gumba.json in Resources */,
 				C3BCFF311590D9A600502AD2 /* icon.png in Resources */,
+				C3500CEB15B5B8A3006465C5 /* radar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +303,9 @@
 				C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */,
 				38EEBFB61590F41F00367FEA /* CircleView.m in Sources */,
 				C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */,
+				C3500CE415B59BD9006465C5 /* Quadrant.m in Sources */,
+				C3500CE915B5ADB8006465C5 /* Radar.m in Sources */,
+				C3500CEE15B5C6E7006465C5 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

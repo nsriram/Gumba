@@ -73,5 +73,12 @@
     UITouch *touch=[[event allTouches]anyObject];
     CGPoint point= [touch locationInView:touch.view];
     NSLog(@"Circle View %f,%f,%@",point.x,point.y,self.blipName);
+    
+    CGPoint parentOrigin = self.superview.frame.origin;
+
+    CGRect someFrame = CGRectMake(parentOrigin.x, parentOrigin.y, 100.0, 60.0);
+    UILabel *technology = [[UILabel alloc]initWithFrame:someFrame];
+    technology.text=@"Testing";
+    [self.superview insertSubview:technology atIndex:2];
 }
 @end

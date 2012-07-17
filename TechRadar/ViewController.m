@@ -1,6 +1,7 @@
+#import <QuartzCore/QuartzCore.h>
 #import "ViewController.h"
 #import "QuadrantView.h"
-#import <QuartzCore/QuartzCore.h>
+#import "Radar.h"
 
 #define TECHNIQUES @"Techniques"
 #define LANGUAGES @"Languages"
@@ -18,6 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    Radar *radar = [Radar radarFromFile:@"radar"];
+    NSLog(@"radar ready");
+    [radar print];
 
 	CGPoint midPoint; // center of our bounds in our coordinate system
     midPoint.x = self.view.bounds.origin.x + self.view.bounds.size.width/2;
