@@ -4,17 +4,15 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SBJson.h"
+#import "AppConstants.h"
 
 @interface QuadrantView()
 @property (nonatomic, assign) CGPoint frameOrigin;
 @end
 
-#define GUMBA @"gumba"
-#define JSON @"json"
-
 @implementation QuadrantView
 
-@synthesize center,rotation;
+@synthesize center;
 @synthesize frameOrigin;
 @synthesize quadrantName;
 
@@ -58,12 +56,11 @@
 	[UIView commitAnimations];	
 }
 
-- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndRotation:(BOOL)arcRotation AndName:(NSString*) quadName {
+- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndName:(NSString*) quadName {
     self = [super initWithFrame:frame];
     if (self) {
         self.frameOrigin=self.frame.origin;
         self.center = point;
-        self.rotation = arcRotation;
         self.quadrantName = quadName;
         UITapGestureRecognizer *doubleTap = 
         [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];        
@@ -78,7 +75,7 @@
 {
     UIGraphicsPushContext(context);
     CGContextBeginPath(context);
-    CGContextAddArc(context, p.x, p.y, radius, 0, M_PI, self.rotation);
+    CGContextAddArc(context, p.x, p.y, radius, 0, M_PI*2.0, true);
     CGContextStrokePath(context);
     UIGraphicsPopContext();
 }   

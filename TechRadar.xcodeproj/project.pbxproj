@@ -36,6 +36,7 @@
 		C3760272151CC66D00D26B46 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760265151CC66D00D26B46 /* SBJsonUTF8Stream.m */; };
 		C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760267151CC66D00D26B46 /* SBJsonWriter.m */; };
 		C3BCFF311590D9A600502AD2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3BCFF301590D9A600502AD2 /* icon.png */; };
+		C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2E715B712A2005DE04B /* AppConstants.m */; };
 		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,8 @@
 		C3760266151CC66D00D26B46 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		C3760267151CC66D00D26B46 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		C3BCFF301590D9A600502AD2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C3DFC2E615B712A2005DE04B /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		C3DFC2E715B712A2005DE04B /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstants.m; sourceTree = "<group>"; };
 		C3E0ACEC159E2FEF00F051C9 /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleView.h; sourceTree = "<group>"; };
 		C3E0ACED159E2FEF00F051C9 /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +148,8 @@
 				C3500CE615B5AD19006465C5 /* model */,
 				C3BCFF301590D9A600502AD2 /* icon.png */,
 				C376024E151CC63700D26B46 /* json-framework */,
+				C3DFC2E615B712A2005DE04B /* AppConstants.h */,
+				C3DFC2E715B712A2005DE04B /* AppConstants.m */,
 				C310A8ED15011503003BF6B7 /* QuadrantView.h */,
 				C310A8EE15011503003BF6B7 /* QuadrantView.m */,
 				C310A8DF15011447003BF6B7 /* AppDelegate.h */,
@@ -306,6 +311,7 @@
 				C3500CE415B59BD9006465C5 /* Quadrant.m in Sources */,
 				C3500CE915B5ADB8006465C5 /* Radar.m in Sources */,
 				C3500CEE15B5C6E7006465C5 /* Item.m in Sources */,
+				C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
