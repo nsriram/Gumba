@@ -1,8 +1,9 @@
 #import <UIKit/UIKit.h>
+#import "Quadrant.h"
 
 @interface QuadrantView : UIView
 @property (nonatomic, assign) CGPoint center;
-@property (nonatomic, retain) NSString* quadrantName;
+@property (nonatomic, strong) Quadrant* quadrant;
 
-- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndName:(NSString*)quadName;
+- (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndQuadrant:(Quadrant*)quadrant;
 @end

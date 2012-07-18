@@ -81,4 +81,14 @@
     technology.text=@"Testing";
     [self.superview insertSubview:technology atIndex:2];
 }
+
+-(void) minimize{
+    CGRect currentFrame = self.frame;
+    [self setFrame:CGRectMake(currentFrame.origin.x/2.0, currentFrame.origin.y/2.0, currentFrame.size.width/2.0, currentFrame.size.height/2.0)];
+}
+
+-(void) maximize {
+    CGRect currentFrame = self.frame;
+    [self setFrame:CGRectMake(currentFrame.origin.x*2.0, currentFrame.origin.y*2.0, currentFrame.size.width*2.0, currentFrame.size.height*2.0)];    
+}
 @end

@@ -6,24 +6,26 @@
 
 @implementation ViewController
 
--(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Name:(NSString*)name{
+-(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Quadrant:(Quadrant*)quadrant{
     CGPoint origin = CGPointMake(x, y);
     CGRect frame = CGRectMake(origin.x, origin.y, self.view.bounds.size.width/2, self.view.bounds.size.height/2);
     CGFloat centerX = (x > 0.0 ? 0.0 : self.view.bounds.size.width/2);
     CGFloat centerY = (y > 0.0 ? 0.0 : self.view.bounds.size.height/2);
     return [[QuadrantView alloc]initWithFrame:frame
                                    WithCenter:CGPointMake(centerX,centerY)
-                                      AndName:name];
+                                      AndQuadrant:quadrant];
 }
 
 -(void) addQuadrants {
+    Radar *radar = [Radar radarFromFile:@"radar"];
+    NSMutableArray *allQuadrants = [radar quadrants];
     CGFloat midPointX = self.view.bounds.size.width/2;
     CGFloat midPointY = self.view.bounds.size.height/2;
 
-    [self.view insertSubview:[self quadrantOriginX:0.0 Y:0.0 Name:TECHNIQUES] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:midPointX Y:0.0 Name:TOOLS] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Name:PLATFORMS] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:midPointX Y:midPointY Name:LANGUAGES] atIndex:1];
+    [self.view insertSubview:[self quadrantOriginX:0.0 Y:0.0 Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
+    [self.view insertSubview:[self quadrantOriginX:midPointX Y:0.0 Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
+    [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
+    [self.view insertSubview:[self quadrantOriginX:midPointX Y:midPointY Quadrant:[allQuadrants objectAtIndex:3]] atIndex:1];
 } 
 
 - (void)viewDidLoad {

@@ -36,12 +36,12 @@
     return [parser objectWithString:fileContent error:nil];
 }
 
-+ (Item *)item:(NSMutableDictionary *)radarItem {
++ (Item *)item:(NSMutableDictionary *)radarItem index:(int)i{
     NSString *itemName = [radarItem objectForKey:NAME];
     NSMutableDictionary *itemPosition = [radarItem objectForKey:PC];
     NSInteger itemRadius = [[itemPosition objectForKey:R] integerValue];
     NSInteger itemTheta = [[itemPosition objectForKey:T] integerValue];
-    return [[Item alloc] initWithName:itemName Radius:itemRadius End:itemTheta];
+    return [[Item alloc] initWithName:itemName Index:i Radius:itemRadius End:itemTheta];
 }
 
 + (Quadrant *)quadrant:(NSMutableDictionary *)radarQuadrant allPoints:(NSMutableArray *)allPoints {
@@ -52,7 +52,7 @@
     Quadrant *quadrant = [[Quadrant alloc] initWithName:name Start:start End:end];
     for(int itemIndex = start; itemIndex < end; itemIndex = itemIndex +1 ){
         NSMutableDictionary *radarItem = [allPoints objectAtIndex:itemIndex];
-        Item *item = [Radar item:radarItem];
+        Item *item = [Radar item:radarItem index:itemIndex+1];
         NSString *movement = [radarItem objectForKey:MOVEMENT];            
         if([movement isEqualToString:C]){
             [quadrant addCircle:item];
@@ -60,6 +60,8 @@
             [quadrant addTriangle:item];
         }
     }
+    NSLog(@"%d",[[quadrant circles]count]);
+    NSLog(@"%d",[[quadrant triangles]count]);
     return quadrant;
 }
 
@@ -67,7 +69,7 @@
     NSMutableDictionary *radarData = [Radar fileContents:fileName];    
     NSMutableArray *allQuadrants = [radarData objectForKey:RADAR_QUADRANTS];
     NSMutableArray *allPoints = [radarData objectForKey:RADAR_DATA];
-    
+    NSLog(@"Allpoints %d",[allPoints count]);    
     Radar *radar = [[Radar alloc]init];
     for(NSMutableDictionary *radarQuadrant in allQuadrants){
         Quadrant *quadrant = [Radar quadrant:radarQuadrant allPoints:allPoints];

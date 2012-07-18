@@ -7,6 +7,8 @@
 -(id) initWithName:(NSString*)name Start:(NSInteger)start End:(NSInteger)end {
     self = [super init];
     if(self){
+        _circles = [[NSMutableArray alloc] init];
+        _triangles = [[NSMutableArray alloc] init];
         _name=name;
         _start = start;
         _end = end;

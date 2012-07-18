@@ -4,5 +4,9 @@
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) NSInteger radius;
 @property (nonatomic, assign) NSInteger theta;
--(id) initWithName:(NSString*)name Radius:(NSInteger)radius End:(NSInteger)theta;
+@property (nonatomic, assign) NSInteger index;
+
+-(id) initWithName:(NSString*)name Index:(NSInteger)index Radius:(NSInteger)radius End:(NSInteger)theta;
+-(CGPoint) raster;
+
 @end
