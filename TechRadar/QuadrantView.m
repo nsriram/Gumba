@@ -39,12 +39,6 @@
 	[UIView commitAnimations];	
 }
 
--(void) bindDoubleTap {
-    UITapGestureRecognizer *doubleTap = 
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];        
-    [doubleTap setNumberOfTapsRequired:2];
-    [self addGestureRecognizer:doubleTap];        
-}
 
 - (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
 {
@@ -110,9 +104,11 @@
                                  CGPointMake(self.frame.size.width, self.frame.size.height), 0);
 }
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    return self;
+-(void) bindDoubleTap {
+    UITapGestureRecognizer *doubleTap = 
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];        
+    [doubleTap setNumberOfTapsRequired:2];
+    [self addGestureRecognizer:doubleTap];        
 }
 
 - (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndQuadrant:(Quadrant*)quadrant{

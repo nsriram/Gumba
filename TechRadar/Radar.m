@@ -60,8 +60,6 @@
             [quadrant addTriangle:item];
         }
     }
-    NSLog(@"%d",[[quadrant circles]count]);
-    NSLog(@"%d",[[quadrant triangles]count]);
     return quadrant;
 }
 
@@ -69,7 +67,6 @@
     NSMutableDictionary *radarData = [Radar fileContents:fileName];    
     NSMutableArray *allQuadrants = [radarData objectForKey:RADAR_QUADRANTS];
     NSMutableArray *allPoints = [radarData objectForKey:RADAR_DATA];
-    NSLog(@"Allpoints %d",[allPoints count]);    
     Radar *radar = [[Radar alloc]init];
     for(NSMutableDictionary *radarQuadrant in allQuadrants){
         Quadrant *quadrant = [Radar quadrant:radarQuadrant allPoints:allPoints];
@@ -80,12 +77,5 @@
 
 - (void) addQuadrant:(Quadrant*)quadrant{
     [_quadrants addObject:quadrant];
-}
-
--(void) print{
-    NSLog(@"printing %d",[_quadrants count]);
-    for(Quadrant *q in _quadrants){
-        NSLog(@"%@", [q name]);
-    }
 }
 @end

@@ -8,4 +8,5 @@
 
 @interface AppConstants : NSObject
 +(UIColor*) backgroundColor;
++(UIColor*) blipColor;
 @end

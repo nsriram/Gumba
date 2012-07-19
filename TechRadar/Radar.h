@@ -6,7 +6,5 @@
 @property (nonatomic, strong) NSMutableArray* quadrants;
 
 - (void) addQuadrant:(Quadrant*)quadrant;
-- (void) print;
 + (Radar*)radarFromFile:(NSString*)fileName;
-
 @end
