@@ -139,7 +139,7 @@
     
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
-        CGRect someRect = CGRectMake(point.x, point.y, 18.0, 18.0);
+        CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
         TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name]];
         [self insertSubview:triangleView atIndex:1];
     }

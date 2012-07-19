@@ -15,7 +15,6 @@
 #define MOVEMENT @"movement"
 
 @implementation Radar
-
 @synthesize quadrants = _quadrants;
 
 -(id) init {

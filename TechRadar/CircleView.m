@@ -22,8 +22,13 @@
     [[UIColor blackColor] set]; 
     UIFont *font = [UIFont systemFontOfSize:9];
     NSString *entryString = [NSString stringWithFormat:@"%d", self.entry]; 
-    CGPoint textPoint = CGPointMake(1.0,7.0);
-    
+    CGPoint textPoint;
+    if([entryString length] > 2) {
+        textPoint = CGPointMake(0.0,9.0);        
+    }else {
+        textPoint = CGPointMake(1.0,7.0);
+    }
+
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, textPoint.x, textPoint.y);
     CGAffineTransform textTransform = CGAffineTransformMakeRotation(-0.785);

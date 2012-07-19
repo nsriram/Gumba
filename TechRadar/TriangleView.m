@@ -9,8 +9,8 @@
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);    
     CGContextMoveToPoint(context, 0.0, 0.0); 
-    CGContextAddLineToPoint(context, 9.0,18.0);
-    CGContextAddLineToPoint(context, 18.0,0.0);
+    CGContextAddLineToPoint(context, 10.0,20.0);
+    CGContextAddLineToPoint(context, 20.0,0.0);
     CGContextAddLineToPoint(context, 0.0, 0.0);
     
     CGContextClosePath(context);
@@ -21,9 +21,13 @@
     CGPathRelease(a_path);    
     
     [[UIColor blackColor] set]; 
-    UIFont *font = [UIFont systemFontOfSize:9];
     NSString *entryString = [NSString stringWithFormat:@"%d", self.entry]; 
-    CGPoint textPoint = CGPointMake(1.0, 7.0);
+    int fontSize = 9;
+    if([entryString length] > 2){
+        fontSize = 8;
+    }
+    UIFont *font = [UIFont systemFontOfSize:fontSize];
+    CGPoint textPoint = CGPointMake(2.0, 9.0);
     
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, textPoint.x, textPoint.y);

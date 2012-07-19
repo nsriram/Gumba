@@ -38,7 +38,7 @@
                                          destructiveButtonTitle:nil
                                               otherButtonTitles:@"ok" ,nil];
     sheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [sheet setBackgroundColor:[UIColor yellowColor]];
+    [sheet setBackgroundColor:[UIColor blackColor]];
     [sheet showInView:self];
 }
 

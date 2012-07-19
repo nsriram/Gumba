@@ -8,5 +8,4 @@
 
 -(id) initWithName:(NSString*)name Index:(NSInteger)index Radius:(NSInteger)radius End:(NSInteger)theta;
 -(CGPoint) raster;
-
 @end
