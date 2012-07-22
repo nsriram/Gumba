@@ -23,31 +23,27 @@
                            forView:self
                              cache:NO];
     CGRect resized;
-    if(self.frame.size.height == 1004){
+
+
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    if(self.frame.size.height == screenHeight){
         for(CircleView *subView in self.subviews){
             [subView minimize];
         }
-        resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, 384, 502);
+        resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
     } else {
         for(CircleView *subView in self.subviews){
             [subView maximize];
         }
-        resized = CGRectMake(0, 0, 768, 1004);
+        resized = CGRectMake(0, 0, screenWidth, screenHeight);
         [self.superview bringSubviewToFront:self];
     }
     self.frame = resized;	
 	[UIView commitAnimations];	
 }
-
-
-- (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
-{
-    UIGraphicsPushContext(context);
-    CGContextBeginPath(context);
-    CGContextAddArc(context, p.x, p.y, radius, 0, M_PI*2.0, true);
-    CGContextStrokePath(context);
-    UIGraphicsPopContext();
-}   
 
 - (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
     [[UIColor whiteColor] set];
@@ -79,6 +75,15 @@
     [[_quadrant name] drawAtPoint:textPoint withFont:font];
     UIGraphicsPopContext();
 }
+
+- (void)drawCircleAtPoint:(CGPoint)p withRadius:(CGFloat)radius inContext:(CGContextRef)context
+{
+    UIGraphicsPushContext(context);
+    CGContextBeginPath(context);
+    CGContextAddArc(context, p.x, p.y, radius, 0, M_PI*2.0, true);
+    CGContextStrokePath(context);
+    UIGraphicsPopContext();
+}   
 
 -( CGPoint) adjustPoint:(CGPoint) point {
     if(point.x < 0){
@@ -132,16 +137,16 @@
     
     for(Item *circle in circles){
         CGPoint point = [self adjustPoint:[circle raster]];
-        CGRect someRect = CGRectMake(point.x, point.y, 18.0, 18.0);
+        CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
         CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:[circle index] AndBlip:[circle name]];
-        [self insertSubview:circleView atIndex:1];
+        [self insertSubview:circleView atIndex:0];
     }
     
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
         CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
         TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name]];
-        [self insertSubview:triangleView atIndex:1];
+        [self insertSubview:triangleView atIndex:0];
     }
     
     CGContextSetLineWidth(context, 2.0);

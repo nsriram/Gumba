@@ -32,17 +32,7 @@
     [super viewDidLoad];
     [self addQuadrants];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
-    UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] 
-                                                initWithTarget:self 
-                                                action:@selector(twoFingerPinch:)];
-    [[self view] addGestureRecognizer:twoFingerPinch];
 }
-
-- (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer {
-    if (recognizer.scale < 1.0) return;
-    CGAffineTransform transform = CGAffineTransformMakeScale(recognizer.scale, recognizer.scale);
-    self.view.transform = transform;
-} 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

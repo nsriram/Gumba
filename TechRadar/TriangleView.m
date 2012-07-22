@@ -5,7 +5,6 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();     
-    [self drawBackgroundGradient:context];
     CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);    
     CGContextMoveToPoint(context, 0.0, 0.0); 
@@ -20,7 +19,6 @@
     CGContextFillPath(context);
     CGPathRelease(a_path);    
     
-    [[UIColor blackColor] set]; 
     NSString *entryString = [NSString stringWithFormat:@"%d", self.entry]; 
     int fontSize = 9;
     if([entryString length] > 2){
@@ -28,13 +26,6 @@
     }
     UIFont *font = [UIFont systemFontOfSize:fontSize];
     CGPoint textPoint = CGPointMake(2.0, 9.0);
-    
-    CGContextSaveGState(context);
-    CGContextTranslateCTM(context, textPoint.x, textPoint.y);
-    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.046666666666667);
-    CGContextConcatCTM(context, textTransform);
-    CGContextTranslateCTM(context, -(textPoint.x), -(textPoint.y));
-    [entryString drawAtPoint:textPoint withFont:font];
-    CGContextRestoreGState(context);
+    [self drawTextWithContext:context Text:entryString Font:font At:textPoint Angle:TRIANGLE_TEXT_ANGLE];
 }
 @end

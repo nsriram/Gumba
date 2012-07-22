@@ -4,21 +4,15 @@
 
 @synthesize entry = _entry, blipName =_blipName;
 
--(void) drawBackgroundGradient : (CGContextRef) context{
-    size_t num_locations = 2;
-    CGFloat locations[2] = { 0.0, 1.0};
-    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8, 
-        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8 };
-    CGColorSpaceRef myColorspace = CGColorSpaceCreateDeviceRGB();
-    CGGradientRef myGradient = CGGradientCreateWithColorComponents (myColorspace, 
-                                                                    components,locations, 
-                                                                    num_locations);
-    CGPoint myStartPoint, myEndPoint;    
-    myStartPoint.x = 0.0;    
-    myStartPoint.y = 0.0;
-    myEndPoint.x = self.frame.size.width;
-    myEndPoint.y = self.frame.size.height;    
-    CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
+-(void) drawTextWithContext:(CGContextRef)context Text:(NSString*)text Font:(UIFont*)font At:(CGPoint) point Angle:(CGFloat)angle{
+    [[UIColor blackColor] set]; 
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, point.x, point.y);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(angle);
+    CGContextConcatCTM(context, textTransform);
+    CGContextTranslateCTM(context, -(point.x), -(point.y));
+    [text drawAtPoint:point withFont:font];
+    CGContextRestoreGState(context);    
 }
 
 -(void) minimize{
@@ -28,7 +22,7 @@
 
 -(void) maximize {
     CGRect currentFrame = self.frame;
-    [self setFrame:CGRectMake(currentFrame.origin.x*2.0, currentFrame.origin.y*2.0, currentFrame.size.width*2.0, currentFrame.size.height*2.0)];    
+    [self setFrame:CGRectMake(currentFrame.origin.x*2.0, currentFrame.origin.y*2.0, currentFrame.size.width*2.0, currentFrame.size.height*2.0)];
 }
 
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {    
@@ -38,7 +32,7 @@
                                          destructiveButtonTitle:nil
                                               otherButtonTitles:@"ok" ,nil];
     sheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [sheet setBackgroundColor:[UIColor blackColor]];
+    [sheet setBackgroundColor:[UIColor grayColor]];
     [sheet showInView:self];
 }
 
@@ -47,6 +41,7 @@
     if (self) {
         self.entry = entry;
         self.blipName = blipName;
+        self.backgroundColor =[UIColor clearColor];
     }
     return self;
 }
