@@ -152,10 +152,10 @@
     CGContextSetLineWidth(context, 2.0);
     [[UIColor whiteColor] setStroke];
     
-    [self drawCircleAtPoint:self.center withRadius:150 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:275 inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:350 inContext:context];    
-    [self drawCircleAtPoint:self.center withRadius:400 inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:150*RADAR_RATIO inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:275*RADAR_RATIO inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:350*RADAR_RATIO inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:400*RADAR_RATIO inContext:context];    
     
     CGRect    myFrame = self.bounds;
     CGContextSetLineWidth(context, 1);
@@ -163,10 +163,10 @@
     [[UIColor whiteColor] set];
     UIRectFrame(myFrame);
     
-    [self drawArcTitles:context withTitle:@"Adopt" Width:80.0 Height:130.0];
-    [self drawArcTitles:context withTitle:@"Trial" Width:165.0 Height:225.0];
-    [self drawArcTitles:context withTitle:@"Assess" Width:210.0 Height:280.0];
-    [self drawArcTitles:context withTitle:@"Hold" Width:250.0 Height:315.0];    
+    [self drawArcTitles:context withTitle:@"Adopt" Width:80.0*RADAR_RATIO Height:130.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Trial" Width:165.0*RADAR_RATIO Height:225.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Assess" Width:210.0*RADAR_RATIO Height:280.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Hold" Width:250.0*RADAR_RATIO Height:315.0*RADAR_RATIO];
     
     [self drawQuadrantLabelInContext:context];
 }

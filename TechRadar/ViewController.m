@@ -7,10 +7,13 @@
 @implementation ViewController
 
 -(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Quadrant:(Quadrant*)quadrant{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
     CGPoint origin = CGPointMake(x, y);
-    CGRect frame = CGRectMake(origin.x, origin.y, self.view.bounds.size.width/2, self.view.bounds.size.height/2);
-    CGFloat centerX = (x > 0.0 ? 0.0 : self.view.bounds.size.width/2);
-    CGFloat centerY = (y > 0.0 ? 0.0 : self.view.bounds.size.height/2);
+    CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, screenHeight/2);
+    CGFloat centerX = (x > 0.0 ? 0.0 : screenWidth/2);
+    CGFloat centerY = (y > 0.0 ? 0.0 : screenHeight/2);
     return [[QuadrantView alloc]initWithFrame:frame
                                    WithCenter:CGPointMake(centerX,centerY)
                                       AndQuadrant:quadrant];
@@ -19,8 +22,13 @@
 -(void) addQuadrants {
     Radar *radar = [Radar radarFromFile:@"radar"];
     NSMutableArray *allQuadrants = [radar quadrants];
-    CGFloat midPointX = self.view.bounds.size.width/2;
-    CGFloat midPointY = self.view.bounds.size.height/2;
+
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    CGFloat midPointX = screenWidth/2;
+    CGFloat midPointY = screenHeight/2;
 
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:0.0 Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:midPointX Y:0.0 Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];

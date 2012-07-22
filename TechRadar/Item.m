@@ -1,4 +1,5 @@
 #import "Item.h"
+#import "AppConstants.h"
 
 @implementation Item
 @synthesize name= _name,index = _index,theta = _theta, radius = _radius;
@@ -15,8 +16,8 @@
 }
 
 -(CGPoint) raster{
-    CGFloat x = _radius * cos((_theta * M_PI/180));
-    CGFloat y = _radius * sin((_theta * M_PI/180));  
+    CGFloat x = _radius * RADAR_RATIO * cos((_theta * M_PI/180));
+    CGFloat y = _radius * RADAR_RATIO * sin((_theta * M_PI/180));  
     return CGPointMake(x,y);
 }
 @end
