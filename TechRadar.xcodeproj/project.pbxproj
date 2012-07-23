@@ -22,6 +22,8 @@
 		C3500CE915B5ADB8006465C5 /* Radar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CE815B5ADB8006465C5 /* Radar.m */; };
 		C3500CEB15B5B8A3006465C5 /* radar.json in Resources */ = {isa = PBXBuildFile; fileRef = C3500CEA15B5B8A3006465C5 /* radar.json */; };
 		C3500CEE15B5C6E7006465C5 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CED15B5C6E7006465C5 /* Item.m */; };
+		C366E08815BD1729006209B3 /* RadarItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */; };
+		C366E08915BD1729006209B3 /* RadarItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */; };
 		C3760268151CC66D00D26B46 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760250151CC66D00D26B46 /* NSObject+SBJson.m */; };
 		C3760269151CC66D00D26B46 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760253151CC66D00D26B46 /* SBJsonParser.m */; };
 		C376026A151CC66D00D26B46 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760255151CC66D00D26B46 /* SBJsonStreamParser.m */; };
@@ -66,6 +68,9 @@
 		C3500CEA15B5B8A3006465C5 /* radar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = radar.json; sourceTree = "<group>"; };
 		C3500CEC15B5C6E7006465C5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		C3500CED15B5C6E7006465C5 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		C366E08515BD1729006209B3 /* RadarItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarItemDetailViewController.h; sourceTree = "<group>"; };
+		C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarItemDetailViewController.m; sourceTree = "<group>"; };
+		C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarItemDetailViewController.xib; sourceTree = "<group>"; };
 		C376024F151CC66D00D26B46 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		C3760250151CC66D00D26B46 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		C3760251151CC66D00D26B46 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -159,6 +164,9 @@
 				C310A8E015011447003BF6B7 /* AppDelegate.m */,
 				C3DFC2E615B712A2005DE04B /* AppConstants.h */,
 				C3DFC2E715B712A2005DE04B /* AppConstants.m */,
+				C366E08515BD1729006209B3 /* RadarItemDetailViewController.h */,
+				C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */,
+				C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				C310A8E415011447003BF6B7 /* MainStoryboard.storyboard in Resources */,
 				C3BCFF311590D9A600502AD2 /* icon.png in Resources */,
 				C3500CEB15B5B8A3006465C5 /* radar.json in Resources */,
+				C366E08915BD1729006209B3 /* RadarItemDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +332,7 @@
 				C3500CEE15B5C6E7006465C5 /* Item.m in Sources */,
 				C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */,
 				C3DFC2EB15B7C5FD005DE04B /* ItemView.m in Sources */,
+				C366E08815BD1729006209B3 /* RadarItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +420,7 @@
 				INFOPLIST_FILE = "TechRadar/TechRadar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,7 +432,7 @@
 				GCC_PREFIX_HEADER = "TechRadar/TechRadar-Prefix.pch";
 				INFOPLIST_FILE = "TechRadar/TechRadar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

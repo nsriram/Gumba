@@ -1,5 +1,4 @@
 #import "ItemView.h"
-
 @implementation ItemView
 
 @synthesize entry = _entry, blipName =_blipName;

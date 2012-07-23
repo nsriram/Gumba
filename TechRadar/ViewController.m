@@ -1,10 +1,24 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ViewController.h"
 #import "QuadrantView.h"
+#import "CircleView.h"
 #import "Radar.h"
 #import "AppConstants.h"
 
 @implementation ViewController
+@synthesize quadrantViews = _quadrantViews;
+
+- (void)resize:(UIGestureRecognizer*)sender {
+    QuadrantView *quadrantView = (QuadrantView *)sender.view;
+    [quadrantView resize];
+}
+
+-(void) bindDoubleTap :(QuadrantView*)quadrantView {
+    UITapGestureRecognizer *doubleTap = 
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];        
+    [doubleTap setNumberOfTapsRequired:2];
+    [quadrantView addGestureRecognizer:doubleTap];        
+}
 
 -(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Quadrant:(Quadrant*)quadrant{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -14,9 +28,12 @@
     CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, screenHeight/2);
     CGFloat centerX = (x > 0.0 ? 0.0 : screenWidth/2);
     CGFloat centerY = (y > 0.0 ? 0.0 : screenHeight/2);
-    return [[QuadrantView alloc]initWithFrame:frame
-                                   WithCenter:CGPointMake(centerX,centerY)
-                                      AndQuadrant:quadrant];
+    QuadrantView *quadrantView = [[QuadrantView alloc]initWithFrame:frame
+                            WithCenter:CGPointMake(centerX,centerY)
+                                                    AndQuadrant:quadrant];
+    [self bindDoubleTap:quadrantView];
+    [_quadrantViews addObject:quadrantView];
+    return quadrantView;
 }
 
 -(void) addQuadrants {

@@ -6,16 +6,23 @@
 #import "AppConstants.h"
 #import "Item.h"
 
-@interface QuadrantView()
-@property (nonatomic, assign) CGPoint frameOrigin;
-@end
-
 @implementation QuadrantView
 
 @synthesize center, frameOrigin, quadrant = _quadrant;
 
-- (void)resizeQuadrant {
-	[UIView setAnimationDelegate:self];
+- (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
+    [[UIColor whiteColor] set];
+    UIFont *font = [UIFont systemFontOfSize:18];
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, self.center.x +width, self.center.y+distance);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
+    CGContextConcatCTM(context, textTransform);
+    CGContextTranslateCTM(context, -(self.center.x +width), -(self.center.y+distance));
+    [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
+    CGContextRestoreGState(context);
+}
+-(void) resize {
+    [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.50];
@@ -23,8 +30,7 @@
                            forView:self
                              cache:NO];
     CGRect resized;
-
-
+    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
@@ -43,18 +49,6 @@
     }
     self.frame = resized;	
 	[UIView commitAnimations];	
-}
-
-- (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
-    [[UIColor whiteColor] set];
-    UIFont *font = [UIFont systemFontOfSize:18];
-    CGContextSaveGState(context);
-    CGContextTranslateCTM(context, self.center.x +width, self.center.y+distance);
-    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
-    CGContextConcatCTM(context, textTransform);
-    CGContextTranslateCTM(context, -(self.center.x +width), -(self.center.y+distance));
-    [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
-    CGContextRestoreGState(context);
 }
 
 -(void) drawQuadrantLabelInContext:(CGContextRef)context{
