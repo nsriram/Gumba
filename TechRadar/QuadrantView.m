@@ -103,13 +103,6 @@
                                  CGPointMake(self.frame.size.width, self.frame.size.height), 0);
 }
 
--(void) bindDoubleTap {
-    UITapGestureRecognizer *doubleTap = 
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resizeQuadrant)];        
-    [doubleTap setNumberOfTapsRequired:2];
-    [self addGestureRecognizer:doubleTap];        
-}
-
 - (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndQuadrant:(Quadrant*)quadrant{
     self = [super initWithFrame:frame];
     if (self) {
@@ -117,7 +110,6 @@
         self.center = point;
         _quadrant = quadrant;
     }
-    [self bindDoubleTap];
     return self;
 }
 
