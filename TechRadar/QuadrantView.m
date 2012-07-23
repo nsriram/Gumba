@@ -113,27 +113,30 @@
     return self;
 }
 
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();     
-    [self drawBackgroundGradient:context];
-    
+- (void)addCircleViews {
     NSMutableArray *circles = [_quadrant circles];
-    NSMutableArray *triangles = [_quadrant triangles];
-    
     for(Item *circle in circles){
         CGPoint point = [self adjustPoint:[circle raster]];
         CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
         CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:[circle index] AndBlip:[circle name]];
         [self insertSubview:circleView atIndex:0];
     }
-    
+}
+
+- (void)addTriangleViews {
+    NSMutableArray *triangles = [_quadrant triangles];    
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
         CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
         TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name]];
         [self insertSubview:triangleView atIndex:0];
     }
+}
+
+- (void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();     
+
+    [self drawBackgroundGradient:context];
     
     CGContextSetLineWidth(context, 2.0);
     [[UIColor whiteColor] setStroke];

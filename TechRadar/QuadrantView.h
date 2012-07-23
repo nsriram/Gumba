@@ -8,4 +8,6 @@
 
 - (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndQuadrant:(Quadrant*)quadrant;
 - (void) resize;
+- (void)addCircleViews;
+- (void)addTriangleViews;
 @end

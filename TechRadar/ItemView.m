@@ -24,17 +24,6 @@
     [self setFrame:CGRectMake(currentFrame.origin.x*2.0, currentFrame.origin.y*2.0, currentFrame.size.width*2.0, currentFrame.size.height*2.0)];
 }
 
-- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {    
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:_blipName
-                                                       delegate:self
-                                              cancelButtonTitle:nil
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:@"ok" ,nil];
-    sheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [sheet setBackgroundColor:[UIColor grayColor]];
-    [sheet showInView:self];
-}
-
 - (id)initWithFrame:(CGRect)frame AndEntry:(NSInteger)entry AndBlip:(NSString*)blipName {
     self = [super initWithFrame:frame];
     if (self) {

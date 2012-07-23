@@ -13,11 +13,32 @@
     [quadrantView resize];
 }
 
+-(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
+    ItemView *itemView = (ItemView *)sender.view;
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:itemView.blipName
+                                                       delegate:itemView
+                                              cancelButtonTitle:nil
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"ok" ,nil];
+    sheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [sheet setBackgroundColor:[UIColor grayColor]];
+    [sheet showInView:itemView];
+}
+
 -(void) bindDoubleTap :(QuadrantView*)quadrantView {
-    UITapGestureRecognizer *doubleTap = 
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];        
+    UITapGestureRecognizer *doubleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];
     [doubleTap setNumberOfTapsRequired:2];
     [quadrantView addGestureRecognizer:doubleTap];        
+}
+
+-(void) bindItemTap: (QuadrantView*)quadrantView {
+    NSArray *subViews = quadrantView.subviews;
+    for(CircleView *subView in subViews){        
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(displayItemDetails:)];
+        [singleTap setNumberOfTapsRequired:1];
+        [subView setUserInteractionEnabled:YES];
+        [subView addGestureRecognizer:singleTap];        
+    }
 }
 
 -(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Quadrant:(Quadrant*)quadrant{
@@ -31,7 +52,11 @@
     QuadrantView *quadrantView = [[QuadrantView alloc]initWithFrame:frame
                             WithCenter:CGPointMake(centerX,centerY)
                                                     AndQuadrant:quadrant];
+    [quadrantView addCircleViews];
+    [quadrantView addTriangleViews];
     [self bindDoubleTap:quadrantView];
+    [self bindItemTap:quadrantView];
+
     [_quadrantViews addObject:quadrantView];
     return quadrantView;
 }
