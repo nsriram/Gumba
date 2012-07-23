@@ -1,16 +1,19 @@
-//
-//  RadarItemDetailViewController.h
-//  TechRadar
-//
-//  Created by Sriram Narasimhan on 23/07/12.
-//  Copyright (c) 2012 ThoughtWorks. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+
+@protocol RadarItemDetailViewControllerDelegate; 
 
 @interface RadarItemDetailViewController : UIViewController {
     IBOutlet UILabel *detail;
+    id<RadarItemDetailViewControllerDelegate> delegate;
 }
 @property (nonatomic,strong) UILabel *detail;
+@property (nonatomic,strong) NSString* detailText;
+@property (strong) id<RadarItemDetailViewControllerDelegate> delegate;
+
 -(IBAction) ok:(UIButton *)ok;
+
+@end
+
+@protocol RadarItemDetailViewControllerDelegate
+-(void) radarItemViewController:(RadarItemDetailViewController*)sender;
 @end

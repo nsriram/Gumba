@@ -153,20 +153,20 @@
 			children = (
 				C3BCFF301590D9A600502AD2 /* icon.png */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
+				C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */,
 				C3500CEA15B5B8A3006465C5 /* radar.json */,
 				C3500CE615B5AD19006465C5 /* model */,
 				C3DFC2EC15B7C862005DE04B /* view */,
 				C310A8D715011447003BF6B7 /* Supporting Files */,
 				C376024E151CC63700D26B46 /* json-framework */,
-				C310A8E515011447003BF6B7 /* ViewController.h */,
-				C310A8E615011447003BF6B7 /* ViewController.m */,
 				C310A8DF15011447003BF6B7 /* AppDelegate.h */,
 				C310A8E015011447003BF6B7 /* AppDelegate.m */,
 				C3DFC2E615B712A2005DE04B /* AppConstants.h */,
 				C3DFC2E715B712A2005DE04B /* AppConstants.m */,
+				C310A8E515011447003BF6B7 /* ViewController.h */,
+				C310A8E615011447003BF6B7 /* ViewController.m */,
 				C366E08515BD1729006209B3 /* RadarItemDetailViewController.h */,
 				C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */,
-				C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";

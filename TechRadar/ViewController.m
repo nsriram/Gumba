@@ -4,6 +4,7 @@
 #import "CircleView.h"
 #import "Radar.h"
 #import "AppConstants.h"
+#import "RadarItemDetailViewController.h"
 
 @implementation ViewController
 @synthesize quadrantViews = _quadrantViews;
@@ -15,17 +16,17 @@
 
 -(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
     ItemView *itemView = (ItemView *)sender.view;
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:itemView.blipName
-                                                       delegate:itemView
-                                              cancelButtonTitle:nil
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:@"ok" ,nil];
-    sheet.actionSheetStyle = UIActionSheetStyleDefault;
-    [sheet setBackgroundColor:[UIColor grayColor]];
-    [sheet showInView:itemView];
+    RadarItemDetailViewController *controller = [[RadarItemDetailViewController alloc]init];
+    controller.delegate=self;
+    controller.detailText = itemView.blipName;
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    controller.modalPresentationStyle= UIModalPresentationFormSheet;
+    [self presentModalViewController:controller animated:YES];
+    controller.view.superview.frame = CGRectMake(0, 0, 320, 240);
+    controller.view.superview.center = self.view.center;
 }
 
--(void) bindDoubleTap :(QuadrantView*)quadrantView {
+-(void) bindQuadrantDoubleTap :(QuadrantView*)quadrantView {
     UITapGestureRecognizer *doubleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];
     [doubleTap setNumberOfTapsRequired:2];
     [quadrantView addGestureRecognizer:doubleTap];        
@@ -54,7 +55,7 @@
                                                     AndQuadrant:quadrant];
     [quadrantView addCircleViews];
     [quadrantView addTriangleViews];
-    [self bindDoubleTap:quadrantView];
+    [self bindQuadrantDoubleTap:quadrantView];
     [self bindItemTap:quadrantView];
 
     [_quadrantViews addObject:quadrantView];
@@ -77,6 +78,10 @@
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:midPointX Y:midPointY Quadrant:[allQuadrants objectAtIndex:3]] atIndex:1];
 } 
+
+-(void) radarItemViewController:(RadarItemDetailViewController*)sender{
+    [self dismissModalViewControllerAnimated:YES];    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
