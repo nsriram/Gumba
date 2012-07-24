@@ -33,7 +33,7 @@
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
+    CGFloat screenHeight = screenRect.size.height-Y_OFFSET;
     
     if(self.frame.size.height == screenHeight){
         for(CircleView *subView in self.subviews){
@@ -44,7 +44,7 @@
         for(CircleView *subView in self.subviews){
             [subView maximize];
         }
-        resized = CGRectMake(0, 0, screenWidth, screenHeight);
+        resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
         [self.superview bringSubviewToFront:self];
     }
     self.frame = resized;	
@@ -56,7 +56,7 @@
     float labelYDelta = 60.0;
     float labelY=0;
     
-    if(self.frameOrigin.y == 0){
+    if(self.frameOrigin.y == Y_OFFSET){
         labelY = labelYDelta;
     } else {
         labelY = self.frame.size.height - labelYDelta;
@@ -80,13 +80,17 @@
 }   
 
 -( CGPoint) adjustPoint:(CGPoint) point {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width - 12.0;
+    CGFloat screenHeight = screenRect.size.height - Y_OFFSET - 36.0;
+
     if(point.x < 0){
-        point.x = 378.0 + point.x;
+        point.x = screenWidth/2 + point.x;
     } 
     if(point.y <0){
         point.y = (point.y * -1);
     } else {
-        point.y = (494.0 - point.y);
+        point.y = (screenHeight/2 - point.y);
     }
     return CGPointMake(point.x,point.y);
 }
