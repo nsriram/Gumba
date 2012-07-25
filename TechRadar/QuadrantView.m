@@ -34,7 +34,6 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height-Y_OFFSET;
-    
     if(self.frame.size.height == screenHeight){
         for(CircleView *subView in self.subviews){
             [subView minimize];
@@ -80,17 +79,13 @@
 }   
 
 -( CGPoint) adjustPoint:(CGPoint) point {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width - 12.0;
-    CGFloat screenHeight = screenRect.size.height - Y_OFFSET - 36.0;
-
     if(point.x < 0){
-        point.x = screenWidth/2 + point.x;
+        point.x = self.frame.size.width + point.x;
     } 
     if(point.y <0){
         point.y = (point.y * -1);
     } else {
-        point.y = (screenHeight/2 - point.y);
+        point.y = (self.frame.size.height - point.y);
     }
     return CGPointMake(point.x,point.y);
 }
@@ -98,7 +93,7 @@
 -(void) drawBackgroundGradient : (CGContextRef) context{
     size_t num_locations = 2;
     CGFloat locations[2] = { 0.0, 1.0};
-    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8, 
+    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8,  
         70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8 };
     CGGradientRef myGradient = CGGradientCreateWithColorComponents (CGColorSpaceCreateDeviceRGB(), 
                                                                     components,locations, 
@@ -121,8 +116,8 @@
     NSMutableArray *circles = [_quadrant circles];
     for(Item *circle in circles){
         CGPoint point = [self adjustPoint:[circle raster]];
-        CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
-        CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:[circle index] AndBlip:[circle name]];
+        CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
+        CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:[circle index] AndBlip:[circle name] AndType:@"c.png"];
         [self insertSubview:circleView atIndex:0];
     }
 }
@@ -131,8 +126,8 @@
     NSMutableArray *triangles = [_quadrant triangles];    
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
-        CGRect someRect = CGRectMake(point.x, point.y, 20.0, 20.0);
-        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name]];
+        CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
+        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name] AndType:@"t.png"];
         [self insertSubview:triangleView atIndex:0];
     }
 }

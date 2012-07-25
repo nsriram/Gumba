@@ -7,7 +7,6 @@
 }
 
 +(UIColor*) blipColor{
-    return [UIColor colorWithRed: 0.0/255.0 green: 191.0/255.0 blue: 255.0/255.0 alpha: 1.0];
-
+    return [UIColor colorWithRed: 255/255.0 green: 255.0/255.0 blue: 244.0/255.0 alpha: 1.0];
 }
 @end

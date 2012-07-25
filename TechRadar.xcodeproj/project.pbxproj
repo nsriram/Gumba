@@ -40,6 +40,8 @@
 		C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2E715B712A2005DE04B /* AppConstants.m */; };
 		C3DFC2EB15B7C5FD005DE04B /* ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2EA15B7C5FD005DE04B /* ItemView.m */; };
 		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
+		C3E982DF15C063E200FD0DD3 /* t.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982DE15C063E200FD0DD3 /* t.png */; };
+		C3E982E115C063EA00FD0DD3 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982E015C063EA00FD0DD3 /* c.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		C3DFC2EA15B7C5FD005DE04B /* ItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemView.m; path = TechRadar/ItemView.m; sourceTree = "<group>"; };
 		C3E0ACEC159E2FEF00F051C9 /* TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TriangleView.h; path = TechRadar/TriangleView.h; sourceTree = "<group>"; };
 		C3E0ACED159E2FEF00F051C9 /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TriangleView.m; path = TechRadar/TriangleView.m; sourceTree = "<group>"; };
+		C3E982DE15C063E200FD0DD3 /* t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t.png; sourceTree = "<group>"; };
+		C3E982E015C063EA00FD0DD3 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,9 @@
 		C310A8D615011447003BF6B7 /* TechRadar */ = {
 			isa = PBXGroup;
 			children = (
+				C3E982E015C063EA00FD0DD3 /* c.png */,
 				C3BCFF301590D9A600502AD2 /* icon.png */,
+				C3E982DE15C063E200FD0DD3 /* t.png */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
 				C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */,
 				C3500CEA15B5B8A3006465C5 /* radar.json */,
@@ -299,6 +305,8 @@
 				C3BCFF311590D9A600502AD2 /* icon.png in Resources */,
 				C3500CEB15B5B8A3006465C5 /* radar.json in Resources */,
 				C366E08915BD1729006209B3 /* RadarItemDetailViewController.xib in Resources */,
+				C3E982DF15C063E200FD0DD3 /* t.png in Resources */,
+				C3E982E115C063EA00FD0DD3 /* c.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

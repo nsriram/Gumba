@@ -2,7 +2,7 @@
 #import "AppConstants.h"
 
 @implementation RadarItemDetailViewController
-@synthesize detail,detailText,delegate;
+@synthesize detail,detailText,delegate,itemType,imageText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -19,6 +19,8 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
     [self.detail setText:detailText];
+    [self.detail sizeToFit];    
+    [self.itemType setImage:[UIImage imageNamed:imageText]];
 }
 
 - (void)viewDidUnload {

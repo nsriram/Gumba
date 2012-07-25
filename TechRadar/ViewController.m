@@ -18,7 +18,8 @@
     ItemView *itemView = (ItemView *)sender.view;
     RadarItemDetailViewController *controller = [[RadarItemDetailViewController alloc]init];
     controller.delegate=self;
-    controller.detailText = itemView.blipName;
+    controller.detailText = [NSString stringWithFormat:@"%d. %@",itemView.entry,itemView.blipName];
+    controller.imageText = itemView.type;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     controller.modalPresentationStyle= UIModalPresentationFormSheet;
     [self presentModalViewController:controller animated:YES];
@@ -96,33 +97,27 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 @end

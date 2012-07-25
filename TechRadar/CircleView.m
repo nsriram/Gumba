@@ -13,13 +13,13 @@
     CGContextSetStrokeColorWithColor(context, [[AppConstants blipColor] CGColor]);
     CGContextDrawPath(context, kCGPathFillStroke);
     
-    UIFont *font = [UIFont systemFontOfSize:9];
+    UIFont *font = [UIFont systemFontOfSize:10];
     NSString *entryString = [NSString stringWithFormat:@"%d", self.entry]; 
-    CGPoint textPoint;
+    CGPoint textPoint = CGPointMake(2.5,3.0);
     if([entryString length] > 2) {
-        textPoint = CGPointMake(0.0,9.0);        
-    }else {
-        textPoint = CGPointMake(1.0,7.0);
+        textPoint = CGPointMake(1.0,3.0);        
+    }else if([entryString length] == 1){
+        textPoint = CGPointMake(6.0,3.0);
     }
     [self drawTextWithContext:context Text:entryString Font:font At:textPoint Angle:CIRCLE_TEXT_ANGLE];
     UIGraphicsPopContext();
