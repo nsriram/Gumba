@@ -44,6 +44,7 @@
 		C3E982DF15C063E200FD0DD3 /* t.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982DE15C063E200FD0DD3 /* t.png */; };
 		C3E982E115C063EA00FD0DD3 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982E015C063EA00FD0DD3 /* c.png */; };
 		C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */; };
+		C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,8 @@
 		C3E982E015C063EA00FD0DD3 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
 		C3E982E415C06DF300FD0DD3 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRadarController.h; sourceTree = "<group>"; };
+		C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRadarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */,
 				C3E982E415C06DF300FD0DD3 /* DashboardViewController.h */,
 				C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */,
+				C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */,
+				C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				C3DFC2EB15B7C5FD005DE04B /* ItemView.m in Sources */,
 				C366E08815BD1729006209B3 /* RadarItemDetailViewController.m in Sources */,
 				C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */,
+				C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

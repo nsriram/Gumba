@@ -1,5 +1,6 @@
 #import "DashboardViewController.h"
 #import "ViewController.h"
+#import "AboutRadarController.h"
 #import "AppConstants.h"
 
 @implementation DashboardViewController
@@ -8,6 +9,12 @@
     ViewController *viewController = 
     [self.storyboard instantiateViewControllerWithIdentifier:@"CurrentRadarController"];
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+-(IBAction) aboutRadar:(UIButton *)current {
+    ViewController *viewController = 
+    [self.storyboard instantiateViewControllerWithIdentifier:@"AboutRadarController"];
+    [self.navigationController pushViewController:viewController animated:YES];    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
