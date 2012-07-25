@@ -42,6 +42,7 @@
 		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
 		C3E982DF15C063E200FD0DD3 /* t.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982DE15C063E200FD0DD3 /* t.png */; };
 		C3E982E115C063EA00FD0DD3 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982E015C063EA00FD0DD3 /* c.png */; };
+		C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		C3E0ACED159E2FEF00F051C9 /* TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TriangleView.m; path = TechRadar/TriangleView.m; sourceTree = "<group>"; };
 		C3E982DE15C063E200FD0DD3 /* t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t.png; sourceTree = "<group>"; };
 		C3E982E015C063EA00FD0DD3 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
+		C3E982E415C06DF300FD0DD3 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				C310A8E615011447003BF6B7 /* ViewController.m */,
 				C366E08515BD1729006209B3 /* RadarItemDetailViewController.h */,
 				C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */,
+				C3E982E415C06DF300FD0DD3 /* DashboardViewController.h */,
+				C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */,
 				C3DFC2EB15B7C5FD005DE04B /* ItemView.m in Sources */,
 				C366E08815BD1729006209B3 /* RadarItemDetailViewController.m in Sources */,
+				C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
