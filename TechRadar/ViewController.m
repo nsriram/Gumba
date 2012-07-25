@@ -44,15 +44,15 @@
 }
 
 -(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Quadrant:(Quadrant*)quadrant{
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-
+        NSLog(@"screenHeight=%f,%f",screenHeight,self.view.frame.size.height);
     CGPoint origin = CGPointMake(x, y);
-    CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, ((screenHeight-Y_OFFSET)/2));
+    CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
 
     CGFloat centerX = (x > 0.0 ? 0.0 : screenWidth/2);
-    CGFloat centerY = (y > Y_OFFSET ? 0.0 : ((screenHeight-Y_OFFSET)/2));
+    CGFloat centerY = (y > Y_OFFSET ? 0.0 : ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
 
     QuadrantView *quadrantView = [[QuadrantView alloc]initWithFrame:frame
                             WithCenter:CGPointMake(centerX,centerY)
@@ -70,12 +70,15 @@
     Radar *radar = [Radar radarFromFile:@"radar"];
     NSMutableArray *allQuadrants = [radar quadrants];
 
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
+
+    NSLog(@"screenHeight=%f,%f",screenHeight,self.view.frame.size.height);
+    NSLog(@"%f",self.navigationController.navigationBar.frame.size.height);
     
     CGFloat midPointX = screenWidth/2;
-    CGFloat midPointY = ((screenHeight-Y_OFFSET)/2)+Y_OFFSET;
+    CGFloat midPointY = ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2)+Y_OFFSET;
 
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:Y_OFFSET Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:midPointX Y:Y_OFFSET Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
@@ -89,6 +92,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[self view] setClipsToBounds:YES];
     [self addQuadrants];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
 }

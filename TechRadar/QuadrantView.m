@@ -31,9 +31,9 @@
                              cache:NO];
     CGRect resized;
     
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height-Y_OFFSET;
+    CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
     if(self.frame.size.height == screenHeight){
         for(CircleView *subView in self.subviews){
             [subView minimize];
