@@ -5,16 +5,17 @@
 #import "Radar.h"
 #import "AppConstants.h"
 #import "RadarItemDetailViewController.h"
-#import "ACMagnifyingView.h"
-#import "ACMagnifyingGlass.h"
-#import "ACLoupe.h"
 
 @implementation ViewController
 @synthesize quadrantViews = _quadrantViews;
-@synthesize magnifyingView;
 
 - (void)resize:(UIGestureRecognizer*)sender {
     QuadrantView *quadrantView = (QuadrantView *)sender.view;
+    [quadrantView resize];
+}
+
+- (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer  {
+    QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
     [quadrantView resize];
 }
 
@@ -22,19 +23,22 @@
     ItemView *itemView = (ItemView *)sender.view;
     RadarItemDetailViewController *controller = [[RadarItemDetailViewController alloc]init];
     controller.delegate=self;
-    controller.detailText = [NSString stringWithFormat:@"%d. %@",itemView.entry,itemView.blipName];
+    controller.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
     controller.imageText = itemView.type;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     controller.modalPresentationStyle= UIModalPresentationFormSheet;
     [self presentModalViewController:controller animated:YES];
-    controller.view.superview.frame = CGRectMake(0, 0, 320, 240);
+    controller.view.superview.frame = CGRectMake(0, 0, 320, 200);
     controller.view.superview.center = self.view.center;
 }
 
 -(void) bindQuadrantDoubleTap :(QuadrantView*)quadrantView {
     UITapGestureRecognizer *doubleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];
     [doubleTap setNumberOfTapsRequired:2];
-    [quadrantView addGestureRecognizer:doubleTap];        
+//    [quadrantView addGestureRecognizer:doubleTap];        
+
+    UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
+    [quadrantView addGestureRecognizer:twoFingerPinch];
 }
 
 -(void) bindItemTap: (QuadrantView*)quadrantView {
@@ -95,10 +99,6 @@
     [[self view] setClipsToBounds:YES];
     [self addQuadrants];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
-    
-	ACMagnifyingGlass *mag = [[ACMagnifyingGlass alloc] initWithFrame:CGRectMake(0, 0, 120, 120)];
-	mag.scale = 2;
-	self.magnifyingView.magnifyingGlass = mag;    
 }
 
 - (void)didReceiveMemoryWarning {

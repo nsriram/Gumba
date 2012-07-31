@@ -45,10 +45,6 @@
 		C3E982E115C063EA00FD0DD3 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E982E015C063EA00FD0DD3 /* c.png */; };
 		C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */; };
 		C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */; };
-		C3FB838D15C83B38008C08CC /* ACMagnifyingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB838715C83B36008C08CC /* ACMagnifyingView.m */; };
-		C3FB838E15C83B38008C08CC /* ACMagnifyingGlass.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB838915C83B37008C08CC /* ACMagnifyingGlass.m */; };
-		C3FB838F15C83B38008C08CC /* ACLoupe.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB838B15C83B37008C08CC /* ACLoupe.m */; };
-		C3FB839115C83B41008C08CC /* kb-loupe-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB839015C83B40008C08CC /* kb-loupe-hi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,13 +115,6 @@
 		C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRadarController.h; sourceTree = "<group>"; };
 		C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRadarController.m; sourceTree = "<group>"; };
-		C3FB838715C83B36008C08CC /* ACMagnifyingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACMagnifyingView.m; sourceTree = "<group>"; };
-		C3FB838815C83B36008C08CC /* ACMagnifyingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMagnifyingView.h; sourceTree = "<group>"; };
-		C3FB838915C83B37008C08CC /* ACMagnifyingGlass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACMagnifyingGlass.m; sourceTree = "<group>"; };
-		C3FB838A15C83B37008C08CC /* ACMagnifyingGlass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMagnifyingGlass.h; sourceTree = "<group>"; };
-		C3FB838B15C83B37008C08CC /* ACLoupe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACLoupe.m; sourceTree = "<group>"; };
-		C3FB838C15C83B37008C08CC /* ACLoupe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACLoupe.h; sourceTree = "<group>"; };
-		C3FB839015C83B40008C08CC /* kb-loupe-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kb-loupe-hi.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,13 +163,6 @@
 		C310A8D615011447003BF6B7 /* TechRadar */ = {
 			isa = PBXGroup;
 			children = (
-				C3FB839015C83B40008C08CC /* kb-loupe-hi.png */,
-				C3FB838715C83B36008C08CC /* ACMagnifyingView.m */,
-				C3FB838815C83B36008C08CC /* ACMagnifyingView.h */,
-				C3FB838915C83B37008C08CC /* ACMagnifyingGlass.m */,
-				C3FB838A15C83B37008C08CC /* ACMagnifyingGlass.h */,
-				C3FB838B15C83B37008C08CC /* ACLoupe.m */,
-				C3FB838C15C83B37008C08CC /* ACLoupe.h */,
 				C3E982E015C063EA00FD0DD3 /* c.png */,
 				C3BCFF301590D9A600502AD2 /* icon.png */,
 				C3E982DE15C063E200FD0DD3 /* t.png */,
@@ -339,7 +321,6 @@
 				C3E982DF15C063E200FD0DD3 /* t.png in Resources */,
 				C3E982E115C063EA00FD0DD3 /* c.png in Resources */,
 				51451CCC15C0830200E4C555 /* Default-Portrait.png in Resources */,
-				C3FB839115C83B41008C08CC /* kb-loupe-hi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +357,6 @@
 				C366E08815BD1729006209B3 /* RadarItemDetailViewController.m in Sources */,
 				C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */,
 				C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */,
-				C3FB838D15C83B38008C08CC /* ACMagnifyingView.m in Sources */,
-				C3FB838E15C83B38008C08CC /* ACMagnifyingGlass.m in Sources */,
-				C3FB838F15C83B38008C08CC /* ACLoupe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,6 @@
 
 @class ACMagnifyingView;
 
-@interface ViewController : UIViewController<RadarItemDetailViewControllerDelegate>
+@interface ViewController : UIViewController<RadarItemDetailViewControllerDelegate, UIPopoverControllerDelegate>
 @property (nonatomic,strong) NSMutableArray *quadrantViews;
-@property (nonatomic, retain) IBOutlet ACMagnifyingView *magnifyingView;
 @end
