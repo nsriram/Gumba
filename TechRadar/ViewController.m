@@ -5,9 +5,13 @@
 #import "Radar.h"
 #import "AppConstants.h"
 #import "RadarItemDetailViewController.h"
+#import "ACMagnifyingView.h"
+#import "ACMagnifyingGlass.h"
+#import "ACLoupe.h"
 
 @implementation ViewController
 @synthesize quadrantViews = _quadrantViews;
+@synthesize magnifyingView;
 
 - (void)resize:(UIGestureRecognizer*)sender {
     QuadrantView *quadrantView = (QuadrantView *)sender.view;
@@ -91,6 +95,10 @@
     [[self view] setClipsToBounds:YES];
     [self addQuadrants];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
+    
+	ACMagnifyingGlass *mag = [[ACMagnifyingGlass alloc] initWithFrame:CGRectMake(0, 0, 120, 120)];
+	mag.scale = 2;
+	self.magnifyingView.magnifyingGlass = mag;    
 }
 
 - (void)didReceiveMemoryWarning {
