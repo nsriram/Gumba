@@ -37,11 +37,13 @@
     if(self.frame.size.height == screenHeight){
         for(CircleView *subView in self.subviews){
             [subView minimize];
+            [subView setNeedsDisplay];
         }
         resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
     } else {
         for(CircleView *subView in self.subviews){
             [subView maximize];
+            [subView setNeedsDisplay];
         }
         resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
         [self.superview bringSubviewToFront:self];

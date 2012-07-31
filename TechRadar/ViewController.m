@@ -47,7 +47,6 @@
     CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-        NSLog(@"screenHeight=%f,%f",screenHeight,self.view.frame.size.height);
     CGPoint origin = CGPointMake(x, y);
     CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
 
@@ -74,9 +73,6 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
 
-    NSLog(@"screenHeight=%f,%f",screenHeight,self.view.frame.size.height);
-    NSLog(@"%f",self.navigationController.navigationBar.frame.size.height);
-    
     CGFloat midPointX = screenWidth/2;
     CGFloat midPointY = ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2)+Y_OFFSET;
 
