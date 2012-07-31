@@ -7,7 +7,8 @@
 @property (nonatomic, strong) Quadrant* quadrant;
 
 - (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndQuadrant:(Quadrant*)quadrant;
-- (void) resize;
+- (void) minimize;
+- (void) maximize;
 - (void)addCircleViews;
 - (void)addTriangleViews;
 @end

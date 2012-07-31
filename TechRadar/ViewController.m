@@ -16,18 +16,11 @@
 @synthesize lastScale = _lastScale;
 @synthesize newScale = _newScale;
 
-- (void)resize:(UIGestureRecognizer*)sender {
-    QuadrantView *quadrantView = (QuadrantView *)sender.view;
-    [quadrantView resize];
-}
-
 - (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer  {
     const CGFloat kMaxScale = 2.0;
     const CGFloat kMinScale = 1.0;
     
-    
     if([recognizer state] == UIGestureRecognizerStateBegan) {
-        // Reset the last scale, necessary if there are multiple objects with different scales
         self.lastScale = [recognizer scale];
     }
     
@@ -36,25 +29,20 @@
         
         CGFloat currentScale = [[[recognizer view].layer valueForKeyPath:@"transform.scale"] floatValue];
         
-        self.newScale = 1 -  (self.lastScale - [recognizer scale]); // new scale is in the range (0-1)
+        self.newScale = 1 -  (self.lastScale - [recognizer scale]);
         self.newScale = MIN(self.newScale, kMaxScale / currentScale);
-        self.newScale = MAX(self.newScale, kMinScale / currentScale);
-        
-
-//        CGAffineTransform transform = CGAffineTransformScale([[recognizer view] transform], newScale, newScale);
-//        [recognizer view].transform = transform;
-        
-        self.lastScale = [recognizer scale];  // Store the previous scale factor for the next pinch gesture call
+        self.newScale = MAX(self.newScale, kMinScale / currentScale);        
+        self.lastScale = [recognizer scale];
     }
-    
+
     if([recognizer state] == UIGestureRecognizerStateEnded) {
-        NSLog(@"LastScale: %f", self.lastScale);
-        NSLog(@"NewScale: %f", self.newScale);
-
-        QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        [quadrantView resize];
+            QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
+        if(!self.newScale <= self.lastScale) {
+            [quadrantView minimize];
+        } else {
+            [quadrantView maximize];            
+        }
     }
-
 }
 
 -(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
@@ -71,10 +59,6 @@
 }
 
 -(void) bindQuadrantDoubleTap :(QuadrantView*)quadrantView {
-    UITapGestureRecognizer *doubleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];
-    [doubleTap setNumberOfTapsRequired:2];
-//    [quadrantView addGestureRecognizer:doubleTap];        
-
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
     [quadrantView addGestureRecognizer:twoFingerPinch];
 }

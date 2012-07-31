@@ -21,7 +21,7 @@
     [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
     CGContextRestoreGState(context);
 }
--(void) resize {
+-(void) minimize {
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
@@ -30,24 +30,36 @@
                            forView:self
                              cache:NO];
     CGRect resized;
-    
     CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
-    if(self.frame.size.height == screenHeight){
-        for(CircleView *subView in self.subviews){
-            [subView minimize];
-            [subView setNeedsDisplay];
-        }
-        resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
-    } else {
-        for(CircleView *subView in self.subviews){
-            [subView maximize];
-            [subView setNeedsDisplay];
-        }
-        resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
-        [self.superview bringSubviewToFront:self];
+    for(CircleView *subView in self.subviews){
+        [subView minimize];
+        [subView setNeedsDisplay];
     }
+    resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
+    self.frame = resized;	
+	[UIView commitAnimations];	
+}
+-(void) maximize {
+    [UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.50];
+	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromLeft)
+                           forView:self
+                             cache:NO];
+    CGRect resized;
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
+    
+    for(CircleView *subView in self.subviews){
+        [subView maximize];
+        [subView setNeedsDisplay];
+    }
+    resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
+    [self.superview bringSubviewToFront:self];
     self.frame = resized;	
 	[UIView commitAnimations];	
 }
@@ -136,7 +148,7 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();     
-
+    
     [self drawBackgroundGradient:context];
     
     CGContextSetLineWidth(context, 2.0);
