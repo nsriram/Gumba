@@ -6,8 +6,15 @@
 #import "AppConstants.h"
 #import "RadarItemDetailViewController.h"
 
+@interface ViewController()
+@property (nonatomic, assign) CGFloat lastScale;
+@property (nonatomic, assign) CGFloat newScale;
+@end
+
 @implementation ViewController
 @synthesize quadrantViews = _quadrantViews;
+@synthesize lastScale = _lastScale;
+@synthesize newScale = _newScale;
 
 - (void)resize:(UIGestureRecognizer*)sender {
     QuadrantView *quadrantView = (QuadrantView *)sender.view;
@@ -15,8 +22,39 @@
 }
 
 - (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer  {
-    QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-    [quadrantView resize];
+    const CGFloat kMaxScale = 2.0;
+    const CGFloat kMinScale = 1.0;
+    
+    
+    if([recognizer state] == UIGestureRecognizerStateBegan) {
+        // Reset the last scale, necessary if there are multiple objects with different scales
+        self.lastScale = [recognizer scale];
+    }
+    
+    if ([recognizer state] == UIGestureRecognizerStateBegan ||
+        [recognizer state] == UIGestureRecognizerStateChanged) {
+        
+        CGFloat currentScale = [[[recognizer view].layer valueForKeyPath:@"transform.scale"] floatValue];
+        
+        self.newScale = 1 -  (self.lastScale - [recognizer scale]); // new scale is in the range (0-1)
+        self.newScale = MIN(self.newScale, kMaxScale / currentScale);
+        self.newScale = MAX(self.newScale, kMinScale / currentScale);
+        
+
+//        CGAffineTransform transform = CGAffineTransformScale([[recognizer view] transform], newScale, newScale);
+//        [recognizer view].transform = transform;
+        
+        self.lastScale = [recognizer scale];  // Store the previous scale factor for the next pinch gesture call
+    }
+    
+    if([recognizer state] == UIGestureRecognizerStateEnded) {
+        NSLog(@"LastScale: %f", self.lastScale);
+        NSLog(@"NewScale: %f", self.newScale);
+
+        QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
+        [quadrantView resize];
+    }
+
 }
 
 -(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
@@ -66,7 +104,7 @@
                                                     AndQuadrant:quadrant];
     [quadrantView addCircleViews];
     [quadrantView addTriangleViews];
-    [self bindQuadrantDoubleTap:quadrantView];
+//    [self bindQuadrantDoubleTap:quadrantView];
     [self bindItemTap:quadrantView];
 
     [_quadrantViews addObject:quadrantView];
