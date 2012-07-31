@@ -36,8 +36,11 @@
     }
 
     if([recognizer state] == UIGestureRecognizerStateEnded) {
-            QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        if(!self.newScale <= self.lastScale) {
+        NSLog(@"here");
+        
+        QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
+        
+        if(self.newScale >= self.lastScale) {
             [quadrantView minimize];
         } else {
             [quadrantView maximize];            
@@ -58,7 +61,7 @@
     controller.view.superview.center = self.view.center;
 }
 
--(void) bindQuadrantDoubleTap :(QuadrantView*)quadrantView {
+-(void) bindQuadrantTwoFingerPinch :(QuadrantView*)quadrantView {
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
     [quadrantView addGestureRecognizer:twoFingerPinch];
 }
@@ -88,7 +91,7 @@
                                                     AndQuadrant:quadrant];
     [quadrantView addCircleViews];
     [quadrantView addTriangleViews];
-//    [self bindQuadrantDoubleTap:quadrantView];
+    [self bindQuadrantTwoFingerPinch:quadrantView];
     [self bindItemTap:quadrantView];
 
     [_quadrantViews addObject:quadrantView];
