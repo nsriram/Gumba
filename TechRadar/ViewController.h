@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "RadarItemDetailViewController.h"
 
-@class ACMagnifyingView;
-
-@interface ViewController : UIViewController<RadarItemDetailViewControllerDelegate, UIPopoverControllerDelegate>
+@interface ViewController : UIViewController<RadarItemDetailViewControllerDelegate, 
+UIPopoverControllerDelegate, UISearchBarDelegate> 
 @property (nonatomic,strong) NSMutableArray *quadrantViews;
 @end

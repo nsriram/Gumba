@@ -21,7 +21,7 @@
     [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
     CGContextRestoreGState(context);
 }
--(void) minimize {
+-(void) resize {
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
@@ -33,36 +33,24 @@
     CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
-    for(CircleView *subView in self.subviews){
-        [subView minimize];
-        [subView setNeedsDisplay];
+    if(self.frame.size.height == screenHeight){
+        for(CircleView *subView in self.subviews){
+            [subView minimize];
+            [subView setNeedsDisplay];
+        }
+        resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
+    } else {
+        for(CircleView *subView in self.subviews){
+            [subView maximize];
+            [subView setNeedsDisplay];
+        }
+        resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
+        [self.superview bringSubviewToFront:self];
     }
-    resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
     self.frame = resized;	
 	[UIView commitAnimations];	
 }
--(void) maximize {
-    [UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.50];
-	[UIView setAnimationTransition:([self superview] ? UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromLeft)
-                           forView:self
-                             cache:NO];
-    CGRect resized;
-    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
-    
-    for(CircleView *subView in self.subviews){
-        [subView maximize];
-        [subView setNeedsDisplay];
-    }
-    resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
-    [self.superview bringSubviewToFront:self];
-    self.frame = resized;	
-	[UIView commitAnimations];	
-}
+
 
 -(void) drawQuadrantLabelInContext:(CGContextRef)context{
     float labelX = self.frame.size.width/3.0;

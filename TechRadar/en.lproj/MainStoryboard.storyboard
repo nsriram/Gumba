@@ -197,12 +197,12 @@ Items that have not moved in two publications of the radar fade and are no longe
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" id="Afs-Uc-aec">
+                            <searchBar contentMode="redraw" id="gBk-52-3nN">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="2" id="iQ1-a9-L3a"/>
+                                    <outlet property="delegate" destination="2" id="s8p-rH-8vz"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -217,7 +217,6 @@ Items that have not moved in two publications of the radar fade and are no longe
                 <searchDisplayController id="Ajd-Qp-EzT">
                     <connections>
                         <outlet property="delegate" destination="2" id="zUS-jp-nWg"/>
-                        <outlet property="searchBar" destination="Afs-Uc-aec" id="kAI-Mx-FsW"/>
                         <outlet property="searchContentsController" destination="2" id="iJF-TG-wFH"/>
                         <outlet property="searchResultsDataSource" destination="2" id="IMv-DA-Fh4"/>
                         <outlet property="searchResultsDelegate" destination="2" id="lGh-L8-R0B"/>
@@ -240,6 +239,9 @@ Items that have not moved in two publications of the radar fade and are no longe
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="radarSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -16,6 +16,39 @@
 @synthesize lastScale = _lastScale;
 @synthesize newScale = _newScale;
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    for(QuadrantView *quadrantView in self.quadrantViews){
+        NSArray *subViews = quadrantView.subviews;
+        for(ItemView *subView in subViews){
+            if([subView isHidden]){
+                [subView setHidden:FALSE];
+            }
+        }
+    }    
+}
+
+-(void) searchRadar:(NSString*) searchTerm {
+    searchTerm = [searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+    if([searchTerm length] != 0) {
+        for(QuadrantView *quadrantView in self.quadrantViews){
+            NSArray *subViews = quadrantView.subviews;
+            for(ItemView *subView in subViews){
+                NSString *blipName = [subView blipName];
+                if ([blipName rangeOfString:searchTerm].location == NSNotFound) {
+                    [subView setHidden:TRUE];
+                }
+            }
+        }}
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self searchRadar:searchBar.text];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self searchRadar:searchBar.text];
+}
+
 - (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer  {
     const CGFloat kMaxScale = 2.0;
     const CGFloat kMinScale = 1.0;
@@ -34,17 +67,10 @@
         self.newScale = MAX(self.newScale, kMinScale / currentScale);        
         self.lastScale = [recognizer scale];
     }
-
+    
     if([recognizer state] == UIGestureRecognizerStateEnded) {
-        NSLog(@"here");
-        
         QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        
-        if(self.newScale >= self.lastScale) {
-            [quadrantView minimize];
-        } else {
-            [quadrantView maximize];            
-        }
+        [quadrantView resize];
     }
 }
 
@@ -82,18 +108,18 @@
     CGFloat screenHeight = screenRect.size.height;
     CGPoint origin = CGPointMake(x, y);
     CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
-
+    
     CGFloat centerX = (x > 0.0 ? 0.0 : screenWidth/2);
     CGFloat centerY = (y > Y_OFFSET ? 0.0 : ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
-
+    
     QuadrantView *quadrantView = [[QuadrantView alloc]initWithFrame:frame
-                            WithCenter:CGPointMake(centerX,centerY)
-                                                    AndQuadrant:quadrant];
+                                                         WithCenter:CGPointMake(centerX,centerY)
+                                                        AndQuadrant:quadrant];
     [quadrantView addCircleViews];
     [quadrantView addTriangleViews];
     [self bindQuadrantTwoFingerPinch:quadrantView];
     [self bindItemTap:quadrantView];
-
+    
     [_quadrantViews addObject:quadrantView];
     return quadrantView;
 }
@@ -101,14 +127,14 @@
 -(void) addQuadrants {
     Radar *radar = [Radar radarFromFile:@"radar"];
     NSMutableArray *allQuadrants = [radar quadrants];
-
+    
     CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-
+    
     CGFloat midPointX = screenWidth/2;
     CGFloat midPointY = ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2)+Y_OFFSET;
-
+    
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:Y_OFFSET Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:midPointX Y:Y_OFFSET Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
@@ -122,6 +148,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self view] setClipsToBounds:YES];
+    _quadrantViews = [[NSMutableArray alloc] init];
     [self addQuadrants];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
 }
