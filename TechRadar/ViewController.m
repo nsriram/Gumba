@@ -28,15 +28,11 @@
     }    
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    [self showAllItems];
-}
-
 -(void) searchRadar:(NSString*) searchkey {
     searchkey = [searchkey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
     searchkey = [searchkey lowercaseString];
+    _searchTerm = searchkey;
     if([searchkey length] != 0) {
-        _searchTerm = searchkey;
         for(QuadrantView *quadrantView in self.quadrantViews){
             NSArray *subViews = quadrantView.subviews;
             for(ItemView *subView in subViews){
@@ -52,6 +48,10 @@
     } else {
         [self showAllItems];
     }
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self searchRadar:_searchTerm];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
