@@ -88,7 +88,7 @@
     
     if([recognizer state] == UIGestureRecognizerStateEnded) {
         QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        [quadrantView resize];
+        [quadrantView resize:self.navigationItem];
     }
 }
 

@@ -21,7 +21,7 @@
     [label drawAtPoint:CGPointMake(self.center.x +width, self.center.y+distance) withFont:font];
     CGContextRestoreGState(context);
 }
--(void) resize {
+- (void) resize:(UINavigationItem*)navigationItem{
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
@@ -34,12 +34,14 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
     if(self.frame.size.height == screenHeight){
+        navigationItem.hidesBackButton=NO;
         for(CircleView *subView in self.subviews){
             [subView minimize];
             [subView setNeedsDisplay];
         }
         resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
     } else {
+        navigationItem.hidesBackButton=YES;
         for(CircleView *subView in self.subviews){
             [subView maximize];
             [subView setNeedsDisplay];
