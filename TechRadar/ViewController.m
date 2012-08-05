@@ -29,11 +29,13 @@
 
 -(void) searchRadar:(NSString*) searchTerm {
     searchTerm = [searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+    searchTerm = [searchTerm lowercaseString];
     if([searchTerm length] != 0) {
         for(QuadrantView *quadrantView in self.quadrantViews){
             NSArray *subViews = quadrantView.subviews;
             for(ItemView *subView in subViews){
                 NSString *blipName = [subView blipName];
+                blipName = [blipName lowercaseString];
                 if ([blipName rangeOfString:searchTerm].location == NSNotFound) {
                     [subView setHidden:TRUE];
                 }
