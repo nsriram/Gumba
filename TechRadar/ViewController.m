@@ -21,8 +21,10 @@
     for(QuadrantView *quadrantView in self.quadrantViews){
         NSArray *subViews = quadrantView.subviews;
         for(ItemView *subView in subViews){
-            if([subView isHidden]){
-                [subView setHidden:FALSE];
+            if(subView.alpha == 0.0){
+                [UIView animateWithDuration:0.3 animations:^() {
+                    subView.alpha = 1.0;
+                }];
             }
         }
     }    
@@ -39,9 +41,13 @@
                 NSString *blipName = [subView blipName];
                 blipName = [blipName lowercaseString];
                 if ([blipName rangeOfString:searchkey].location == NSNotFound) {
-                    [subView setHidden:TRUE];
+                    [UIView animateWithDuration:0.3 animations:^() {
+                        subView.alpha = 0.0;
+                    }];
                 }else{
-                    [subView setHidden:FALSE];                    
+                    [UIView animateWithDuration:0.3 animations:^() {
+                        subView.alpha = 1.0;
+                    }];
                 }
             }
         }
