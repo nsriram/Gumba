@@ -15,8 +15,9 @@
 @synthesize quadrantViews = _quadrantViews;
 @synthesize lastScale = _lastScale;
 @synthesize newScale = _newScale;
+@synthesize searchTerm = _searchTerm;
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+-(void) showAllItems {
     for(QuadrantView *quadrantView in self.quadrantViews){
         NSArray *subViews = quadrantView.subviews;
         for(ItemView *subView in subViews){
@@ -27,27 +28,42 @@
     }    
 }
 
--(void) searchRadar:(NSString*) searchTerm {
-    searchTerm = [searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
-    searchTerm = [searchTerm lowercaseString];
-    if([searchTerm length] != 0) {
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self showAllItems];
+}
+
+-(void) searchRadar:(NSString*) searchkey {
+    searchkey = [searchkey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+    searchkey = [searchkey lowercaseString];
+    if([searchkey length] != 0) {
+        _searchTerm = searchkey;
         for(QuadrantView *quadrantView in self.quadrantViews){
             NSArray *subViews = quadrantView.subviews;
             for(ItemView *subView in subViews){
                 NSString *blipName = [subView blipName];
                 blipName = [blipName lowercaseString];
-                if ([blipName rangeOfString:searchTerm].location == NSNotFound) {
+                if ([blipName rangeOfString:searchkey].location == NSNotFound) {
                     [subView setHidden:TRUE];
+                }else{
+                    [subView setHidden:FALSE];                    
                 }
             }
-        }}
+        }
+    } else {
+        [self showAllItems];
+    }
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    _searchTerm=@"";
     [self searchRadar:searchBar.text];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self searchRadar:searchBar.text];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     [self searchRadar:searchBar.text];
 }
 
@@ -145,6 +161,7 @@
 
 -(void) radarItemViewController:(RadarItemDetailViewController*)sender{
     [self dismissModalViewControllerAnimated:YES];    
+    [self searchRadar:_searchTerm];
 }
 
 - (void)viewDidLoad {
