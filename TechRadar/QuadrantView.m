@@ -121,7 +121,7 @@
     for(Item *circle in circles){
         CGPoint point = [self adjustPoint:[circle raster]];
         CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
-        CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:[circle index] AndBlip:[circle name] AndType:@"c.png"];
+        CircleView *circleView = [[CircleView alloc] initWithFrame:someRect AndEntry:[circle index] AndBlip:[circle name] AndType:@"c.png" AndRadius:[circle radius]];
         [self insertSubview:circleView atIndex:0];
     }
 }
@@ -131,7 +131,7 @@
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
         CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
-        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name] AndType:@"t.png"];
+        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect AndEntry:[triangle index] AndBlip:[triangle name] AndType:@"t.png" AndRadius:[triangle radius]];
         [self insertSubview:triangleView atIndex:0];
     }
 }

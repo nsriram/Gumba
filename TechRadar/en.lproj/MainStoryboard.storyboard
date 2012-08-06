@@ -194,11 +194,11 @@ Items that have not moved in two publications of the radar fade and are no longe
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CurrentRadarController" title="Technology Radar" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" text="" placeholder="Search Radar Items" id="gBk-52-3nN">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <scopeButtonTitles>
@@ -209,11 +209,45 @@ Items that have not moved in two publications of the radar fade and are no longe
                                     <outlet property="delegate" destination="2" id="s8p-rH-8vz"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Qyy-Nq-jz5">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Adopt" width="140" id="SdZ-tG-KLz">
+                                        <connections>
+                                            <action selector="adopt:" destination="2" id="5h4-0J-j9K"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Trial" width="140" id="lPg-AW-326">
+                                        <connections>
+                                            <action selector="trial:" destination="2" id="tq2-LB-aZ6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Assess" width="140" id="0eW-Cz-bkz">
+                                        <connections>
+                                            <action selector="assess:" destination="2" id="CQP-Ac-6CQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Hold" width="140" id="G4h-xF-GLd">
+                                        <connections>
+                                            <action selector="hold:" destination="2" id="sKZ-iX-plZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="All" width="140" id="b6f-52-0bq">
+                                        <connections>
+                                            <action selector="all:" destination="2" id="z2h-Ix-GGl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Technology Radar" id="ecL-lX-AdC"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Technology Radar" id="2yl-ic-qs0"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Ajd-Qp-EzT" id="70L-Ye-ldw"/>
                     </connections>
@@ -243,6 +277,13 @@ Items that have not moved in two publications of the radar fade and are no longe
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="adopt:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="all:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="assess:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="hold:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="trial:" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

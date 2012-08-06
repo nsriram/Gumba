@@ -8,7 +8,7 @@
 #define TRIANGLE_TEXT_ANGLE 0.0
 #define CIRCLE_TEXT_ANGLE 0.0
 #define RADAR_RATIO 0.9
-#define Y_OFFSET 44.0
+#define Y_OFFSET 88.0
 #define NAVBAR_SIZE 44.0
 
 @interface AppConstants : NSObject

@@ -9,6 +9,8 @@
 @interface ViewController()
 @property (nonatomic, assign) CGFloat lastScale;
 @property (nonatomic, assign) CGFloat newScale;
+@property (nonatomic, assign) NSInteger innerRadius;
+@property (nonatomic, assign) NSInteger outerRadius;
 @end
 
 @implementation ViewController
@@ -16,6 +18,28 @@
 @synthesize lastScale = _lastScale;
 @synthesize newScale = _newScale;
 @synthesize searchTerm = _searchTerm;
+@synthesize innerRadius,outerRadius;
+
+-(void) hideCircle:(NSInteger) innerRadius AndOuter:(NSInteger) outerRadius{
+    self.innerRadius = innerRadius;
+    self.outerRadius= outerRadius;
+
+    for(QuadrantView *quadrantView in self.quadrantViews){
+        NSArray *subViews = quadrantView.subviews;
+        for(ItemView *subView in subViews){
+            NSInteger ratioRadius = RADAR_RATIO*subView.radius;
+            if(ratioRadius > innerRadius && ratioRadius < outerRadius) {
+                [UIView animateWithDuration:0.3 animations:^() {
+                    subView.alpha = 1.0;
+                }];
+            }else {
+                [UIView animateWithDuration:0.3 animations:^() {
+                    subView.alpha = 0.0;
+                }];
+            }
+        }
+    }
+}
 
 -(void) showAllItems {
     for(QuadrantView *quadrantView in self.quadrantViews){
@@ -28,6 +52,26 @@
             }
         }
     }    
+}
+
+-(IBAction) adopt:(UIBarButtonItem *)adoptButtobarButtonItem{
+    [self hideCircle:0.0 AndOuter:150.0*RADAR_RATIO];
+}
+
+-(IBAction) trial:(UIBarButtonItem *)barButtonItem{
+    [self hideCircle:150.0*RADAR_RATIO AndOuter:275.0*RADAR_RATIO];
+}
+-(IBAction) assess:(UIBarButtonItem *)barButtonItem{
+    [self hideCircle:275.0*RADAR_RATIO AndOuter:350.0*RADAR_RATIO];
+}
+
+-(IBAction) hold:(UIBarButtonItem *)barButtonItem{
+    [self hideCircle:350.0*RADAR_RATIO AndOuter:400.0*RADAR_RATIO];
+}
+-(IBAction) all:(UIBarButtonItem *)barButtonItem{
+    self.innerRadius = 0.0;
+    self.outerRadius = 400.0;
+    [self hideCircle:0.0 AndOuter:400.0*RADAR_RATIO];
 }
 
 -(void) searchRadar:(NSString*) searchkey {
@@ -166,8 +210,11 @@
 } 
 
 -(void) radarItemViewController:(RadarItemDetailViewController*)sender{
-    [self dismissModalViewControllerAnimated:YES];    
-    [self searchRadar:_searchTerm];
+    [self dismissModalViewControllerAnimated:YES];
+    if([_searchTerm length] > 0)
+        [self searchRadar:_searchTerm];
+    if(self.outerRadius > 0.0)
+        [self hideCircle:self.innerRadius AndOuter:self.outerRadius];
 }
 
 - (void)viewDidLoad {

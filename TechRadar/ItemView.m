@@ -1,7 +1,7 @@
 #import "ItemView.h"
 @implementation ItemView
 
-@synthesize entry = _entry, blipName =_blipName, type = _type, isMinized = _isMinized;
+@synthesize entry = _entry, blipName =_blipName, type = _type, isMinized = _isMinized, radius = _radius;
 
 -(void) drawTextWithContext:(CGContextRef)context Text:(NSString*)text Font:(UIFont*)font At:(CGPoint) point Angle:(CGFloat)angle{
     [[UIColor blackColor] set]; 
@@ -26,12 +26,13 @@
     _isMinized=FALSE;
 }
 
-- (id)initWithFrame:(CGRect)frame AndEntry:(NSInteger)entry AndBlip:(NSString*)blipName AndType:(NSString*)type {
+- (id)initWithFrame:(CGRect)frame AndEntry:(NSInteger)entry AndBlip:(NSString*)blipName AndType:(NSString*)type AndRadius:(NSInteger)radius{
     self = [super initWithFrame:frame];
     if (self) {
         self.isMinized = TRUE;
         self.entry = entry;
         self.blipName = blipName;
+        self.radius=radius;
         self.backgroundColor =[UIColor clearColor];
         self.type = type;
     }
