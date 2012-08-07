@@ -19,16 +19,18 @@
 @synthesize newScale = _newScale;
 @synthesize searchTerm = _searchTerm;
 @synthesize innerRadius,outerRadius;
+@synthesize selectedButton;
+@synthesize barButtonColor;
 
--(void) hideCircle:(NSInteger) innerRadius AndOuter:(NSInteger) outerRadius{
+-(void) hideCircle:(NSInteger) inRadius AndOuter:(NSInteger) outRadius{
     self.innerRadius = innerRadius;
     self.outerRadius= outerRadius;
-
+    
     for(QuadrantView *quadrantView in self.quadrantViews){
         NSArray *subViews = quadrantView.subviews;
         for(ItemView *subView in subViews){
             NSInteger ratioRadius = RADAR_RATIO*subView.radius;
-            if(ratioRadius > innerRadius && ratioRadius < outerRadius) {
+            if(ratioRadius > inRadius && ratioRadius < outRadius) {
                 [UIView animateWithDuration:0.3 animations:^() {
                     subView.alpha = 1.0;
                 }];
@@ -45,7 +47,8 @@
     for(QuadrantView *quadrantView in self.quadrantViews){
         NSArray *subViews = quadrantView.subviews;
         for(ItemView *subView in subViews){
-            if(subView.alpha == 0.0){
+            NSInteger ratioRadius = RADAR_RATIO*subView.radius;
+            if(subView.alpha == 0.0 && ratioRadius > innerRadius && ratioRadius < outerRadius){
                 [UIView animateWithDuration:0.3 animations:^() {
                     subView.alpha = 1.0;
                 }];
@@ -54,21 +57,37 @@
     }    
 }
 
+-(void) highlightSelectedBarButton :(UIBarButtonItem *) barButton {
+    if(selectedButton != NULL){
+        [selectedButton setTintColor:barButtonColor];
+    }else {
+        barButtonColor = selectedButton.tintColor;
+    }
+    selectedButton = barButton;
+    [selectedButton setTintColor:[UIColor darkGrayColor]];
+}
+
 -(IBAction) adopt:(UIBarButtonItem *)adoptButtobarButtonItem{
+    [self highlightSelectedBarButton:adoptButtobarButtonItem];
     [self hideCircle:0.0 AndOuter:150.0*RADAR_RATIO];
 }
 
 -(IBAction) trial:(UIBarButtonItem *)barButtonItem{
+    [self highlightSelectedBarButton:barButtonItem];
     [self hideCircle:150.0*RADAR_RATIO AndOuter:275.0*RADAR_RATIO];
 }
 -(IBAction) assess:(UIBarButtonItem *)barButtonItem{
+    [self highlightSelectedBarButton:barButtonItem];
     [self hideCircle:275.0*RADAR_RATIO AndOuter:350.0*RADAR_RATIO];
 }
 
 -(IBAction) hold:(UIBarButtonItem *)barButtonItem{
+    [self highlightSelectedBarButton:barButtonItem];
     [self hideCircle:350.0*RADAR_RATIO AndOuter:400.0*RADAR_RATIO];
 }
+
 -(IBAction) all:(UIBarButtonItem *)barButtonItem{
+    [self highlightSelectedBarButton:barButtonItem];
     self.innerRadius = 0.0;
     self.outerRadius = 400.0;
     [self hideCircle:0.0 AndOuter:400.0*RADAR_RATIO];
@@ -84,15 +103,17 @@
             for(ItemView *subView in subViews){
                 NSString *blipName = [subView blipName];
                 blipName = [blipName lowercaseString];
-                if ([blipName rangeOfString:searchkey].location == NSNotFound) {
-                    [UIView animateWithDuration:0.3 animations:^() {
-                        subView.alpha = 0.0;
-                    }];
-                }else{
-                    [UIView animateWithDuration:0.3 animations:^() {
-                        subView.alpha = 1.0;
-                    }];
-                }
+                NSInteger ratioRadius = RADAR_RATIO*subView.radius;
+                if(ratioRadius > innerRadius && ratioRadius < outerRadius){
+                    if ([blipName rangeOfString:searchkey].location == NSNotFound) {
+                        [UIView animateWithDuration:0.3 animations:^() {
+                            subView.alpha = 0.0;
+                        }];
+                    }else{
+                        [UIView animateWithDuration:0.3 animations:^() {
+                            subView.alpha = 1.0;
+                        }];
+                    }}
             }
         }
     } else {
@@ -101,7 +122,9 @@
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    [self searchRadar:_searchTerm];
+    if([_searchTerm length] > 0) {
+        [self searchRadar:_searchTerm];
+    }
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
@@ -151,7 +174,7 @@
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     controller.modalPresentationStyle= UIModalPresentationFormSheet;
     [self presentModalViewController:controller animated:YES];
-    controller.view.superview.frame = CGRectMake(0, 0, 320, 200);
+    controller.view.superview.frame = CGRectMake(0, 0, 640.0, 480.0);
     controller.view.superview.center = self.view.center;
 }
 
@@ -219,6 +242,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.innerRadius=0.0;
+    self.outerRadius=400.0;
     [[self view] setClipsToBounds:YES];
     _quadrantViews = [[NSMutableArray alloc] init];
     [self addQuadrants];

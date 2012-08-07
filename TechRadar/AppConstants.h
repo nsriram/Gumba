@@ -14,4 +14,5 @@
 @interface AppConstants : NSObject
 +(UIColor*) backgroundColor;
 +(UIColor*) blipColor;
++(UIColor*) barButtonColor;
 @end

@@ -245,7 +245,7 @@ Items that have not moved in two publications of the radar fade and are no longe
                     </view>
                     <tabBarItem key="tabBarItem" title="Technology Radar" id="ecL-lX-AdC"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Technology Radar" id="2yl-ic-qs0"/>
+                    <navigationItem key="navigationItem" id="2yl-ic-qs0"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
