@@ -3,7 +3,7 @@
 @implementation AppConstants
 
 +(UIColor*) backgroundColor{
-    return [UIColor colorWithRed: 70.0/255.0 green: 130.0/255.0 blue: 170.0/255.0 alpha: 0.8];
+    return [UIColor colorWithRed: 70.0/255.0 green: 130.0/255.0 blue: 170.0/255.0 alpha: 0.9];
 }
 
 
@@ -18,8 +18,8 @@
 +(CGGradientRef) backgroundGradient {
     size_t num_locations = 2;
     CGFloat locations[2] = { 0.0, 1.0};
-    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8,  
-        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8 };
+    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.9,  
+        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.9 };
     return CGGradientCreateWithColorComponents (CGColorSpaceCreateDeviceRGB(),components,locations,num_locations);
 }
 @end

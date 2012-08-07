@@ -2,12 +2,13 @@
 #import "AppConstants.h"
 
 @implementation Item
-@synthesize name= _name,index = _index,theta = _theta, radius = _radius;
+@synthesize name= _name,index = _index,theta = _theta, radius = _radius, tip =_tip;
 
--(id) initWithName:(NSString*)name Index:(NSInteger)index Radius:(NSInteger)radius End:(NSInteger)theta{
+-(id) initWithName:(NSString*)name Tip:(NSString*)tip Index:(NSInteger)index Radius:(NSInteger)radius End:(NSInteger)theta{
     self =   [super init];
     if(self){
         _name = name;
+        _tip = tip;
         _index = index;
         _theta = theta;
         _radius = radius;
