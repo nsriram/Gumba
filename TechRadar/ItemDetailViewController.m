@@ -13,16 +13,25 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - View lifecycle
+- (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
+
+-(void) bindSwipeRight {
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizer];
+}
 
 - (void)viewDidLoad {
-    NSLog(@"view loading");
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];        
+    [self bindSwipeRight];
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
 }
+
 
 - (void)viewDidUnload {
     [super viewDidUnload];

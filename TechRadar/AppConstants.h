@@ -15,4 +15,5 @@
 +(UIColor*) backgroundColor;
 +(UIColor*) blipColor;
 +(UIColor*) barButtonColor;
++(CGGradientRef) backgroundGradient;
 @end

@@ -95,14 +95,7 @@
 }
 
 -(void) drawBackgroundGradient : (CGContextRef) context{
-    size_t num_locations = 2;
-    CGFloat locations[2] = { 0.0, 1.0};
-    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8,  
-        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.8 };
-    CGGradientRef myGradient = CGGradientCreateWithColorComponents (CGColorSpaceCreateDeviceRGB(), 
-                                                                    components,locations, 
-                                                                    num_locations);
-    CGContextDrawLinearGradient (context, myGradient, CGPointMake(0.0, 0.0), 
+    CGContextDrawLinearGradient (context, [AppConstants backgroundGradient], CGPointMake(0.0, 0.0), 
                                  CGPointMake(self.frame.size.width, self.frame.size.height), 0);
 }
 
