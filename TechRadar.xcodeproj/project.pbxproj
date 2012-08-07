@@ -19,6 +19,7 @@
 		C310A8E415011447003BF6B7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */; };
 		C310A8E715011447003BF6B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C310A8E615011447003BF6B7 /* ViewController.m */; };
 		C310A8EF15011503003BF6B7 /* QuadrantView.m in Sources */ = {isa = PBXBuildFile; fileRef = C310A8EE15011503003BF6B7 /* QuadrantView.m */; };
+		C34A032515D1666B0068A84F /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C34A032415D1666B0068A84F /* ItemDetailViewController.m */; };
 		C3500CE415B59BD9006465C5 /* Quadrant.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CE315B59BD9006465C5 /* Quadrant.m */; };
 		C3500CE915B5ADB8006465C5 /* Radar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3500CE815B5ADB8006465C5 /* Radar.m */; };
 		C3500CEB15B5B8A3006465C5 /* radar.json in Resources */ = {isa = PBXBuildFile; fileRef = C3500CEA15B5B8A3006465C5 /* radar.json */; };
@@ -67,6 +68,8 @@
 		C310A8E615011447003BF6B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C310A8ED15011503003BF6B7 /* QuadrantView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuadrantView.h; path = TechRadar/QuadrantView.h; sourceTree = "<group>"; };
 		C310A8EE15011503003BF6B7 /* QuadrantView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuadrantView.m; path = TechRadar/QuadrantView.m; sourceTree = "<group>"; };
+		C34A032315D1666A0068A84F /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		C34A032415D1666B0068A84F /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
 		C3500CE215B59BD9006465C5 /* Quadrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadrant.h; sourceTree = "<group>"; };
 		C3500CE315B59BD9006465C5 /* Quadrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quadrant.m; sourceTree = "<group>"; };
 		C3500CE715B5ADB8006465C5 /* Radar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radar.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				C366E08615BD1729006209B3 /* RadarItemDetailViewController.m */,
 				C3E982E415C06DF300FD0DD3 /* DashboardViewController.h */,
 				C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */,
+				C34A032315D1666A0068A84F /* ItemDetailViewController.h */,
+				C34A032415D1666B0068A84F /* ItemDetailViewController.m */,
 				C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */,
 				C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */,
 			);
@@ -357,6 +362,7 @@
 				C366E08815BD1729006209B3 /* RadarItemDetailViewController.m in Sources */,
 				C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */,
 				C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */,
+				C34A032515D1666B0068A84F /* ItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,7 @@
 #import "Radar.h"
 #import "AppConstants.h"
 #import "RadarItemDetailViewController.h"
+#import "ItemDetailViewController.h"
 
 @interface ViewController()
 @property (nonatomic, assign) CGFloat lastScale;
@@ -22,10 +23,52 @@
 @synthesize selectedButton;
 @synthesize barButtonColor;
 
+-(void) showAllItems {
+    for(QuadrantView *quadrantView in self.quadrantViews){
+        NSArray *subViews = quadrantView.subviews;
+        for(ItemView *subView in subViews){
+            NSInteger ratioRadius = RADAR_RATIO*subView.radius;
+            if(subView.alpha == 0.0 && ratioRadius > innerRadius && ratioRadius < outerRadius){
+                [UIView animateWithDuration:0.3 animations:^() {
+                    subView.alpha = 1.0;
+                }];
+            }
+        }
+    }    
+}
+
+-(void) searchRadar:(NSString*) searchkey {
+    searchkey = [searchkey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+    searchkey = [searchkey lowercaseString];
+    _searchTerm = searchkey;
+    if([searchkey length] != 0) {
+        for(QuadrantView *quadrantView in self.quadrantViews){
+            NSArray *subViews = quadrantView.subviews;
+            for(ItemView *subView in subViews){
+                NSString *blipName = [subView blipName];
+                blipName = [blipName lowercaseString];
+                NSInteger ratioRadius = RADAR_RATIO*subView.radius;
+                if(ratioRadius > innerRadius && ratioRadius < outerRadius){
+                    if ([blipName rangeOfString:searchkey].location == NSNotFound) {
+                        [UIView animateWithDuration:0.3 animations:^() {
+                            subView.alpha = 0.0;
+                        }];
+                    }else{
+                        [UIView animateWithDuration:0.3 animations:^() {
+                            subView.alpha = 1.0;
+                        }];
+                    }}
+            }
+        }
+    } else {
+        [self showAllItems];
+    }
+}
+
 -(void) hideCircle:(NSInteger) inRadius AndOuter:(NSInteger) outRadius{
-    self.innerRadius = innerRadius;
-    self.outerRadius= outerRadius;
-    
+    self.innerRadius = inRadius;
+    self.outerRadius= outRadius;
+        
     for(QuadrantView *quadrantView in self.quadrantViews){
         NSArray *subViews = quadrantView.subviews;
         for(ItemView *subView in subViews){
@@ -41,20 +84,6 @@
             }
         }
     }
-}
-
--(void) showAllItems {
-    for(QuadrantView *quadrantView in self.quadrantViews){
-        NSArray *subViews = quadrantView.subviews;
-        for(ItemView *subView in subViews){
-            NSInteger ratioRadius = RADAR_RATIO*subView.radius;
-            if(subView.alpha == 0.0 && ratioRadius > innerRadius && ratioRadius < outerRadius){
-                [UIView animateWithDuration:0.3 animations:^() {
-                    subView.alpha = 1.0;
-                }];
-            }
-        }
-    }    
 }
 
 -(void) highlightSelectedBarButton :(UIBarButtonItem *) barButton {
@@ -91,34 +120,6 @@
     self.innerRadius = 0.0;
     self.outerRadius = 400.0;
     [self hideCircle:0.0 AndOuter:400.0*RADAR_RATIO];
-}
-
--(void) searchRadar:(NSString*) searchkey {
-    searchkey = [searchkey stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
-    searchkey = [searchkey lowercaseString];
-    _searchTerm = searchkey;
-    if([searchkey length] != 0) {
-        for(QuadrantView *quadrantView in self.quadrantViews){
-            NSArray *subViews = quadrantView.subviews;
-            for(ItemView *subView in subViews){
-                NSString *blipName = [subView blipName];
-                blipName = [blipName lowercaseString];
-                NSInteger ratioRadius = RADAR_RATIO*subView.radius;
-                if(ratioRadius > innerRadius && ratioRadius < outerRadius){
-                    if ([blipName rangeOfString:searchkey].location == NSNotFound) {
-                        [UIView animateWithDuration:0.3 animations:^() {
-                            subView.alpha = 0.0;
-                        }];
-                    }else{
-                        [UIView animateWithDuration:0.3 animations:^() {
-                            subView.alpha = 1.0;
-                        }];
-                    }}
-            }
-        }
-    } else {
-        [self showAllItems];
-    }
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
@@ -164,8 +165,15 @@
         [quadrantView resize:self.navigationItem];
     }
 }
-
 -(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
+    ItemDetailViewController *itemDetailViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];    
+    ItemView *itemView = (ItemView *)sender.view;
+    itemDetailViewController.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
+    itemDetailViewController.imageText = itemView.type;    
+    [self.navigationController pushViewController:itemDetailViewController animated:YES];    
+}
+
+-(IBAction) displayItemDetailsAsPopup:(UIGestureRecognizer*)sender {
     ItemView *itemView = (ItemView *)sender.view;
     RadarItemDetailViewController *controller = [[RadarItemDetailViewController alloc]init];
     controller.delegate=self;
