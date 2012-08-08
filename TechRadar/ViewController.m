@@ -251,8 +251,19 @@
         [self hideCircle:self.innerRadius AndOuter:self.outerRadius];
 }
 
+- (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
+
+-(void) bindSwipeRight {
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizer];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self bindSwipeRight];
     self.innerRadius=0.0;
     self.outerRadius=400.0;
     [[self view] setClipsToBounds:YES];
