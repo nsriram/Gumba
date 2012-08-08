@@ -15,6 +15,7 @@
     CGContextAddArc(context, x, radius*.9, radius*.8, 0, 2*M_PI, YES);
     CGContextSetFillColorWithColor(context, [[AppConstants blipColor] CGColor]);
     CGContextSetStrokeColorWithColor(context, [[AppConstants blipColor] CGColor]);
+    CGContextSetShadow(context, CGSizeMake(2.0f, 2.0f), 2.0f);
     CGContextDrawPath(context, kCGPathFillStroke);
     if(!self.isMinized) {
         UIFont *font = [UIFont systemFontOfSize:10.5];
