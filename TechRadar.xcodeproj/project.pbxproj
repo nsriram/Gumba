@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		38EEBFB61590F41F00367FEA /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEBFB51590F41F00367FEA /* CircleView.m */; };
 		51451CCC15C0830200E4C555 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 51451CCB15C0830200E4C555 /* Default-Portrait.png */; };
-		516E58CE15D1A1AD00A2369D /* circle_back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 516E58CD15D1A1AD00A2369D /* circle_back.jpg */; };
+		515AC8F415D2D39A00639789 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 515AC8F315D2D39A00639789 /* background.jpg */; };
 		516E58D215D1A4A600A2369D /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 516E58D115D1A4A600A2369D /* circle.png */; };
 		C301ABD1150B12B700272284 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C301ABD0150B12B700272284 /* QuartzCore.framework */; };
 		C310A8D115011447003BF6B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D015011447003BF6B7 /* UIKit.framework */; };
@@ -54,7 +54,7 @@
 		38EEBFB41590F41F00367FEA /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleView.h; path = TechRadar/CircleView.h; sourceTree = "<group>"; };
 		38EEBFB51590F41F00367FEA /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleView.m; path = TechRadar/CircleView.m; sourceTree = "<group>"; };
 		51451CCB15C0830200E4C555 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
-		516E58CD15D1A1AD00A2369D /* circle_back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circle_back.jpg; sourceTree = "<group>"; };
+		515AC8F315D2D39A00639789 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		516E58D115D1A4A600A2369D /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		C301ABD0150B12B700272284 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C310A8CC15011447003BF6B7 /* TechRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +175,7 @@
 				C3E982DE15C063E200FD0DD3 /* t.png */,
 				516E58D115D1A4A600A2369D /* circle.png */,
 				51451CCB15C0830200E4C555 /* Default-Portrait.png */,
-				516E58CD15D1A1AD00A2369D /* circle_back.jpg */,
+				515AC8F315D2D39A00639789 /* background.jpg */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
 				C366E08715BD1729006209B3 /* RadarItemDetailViewController.xib */,
 				C3500CEA15B5B8A3006465C5 /* radar.json */,
@@ -332,8 +332,8 @@
 				C3E982DF15C063E200FD0DD3 /* t.png in Resources */,
 				C3E982E115C063EA00FD0DD3 /* c.png in Resources */,
 				51451CCC15C0830200E4C555 /* Default-Portrait.png in Resources */,
-				516E58CE15D1A1AD00A2369D /* circle_back.jpg in Resources */,
 				516E58D215D1A4A600A2369D /* circle.png in Resources */,
+				515AC8F415D2D39A00639789 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 @synthesize center, frameOrigin, quadrant = _quadrant;
 
 - (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
-    [[UIColor whiteColor] set];
+    [[UIColor blackColor] set];
     UIFont *font = [UIFont systemFontOfSize:18];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x +width, self.center.y+distance);
@@ -66,7 +66,7 @@
     }
     
     UIGraphicsPushContext(context);
-    [[UIColor whiteColor] set]; 
+    [[UIColor blackColor] set];
     UIFont *font = [UIFont systemFontOfSize:20];
     CGPoint textPoint = CGPointMake(labelX,labelY);
     [[_quadrant name] drawAtPoint:textPoint withFont:font];
@@ -145,7 +145,7 @@
     CGRect    myFrame = self.bounds;
     CGContextSetLineWidth(context, 1);
     CGRectInset(myFrame, 2, 2);
-    [[UIColor whiteColor] set];
+    [[UIColor blackColor] set];
     UIRectFrame(myFrame);
     
     [self drawArcTitles:context withTitle:@"Adopt" Width:80.0*RADAR_RATIO Height:130.0*RADAR_RATIO];

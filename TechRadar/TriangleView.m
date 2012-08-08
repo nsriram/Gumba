@@ -25,6 +25,7 @@
     CGContextAddPath(context, a_path);
     
     CGContextSetFillColorWithColor(context, [[AppConstants blipColor] CGColor]);
+    CGContextSetShadow(context, CGSizeMake(1.0f, 4.0f), 2.0f);
     CGContextFillPath(context);
     CGPathRelease(a_path);    
     if(!self.isMinized) {
