@@ -3,7 +3,7 @@
 @implementation AppConstants
 
 +(UIColor*) backgroundColor{
-    return [UIColor colorWithRed: 70.0/255.0 green: 130.0/255.0 blue: 170.0/255.0 alpha: 0.9];
+    return [UIColor colorWithRed: 231.0/255.0 green: 231.0/255.0 blue: 232.0/255.0 alpha: 0.9];
 }
 
 +(UIColor*) barButtonColor{
