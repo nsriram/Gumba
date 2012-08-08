@@ -189,6 +189,9 @@
 -(void) bindQuadrantTwoFingerPinch :(QuadrantView*)quadrantView {
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
     [quadrantView addGestureRecognizer:twoFingerPinch];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)];
+    singleTap.numberOfTapsRequired = 1;
+    [quadrantView addGestureRecognizer:singleTap];
 }
 
 -(void) bindItemTap: (QuadrantView*)quadrantView {
