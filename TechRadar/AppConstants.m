@@ -3,7 +3,7 @@
 @implementation AppConstants
 
 +(UIColor*) backgroundColor{
-    return [UIColor colorWithRed: 231.0/255.0 green: 231.0/255.0 blue: 232.0/255.0 alpha: 0.9];
+    return [UIColor colorWithRed: 70.0/255.0 green: 130.0/255.0 blue: 170.0/255.0 alpha: 0.9];
 }
 
 +(UIColor*) barButtonColor{
@@ -11,14 +11,14 @@
 }
 
 +(UIColor*) blipColor{
-    return [UIColor colorWithRed: 69/255.0 green: 170.0/255.0 blue: 225.0/255.0 alpha: 1.0];
+    return [UIColor colorWithRed: 255/255.0 green: 255.0/255.0 blue: 244.0/255.0 alpha: 1.0];
 }
 
 +(CGGradientRef) backgroundGradient {
     size_t num_locations = 2;
     CGFloat locations[2] = { 0.0, 1.0};
-    CGFloat components[12] = {  231.0/255.0, 231.0/255.0, 232.0/255.0, 0.9,
-        218.0/255.0, 219.0/255.0, 220.0/255.0, 0.9 };
+    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.9,
+        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.9 };
     return CGGradientCreateWithColorComponents (CGColorSpaceCreateDeviceRGB(),components,locations,num_locations);
 }
 @end
