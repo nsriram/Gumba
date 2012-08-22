@@ -169,6 +169,7 @@
     ItemDetailViewController *itemDetailViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];    
     ItemView *itemView = (ItemView *)sender.view;
     itemDetailViewController.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
+    itemDetailViewController.descriptionText = itemView.description;
     itemDetailViewController.imageText = itemView.type;    
     [self.navigationController pushViewController:itemDetailViewController animated:YES];    
 }

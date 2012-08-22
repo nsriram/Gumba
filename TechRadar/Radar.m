@@ -7,6 +7,7 @@
 #define RADAR_DATA @"radar_data"
 #define NAME @"name"
 #define TIP @"tip"
+#define DESCRIPTION @"description"
 #define START @"start"
 #define END @"end"
 #define PC @"pc"
@@ -39,10 +40,11 @@
 + (Item *)item:(NSMutableDictionary *)radarItem index:(int)i{
     NSString *itemName = [radarItem objectForKey:NAME];
     NSString *itemTip = [radarItem objectForKey:TIP];
+    NSString *itemDesc = [radarItem objectForKey:DESCRIPTION];
     NSMutableDictionary *itemPosition = [radarItem objectForKey:PC];
     NSInteger itemRadius = [[itemPosition objectForKey:R] integerValue];
     NSInteger itemTheta = [[itemPosition objectForKey:T] integerValue];
-    return [[Item alloc] initWithName:itemName Tip:itemTip Index:i Radius:itemRadius End:itemTheta];
+    return [[Item alloc] initWithName:itemName Tip:itemTip Description:itemDesc Index:i Radius:itemRadius End:itemTheta];
 }
 
 + (Quadrant *)quadrant:(NSMutableDictionary *)radarQuadrant allPoints:(NSMutableArray *)allPoints {

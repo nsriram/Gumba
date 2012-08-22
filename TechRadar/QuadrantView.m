@@ -56,13 +56,14 @@
 
 -(void) drawQuadrantLabelInContext:(CGContextRef)context{
     float labelX = self.frame.size.width/3.0;
-    float labelYDelta = 60.0;
+    float labelYDeltaTop = 20.0;
+    float labelYDeltaBottom = 60.0;
     float labelY=0;
     
     if(self.frameOrigin.y == Y_OFFSET){
-        labelY = labelYDelta;
+        labelY = labelYDeltaTop;
     } else {
-        labelY = self.frame.size.height - labelYDelta;
+        labelY = self.frame.size.height - labelYDeltaBottom;
     }
     
     UIGraphicsPushContext(context);
@@ -114,7 +115,7 @@
     for(Item *circle in circles){
         CGPoint point = [self adjustPoint:[circle raster]];
         CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
-        CircleView *circleView = [[CircleView alloc] initWithFrame:someRect Entry:[circle index] Tip:[circle tip]  Blip:[circle name] Type:@"c.png" Radius:[circle radius]];
+        CircleView *circleView = [[CircleView alloc] initWithFrame:someRect Entry:[circle index] Tip:[circle tip]  Description:[circle description] Blip:[circle name] Type:@"c.png" Radius:[circle radius]];
         [self insertSubview:circleView atIndex:0];
     }
 }
@@ -124,7 +125,7 @@
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
         CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
-        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect Entry:[triangle index] Tip:[triangle tip] Blip:[triangle name] Type:@"t.png" Radius:[triangle radius]];
+        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect Entry:[triangle index] Tip:[triangle tip] Description:[triangle description] Blip:[triangle name] Type:@"t.png" Radius:[triangle radius]];
         [self insertSubview:triangleView atIndex:0];
     }
 }

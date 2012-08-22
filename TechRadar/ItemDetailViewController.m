@@ -2,7 +2,7 @@
 #import "AppConstants.h"
 
 @implementation ItemDetailViewController
-@synthesize detail,detailText,itemType,imageText;
+@synthesize detail,description, descriptionText, detailText,itemType,imageText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +29,10 @@
     [self bindSwipeRight];
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
+    [self.description setBackgroundColor:[AppConstants backgroundColor]];
+    [self.description setText:descriptionText];
+    [self.description setFont:[UIFont systemFontOfSize:24.0]];
+    [self.description setTextColor:[UIColor whiteColor]];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
 }
 

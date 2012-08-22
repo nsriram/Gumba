@@ -1,7 +1,8 @@
 #import "AboutRadarController.h"
+#import "AppConstants.h"
 
 @implementation AboutRadarController
-
+@synthesize detail;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,13 +26,13 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[AppConstants backgroundColor]];
+    [self.detail setBackgroundColor:[AppConstants backgroundColor]];
+    [self.detail setFont:[UIFont systemFontOfSize:18.0]];
+    [self.detail setTextColor:[UIColor whiteColor]];
 }
-*/
 
 - (void)viewDidUnload {
     [super viewDidUnload];
