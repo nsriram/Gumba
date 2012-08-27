@@ -13,6 +13,7 @@
 
 @interface AppConstants : NSObject
 +(UIColor*) backgroundColor;
++(UIColor*) detailBackgroundColor;
 +(UIColor*) blipColor;
 +(UIColor*) barButtonColor;
 +(CGGradientRef) backgroundGradient;

@@ -6,6 +6,11 @@
     return [UIColor colorWithRed: 70.0/255.0 green: 130.0/255.0 blue: 170.0/255.0 alpha: 0.9];
 }
 
+
++(UIColor*) detailBackgroundColor{
+    return [UIColor colorWithRed: 63.0/255.0 green: 117.0/255.0 blue: 153.0/255.0 alpha: 0.9];
+}
+
 +(UIColor*) barButtonColor{
     return [UIColor colorWithRed: 55/255.0 green: 56.0/255.0 blue: 60.0/255.0 alpha: 1.0];
 }

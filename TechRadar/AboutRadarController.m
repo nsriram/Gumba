@@ -9,27 +9,14 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
-
-#pragma mark - View lifecycle
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[AppConstants backgroundColor]];
-    [self.detail setBackgroundColor:[AppConstants backgroundColor]];
+    [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
+    [self.detail setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.detail setFont:[UIFont systemFontOfSize:18.0]];
     [self.detail setTextColor:[UIColor whiteColor]];
 }

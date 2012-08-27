@@ -29,7 +29,7 @@
     [self bindSwipeRight];
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
-    [self.description setBackgroundColor:[AppConstants backgroundColor]];
+    [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:descriptionText];
     [self.description setFont:[UIFont systemFontOfSize:24.0]];
     [self.description setTextColor:[UIColor whiteColor]];
