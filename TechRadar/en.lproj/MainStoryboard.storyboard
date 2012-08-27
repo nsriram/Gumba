@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wGV-6c-hR4">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wGV-6c-hR4">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--Dashboard View Controller - Technology Radar-->
         <scene sceneID="0jb-IF-ERZ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEc-tB-ZdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,6 +98,7 @@
             </objects>
             <point key="canvasLocation" x="-172" y="-1334"/>
         </scene>
+        <!--About Radar Controller - About Technology Radar-->
         <scene sceneID="2Wt-aq-6M8">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibr-OG-tnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,30 +108,66 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="Q4s-J5-mS7">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="228"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <string key="text">The ThoughtWorks Technology Advisory Board is a group of senior technology leaders within ThoughtWorks. They produce the ThoughtWorks Technology Radar to help decision makers understand emerging technologies and trends that affect the market today.
 
-The goal of the radar is conciseness, so that its target audience understands it quickly. The radar is graphical in nature, grouping items into techniques, tools, languages and platforms. 
-
-Technology Radar Rings
-
-Adopt: We feel strongly that the industry should be adopting these items. We use them when appropriate on our projects.
+The goal of the radar is conciseness, so that its target audience understands it quickly. The radar is graphical in nature, grouping items into techniques, tools, languages and platforms. </string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="WaZ-pZ-kho">
+                                <rect key="frame" x="0.0" y="308" width="768" height="276"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <string key="text">Adopt: We feel strongly that the industry should be adopting these items. We use them when appropriate on our projects.
 
 Trial: Worth pursuing. It is important to understand how to build up this capability. Enterprises should try this technology on a project that can handle the risk.
 
 Assess: Worth exploring with the goal of understanding how it will affect your enterprise.
 
 Hold: Proceed with caution.
+</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="uCx-5r-Ad3">
+                                <rect key="frame" x="0.0" y="644" width="768" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <string key="text">Triangles : Representation of Items that are new or have moved since the last radar.
 
-Technology Radar Items
-
-Triangles : Representation of Items that are new or have moved since the last radar.
-Circles  : Items that have not moved since the last radar.
-
-Note: Items that have not moved in two publications of the radar fade and are no longer displayed unless something significant happens.</string>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
+Circles  : Items that have not moved since the last radar.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="k7V-mZ-ZGh">
+                                <rect key="frame" x="0.0" y="752" width="768" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <string key="text">Note: Items that have not moved in two publications of the radar fade and are no longer displayed unless something significant happens.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Technology Radar Rings" textAlignment="center" id="ae6-km-yW5">
+                                <rect key="frame" x="0.0" y="256" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Technology Radar Items" textAlignment="center" id="jWx-h5-6Sd">
+                                <rect key="frame" x="0.0" y="592" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -144,6 +181,7 @@ Note: Items that have not moved in two publications of the radar fade and are no
             </objects>
             <point key="canvasLocation" x="-184" y="-190"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Tba-iB-rAx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqj-7l-ye8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,6 +200,7 @@ Note: Items that have not moved in two publications of the radar fade and are no
             </objects>
             <point key="canvasLocation" x="-1195" y="-1334"/>
         </scene>
+        <!--Item Detail View Controller-->
         <scene sceneID="KvD-YT-BRS">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRg-2D-5Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,20 +209,20 @@ Note: Items that have not moved in two publications of the radar fade and are no
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" text="Radar Item" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" minimumFontSize="10" id="jUJ-ys-wnV">
-                                <rect key="frame" x="199" y="28" width="518" height="111"/>
+                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" text="Radar Item" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" minimumFontSize="10" adjustsFontSizeToFit="NO" id="jUJ-ys-wnV">
+                                <rect key="frame" x="86" y="27" width="597" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5zP-H1-jdh">
-                                <rect key="frame" x="52" y="20" width="96" height="96"/>
+                                <rect key="frame" x="20" y="59" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="Vzt-76-3rW">
-                                <rect key="frame" x="52" y="187" width="665" height="737"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW">
+                                <rect key="frame" x="20" y="187" width="728" height="391"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
@@ -201,6 +240,7 @@ Note: Items that have not moved in two publications of the radar fade and are no
             </objects>
             <point key="canvasLocation" x="-1195" y="-2504"/>
         </scene>
+        <!--View Controller - Technology Radar-->
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -310,6 +350,8 @@ Note: Items that have not moved in two publications of the radar fade and are no
                 <relationship kind="action" name="adopt:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="all:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="assess:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
+                <relationship kind="action" name="displayItemDetailsAsPopup:" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="action" name="hold:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="trial:" candidateClass="UIBarButtonItem"/>
             </relationships>

@@ -13,12 +13,20 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
+
+-(void) bindSwipeRight {
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizer];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self.detail setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self.detail setFont:[UIFont systemFontOfSize:18.0]];
-    [self.detail setTextColor:[UIColor whiteColor]];
+    [self bindSwipeRight];    
 }
 
 - (void)viewDidUnload {

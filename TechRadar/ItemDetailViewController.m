@@ -31,7 +31,7 @@
     [self.detail setNumberOfLines:0];
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:descriptionText];
-    [self.description setFont:[UIFont systemFontOfSize:24.0]];
+    [self.description setFont:[UIFont fontWithName:@"Times New Roman" size:22]];
     [self.description setTextColor:[UIColor whiteColor]];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
 }
