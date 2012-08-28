@@ -3,4 +3,5 @@
 @interface DashboardViewController : UIViewController
 -(IBAction) currentRadar:(UIButton *)current;
 -(IBAction) aboutRadar:(UIButton *)current;
+-(IBAction) aboutTW:(UIButton *)current;
 @end

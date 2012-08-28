@@ -56,6 +56,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="aboutTW:" destination="DH0-nB-Mfb" eventType="touchDown" id="lb6-JB-6qs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OyM-UB-4rG">
                                 <rect key="frame" x="85" y="430" width="110" height="110"/>
@@ -98,28 +101,90 @@
             </objects>
             <point key="canvasLocation" x="-172" y="-1334"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3F8-Yj-pIf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hc3-fK-hqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="TWViewController" id="4Cu-yI-pZi" customClass="TWViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQv-Go-Fpg">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="corporate_logo.png" id="TFk-4j-FWp">
+                                <rect key="frame" x="296" y="15" width="176" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="7aW-Do-6bI">
+                                <rect key="frame" x="20" y="50" width="728" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">ThoughtWorks is not your typical company. Talented, driven and principled people who are passionate about software, brought together because they want to do something amazing.
+
+ThoughtWorks was founded by Roy Singham in a Chicago basement in 1993. Roy's formula for success from the start was "Attitude, Aptitude, and Integrity" – he built ThoughtWorks upon the firm belief that communities of talented, driven, and principled people could move mountains.
+
+Today we employ over 1700 people across the globe. With a reputation as leaders and experts in the industry, we’ve become a destination employer for like-minded people with a passion to improve how businesses design, build and evolve software.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="people.jpg" id="dcy-4G-cyA">
+                                <rect key="frame" x="164" y="305" width="440" height="327"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="AJQ-W7-2zx">
+                                <rect key="frame" x="20" y="655" width="728" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Amazing work for our clients is the front line, revolutionizing the way the industry works is a gradual effect, improving society through software is our long term goal. Our customers start seeing benefits in weeks, not months or years, a radical change for some clients and partners.
+
+Software development with ThoughtWorks feels and looks different: it is fast, evolutionary, even fun. We take good ideas – best practices like collaboration, feedback, transparency, and testing – and we build them into the fabric of the way we work. We've spent years, and many early mistakes, building up the set of ThoughtWorks’ core capabilities - reusable approaches that we believe to be world class. Of course, every problem is different, and our commitment to satisfying our clients far outstrips any affinity to a set of practices.
+
+We are based in the United States, UK, Australia, Brazil, Canada, Germany, India and China and we work with clients from each location.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="© 2012 ThoughtWorks, Inc. | Privacy policy" textAlignment="center" id="SZB-Jf-JCr">
+                                <rect key="frame" x="264" y="958" width="240" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="peopleImage" destination="dcy-4G-cyA" id="8uN-sg-4aL"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="772" y="-2542"/>
+        </scene>
         <!--About Radar Controller - About Technology Radar-->
         <scene sceneID="2Wt-aq-6M8">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibr-OG-tnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AboutRadarController" title="About Technology Radar" id="6mS-1w-1wn" customClass="AboutRadarController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PSa-6w-rh0">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="Q4s-J5-mS7">
-                                <rect key="frame" x="0.0" y="20" width="768" height="228"/>
+                                <rect key="frame" x="20" y="20" width="728" height="153"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <string key="text">The ThoughtWorks Technology Advisory Board is a group of senior technology leaders within ThoughtWorks. They produce the ThoughtWorks Technology Radar to help decision makers understand emerging technologies and trends that affect the market today.
 
 The goal of the radar is conciseness, so that its target audience understands it quickly. The radar is graphical in nature, grouping items into techniques, tools, languages and platforms. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="WaZ-pZ-kho">
-                                <rect key="frame" x="0.0" y="308" width="768" height="276"/>
+                                <rect key="frame" x="20" y="243" width="728" height="265"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <string key="text">Adopt: We feel strongly that the industry should be adopting these items. We use them when appropriate on our projects.
@@ -131,31 +196,31 @@ Assess: Worth exploring with the goal of understanding how it will affect your e
 Hold: Proceed with caution.
 </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="uCx-5r-Ad3">
-                                <rect key="frame" x="0.0" y="644" width="768" height="100"/>
+                                <rect key="frame" x="20" y="524" width="728" height="131"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <string key="text">Triangles : Representation of Items that are new or have moved since the last radar.
 
 Circles  : Items that have not moved since the last radar.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="k7V-mZ-ZGh">
-                                <rect key="frame" x="0.0" y="752" width="768" height="70"/>
+                                <rect key="frame" x="20" y="619" width="728" height="63"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <string key="text">Note: Items that have not moved in two publications of the radar fade and are no longer displayed unless something significant happens.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Technology Radar Rings" textAlignment="center" id="ae6-km-yW5">
-                                <rect key="frame" x="0.0" y="256" width="768" height="44"/>
+                                <rect key="frame" x="20" y="181" width="728" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,7 +228,7 @@ Circles  : Items that have not moved since the last radar.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Technology Radar Items" textAlignment="center" id="jWx-h5-6Sd">
-                                <rect key="frame" x="0.0" y="592" width="768" height="44"/>
+                                <rect key="frame" x="20" y="472" width="728" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,7 +238,8 @@ Circles  : Items that have not moved since the last radar.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detail" destination="Q4s-J5-mS7" id="wKn-vd-Ofs"/>
                     </connections>
@@ -185,20 +251,24 @@ Circles  : Items that have not moved since the last radar.</string>
         <scene sceneID="Tba-iB-rAx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqj-7l-ye8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="wGV-6c-hR4" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="wGV-6c-hR4" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="RLD-Un-c9c">
                         <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SSK-N2-JoB">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="DH0-nB-Mfb" kind="relationship" relationship="rootViewController" id="8GA-0b-AIp"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1195" y="-1334"/>
+            <point key="canvasLocation" x="-1099" y="-1322"/>
         </scene>
         <!--Item Detail View Controller-->
         <scene sceneID="KvD-YT-BRS">
@@ -238,7 +308,7 @@ Circles  : Items that have not moved since the last radar.</string>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1195" y="-2504"/>
+            <point key="canvasLocation" x="-1099" y="-2542"/>
         </scene>
         <!--View Controller - Technology Radar-->
         <scene sceneID="4">
@@ -321,6 +391,8 @@ Circles  : Items that have not moved since the last radar.</string>
     </scenes>
     <resources>
         <image name="circle.png" width="1233" height="1135"/>
+        <image name="corporate_logo.png" width="176" height="27"/>
+        <image name="people.jpg" width="440" height="327"/>
     </resources>
     <classes>
         <class className="AboutRadarController" superclassName="UIViewController">
@@ -333,6 +405,7 @@ Circles  : Items that have not moved since the last radar.</string>
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
             <relationships>
                 <relationship kind="action" name="aboutRadar:" candidateClass="UIButton"/>
+                <relationship kind="action" name="aboutTW:" candidateClass="UIButton"/>
                 <relationship kind="action" name="currentRadar:" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -342,6 +415,12 @@ Circles  : Items that have not moved since the last radar.</string>
                 <relationship kind="outlet" name="description" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="detail" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="itemType" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TWViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TWViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="peopleImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

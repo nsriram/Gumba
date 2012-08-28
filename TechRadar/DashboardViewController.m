@@ -17,6 +17,12 @@
     [self.navigationController pushViewController:viewController animated:YES];    
 }
 
+-(IBAction) aboutTW:(UIButton *)current {
+    ViewController *viewController =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"TWViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     return self;

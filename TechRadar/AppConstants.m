@@ -3,12 +3,12 @@
 @implementation AppConstants
 
 +(UIColor*) backgroundColor{
-    return [UIColor colorWithRed: 70.0/255.0 green: 130.0/255.0 blue: 170.0/255.0 alpha: 0.9];
+    return [UIColor colorWithRed: 32.0/255.0 green: 134.0/255.0 blue: 174.0/255.0 alpha: 1.0];
 }
 
 
 +(UIColor*) detailBackgroundColor{
-    return [UIColor colorWithRed: 63.0/255.0 green: 117.0/255.0 blue: 153.0/255.0 alpha: 0.9];
+    return [UIColor colorWithRed: 32.0/255.0 green: 134.0/255.0 blue: 174.0/255.0 alpha: 1.0];
 }
 
 +(UIColor*) barButtonColor{
@@ -22,8 +22,8 @@
 +(CGGradientRef) backgroundGradient {
     size_t num_locations = 2;
     CGFloat locations[2] = { 0.0, 1.0};
-    CGFloat components[12] = {  70.0/255.0, 130.0/255.0, 170.0/255.0, 0.9,
-        70.0/255.0, 130.0/255.0, 170.0/255.0, 0.9 };
+    CGFloat components[12] = {  32.0/255.0, 134.0/255.0, 174.0/255.0, 1.0,
+        32.0/255.0, 134.0/255.0, 174.0/255.0, 1.0 };
     return CGGradientCreateWithColorComponents (CGColorSpaceCreateDeviceRGB(),components,locations,num_locations);
 }
 @end
