@@ -4,7 +4,6 @@
 #import "CircleView.h"
 #import "Radar.h"
 #import "AppConstants.h"
-#import "RadarItemDetailViewController.h"
 #import "ItemDetailViewController.h"
 
 @interface ViewController()
@@ -174,19 +173,6 @@
     [self.navigationController pushViewController:itemDetailViewController animated:YES];    
 }
 
--(IBAction) displayItemDetailsAsPopup:(UIGestureRecognizer*)sender {
-    ItemView *itemView = (ItemView *)sender.view;
-    RadarItemDetailViewController *controller = [[RadarItemDetailViewController alloc]init];
-    controller.delegate=self;
-    controller.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
-    controller.imageText = itemView.type;
-    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    controller.modalPresentationStyle= UIModalPresentationFormSheet;
-    [self presentModalViewController:controller animated:YES];
-    controller.view.superview.frame = CGRectMake(0, 0, 640.0, 480.0);
-    controller.view.superview.center = self.view.center;
-}
-
 -(void) bindQuadrantTwoFingerPinch :(QuadrantView*)quadrantView {
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
     [quadrantView addGestureRecognizer:twoFingerPinch];
@@ -243,14 +229,6 @@
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:midPointX Y:midPointY Quadrant:[allQuadrants objectAtIndex:3]] atIndex:1];
 } 
-
--(void) radarItemViewController:(RadarItemDetailViewController*)sender{
-    [self dismissModalViewControllerAnimated:YES];
-    if([_searchTerm length] > 0)
-        [self searchRadar:_searchTerm];
-    if(self.outerRadius > 0.0)
-        [self hideCircle:self.innerRadius AndOuter:self.outerRadius];
-}
 
 - (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
     [self.navigationController popViewControllerAnimated:TRUE];
