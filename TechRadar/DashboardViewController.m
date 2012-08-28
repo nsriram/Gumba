@@ -5,22 +5,26 @@
 
 @implementation DashboardViewController
 
--(IBAction) currentRadar:(UIButton *)current {
+- (void)navigateTo:(NSString*)controllerName {
     ViewController *viewController = 
-    [self.storyboard instantiateViewControllerWithIdentifier:@"CurrentRadarController"];
+    [self.storyboard instantiateViewControllerWithIdentifier:controllerName];
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+-(IBAction) currentRadar:(UIButton *)current {
+    [self navigateTo:@"CurrentRadarController"];
 }
 
 -(IBAction) aboutRadar:(UIButton *)current {
-    ViewController *viewController = 
-    [self.storyboard instantiateViewControllerWithIdentifier:@"AboutRadarController"];
-    [self.navigationController pushViewController:viewController animated:YES];    
+    [self navigateTo:@"AboutRadarController"];
 }
 
 -(IBAction) aboutTW:(UIButton *)current {
-    ViewController *viewController =
-    [self.storyboard instantiateViewControllerWithIdentifier:@"TWViewController"];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self navigateTo:@"TWViewController"];
+}
+
+-(IBAction) reference:(UIButton *)current {
+    [self navigateTo:@"ReferenceViewController"];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
