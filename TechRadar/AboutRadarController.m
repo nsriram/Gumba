@@ -1,5 +1,6 @@
 #import "AboutRadarController.h"
 #import "AppConstants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AboutRadarController
 @synthesize detail;
@@ -25,8 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self bindSwipeRight];    
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"About Radar.jpg"]];
+    [self bindSwipeRight];
 }
 
 - (void)viewDidUnload {
@@ -36,5 +37,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
+
 
 @end

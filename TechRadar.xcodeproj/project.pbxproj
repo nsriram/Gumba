@@ -15,6 +15,7 @@
 		51451CCC15C0830200E4C555 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 51451CCB15C0830200E4C555 /* Default-Portrait.png */; };
 		515AC8F415D2D39A00639789 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 515AC8F315D2D39A00639789 /* background.jpg */; };
 		516E58D215D1A4A600A2369D /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 516E58D115D1A4A600A2369D /* circle.png */; };
+		51E549BA16279BEA00782EAF /* About Radar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51E549B916279BE900782EAF /* About Radar.jpg */; };
 		C301ABD1150B12B700272284 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C301ABD0150B12B700272284 /* QuartzCore.framework */; };
 		C310A8D115011447003BF6B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D015011447003BF6B7 /* UIKit.framework */; };
 		C310A8D315011447003BF6B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D215011447003BF6B7 /* Foundation.framework */; };
@@ -64,6 +65,7 @@
 		51451CCB15C0830200E4C555 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		515AC8F315D2D39A00639789 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		516E58D115D1A4A600A2369D /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		51E549B916279BE900782EAF /* About Radar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "About Radar.jpg"; sourceTree = "<group>"; };
 		C301ABD0150B12B700272284 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C310A8CC15011447003BF6B7 /* TechRadar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechRadar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310A8D015011447003BF6B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -181,6 +183,7 @@
 				516E58D115D1A4A600A2369D /* circle.png */,
 				51451CCB15C0830200E4C555 /* Default-Portrait.png */,
 				515AC8F315D2D39A00639789 /* background.jpg */,
+				51E549B916279BE900782EAF /* About Radar.jpg */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
 				388D0E8715ED16B700D15479 /* people.jpg */,
 				388D0E8515ED15A900D15479 /* corporate_logo.png */,
@@ -343,6 +346,7 @@
 				515AC8F415D2D39A00639789 /* background.jpg in Resources */,
 				388D0E8615ED15A900D15479 /* corporate_logo.png in Resources */,
 				388D0E8815ED16B700D15479 /* people.jpg in Resources */,
+				51E549BA16279BEA00782EAF /* About Radar.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
