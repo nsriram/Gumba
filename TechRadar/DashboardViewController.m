@@ -27,6 +27,10 @@
     [self navigateTo:@"ReferenceViewController"];
 }
 
+-(IBAction) userGuide:(UIButton *)current {
+    [self navigateTo:@"UserGuideViewController"];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     return self;

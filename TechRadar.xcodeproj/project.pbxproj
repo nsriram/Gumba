@@ -47,6 +47,7 @@
 		C3760271151CC66D00D26B46 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760263151CC66D00D26B46 /* SBJsonTokeniser.m */; };
 		C3760272151CC66D00D26B46 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760265151CC66D00D26B46 /* SBJsonUTF8Stream.m */; };
 		C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760267151CC66D00D26B46 /* SBJsonWriter.m */; };
+		C3973F56162B02EE006DF48B /* UserGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3973F55162B02EE006DF48B /* UserGuideViewController.m */; };
 		C3BCFF311590D9A600502AD2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3BCFF301590D9A600502AD2 /* icon.png */; };
 		C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2E715B712A2005DE04B /* AppConstants.m */; };
 		C3DFC2EB15B7C5FD005DE04B /* ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2EA15B7C5FD005DE04B /* ItemView.m */; };
@@ -124,6 +125,8 @@
 		C3760265151CC66D00D26B46 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		C3760266151CC66D00D26B46 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		C3760267151CC66D00D26B46 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		C3973F54162B02EE006DF48B /* UserGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuideViewController.h; sourceTree = "<group>"; };
+		C3973F55162B02EE006DF48B /* UserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuideViewController.m; sourceTree = "<group>"; };
 		C3BCFF301590D9A600502AD2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C3DFC2E615B712A2005DE04B /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		C3DFC2E715B712A2005DE04B /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstants.m; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				388D0E8215ED14B400D15479 /* TWViewController.m */,
 				388D0E8915ED32BD00D15479 /* ReferenceViewController.h */,
 				388D0E8A15ED32BD00D15479 /* ReferenceViewController.m */,
+				C3973F54162B02EE006DF48B /* UserGuideViewController.h */,
+				C3973F55162B02EE006DF48B /* UserGuideViewController.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				C34A032515D1666B0068A84F /* ItemDetailViewController.m in Sources */,
 				388D0E8315ED14B400D15479 /* TWViewController.m in Sources */,
 				388D0E8B15ED32BD00D15479 /* ReferenceViewController.m in Sources */,
+				C3973F56162B02EE006DF48B /* UserGuideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

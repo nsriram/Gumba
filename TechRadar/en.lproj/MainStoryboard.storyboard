@@ -70,6 +70,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="userGuide:" destination="DH0-nB-Mfb" eventType="touchDown" id="dtP-h7-TRR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qjw-fk-udt">
                                 <rect key="frame" x="338" y="662" width="110" height="110"/>
@@ -268,6 +271,20 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
             </objects>
             <point key="canvasLocation" x="-1099" y="-1322"/>
         </scene>
+        <!--User Guide View Controller-->
+        <scene sceneID="6hb-Ry-AbX">
+            <objects>
+                <viewController storyboardIdentifier="UserGuideViewController" id="axw-AT-UJP" customClass="UserGuideViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KbA-WW-IOh">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gl-fp-cZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="-170"/>
+        </scene>
         <!--Item Detail View Controller-->
         <scene sceneID="KvD-YT-BRS">
             <objects>
@@ -406,6 +423,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                 <relationship kind="action" name="aboutTW:" candidateClass="UIButton"/>
                 <relationship kind="action" name="currentRadar:" candidateClass="UIButton"/>
                 <relationship kind="action" name="reference:" candidateClass="UIButton"/>
+                <relationship kind="action" name="userGuide:" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ItemDetailViewController" superclassName="UIViewController">
@@ -421,7 +439,6 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
             <relationships>
                 <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="references:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
@@ -432,6 +449,9 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
             <relationships>
                 <relationship kind="outlet" name="peopleImage" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="UserGuideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserGuideViewController.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
