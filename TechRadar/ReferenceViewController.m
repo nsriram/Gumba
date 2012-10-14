@@ -2,7 +2,7 @@
 #import "AppConstants.h"
 
 @implementation ReferenceViewController
-@synthesize referencesWebView;
+@synthesize referencesWebView,toolbar,backButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

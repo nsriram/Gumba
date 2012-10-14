@@ -121,7 +121,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <webView opaque="NO" contentMode="scaleToFill" id="JcN-GC-eUi">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -129,13 +129,24 @@
                                     <outlet property="delegate" destination="4oB-R0-DCO" id="42E-BV-0JS"/>
                                 </connections>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="fU1-SX-eJ3">
+                                <rect key="frame" x="0.0" y="916" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="kwb-kN-BTo">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="kwb-kN-BTo" id="Sow-jk-x0Z"/>
                         <outlet property="referencesWebView" destination="JcN-GC-eUi" id="Etd-2c-iJF"/>
+                        <outlet property="toolbar" destination="fU1-SX-eJ3" id="kk3-p2-WYZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYP-f5-KW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,7 +412,9 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
         <class className="ReferenceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="TWViewController" superclassName="UIViewController">
