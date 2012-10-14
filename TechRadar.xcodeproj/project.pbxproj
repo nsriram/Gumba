@@ -186,24 +186,14 @@
 			isa = PBXGroup;
 			children = (
 				38E1AD14162A60AC001FEBBC /* bootstrap.css */,
-				38E1AD15162A60AC001FEBBC /* glyphicons-halflings-white.png */,
-				38E1AD16162A60AC001FEBBC /* glyphicons-halflings.png */,
 				38E1AD17162A60AC001FEBBC /* radar_references.html */,
-				C3E982E015C063EA00FD0DD3 /* c.png */,
-				C3BCFF301590D9A600502AD2 /* icon.png */,
-				C3E982DE15C063E200FD0DD3 /* t.png */,
-				516E58D115D1A4A600A2369D /* circle.png */,
-				51451CCB15C0830200E4C555 /* Default-Portrait.png */,
-				515AC8F315D2D39A00639789 /* background.jpg */,
-				51E549B916279BE900782EAF /* About Radar.jpg */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
-				388D0E8715ED16B700D15479 /* people.jpg */,
-				388D0E8515ED15A900D15479 /* corporate_logo.png */,
 				C3500CEA15B5B8A3006465C5 /* radar.json */,
 				C3500CE615B5AD19006465C5 /* model */,
 				C3DFC2EC15B7C862005DE04B /* view */,
 				C310A8D715011447003BF6B7 /* Supporting Files */,
 				C376024E151CC63700D26B46 /* json-framework */,
+				C3973F52162AE450006DF48B /* images */,
 				C310A8DF15011447003BF6B7 /* AppDelegate.h */,
 				C310A8E015011447003BF6B7 /* AppDelegate.m */,
 				C3DFC2E615B712A2005DE04B /* AppConstants.h */,
@@ -278,6 +268,24 @@
 				C3760267151CC66D00D26B46 /* SBJsonWriter.m */,
 			);
 			name = "json-framework";
+			sourceTree = "<group>";
+		};
+		C3973F52162AE450006DF48B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C3E982E015C063EA00FD0DD3 /* c.png */,
+				C3BCFF301590D9A600502AD2 /* icon.png */,
+				C3E982DE15C063E200FD0DD3 /* t.png */,
+				516E58D115D1A4A600A2369D /* circle.png */,
+				38E1AD15162A60AC001FEBBC /* glyphicons-halflings-white.png */,
+				38E1AD16162A60AC001FEBBC /* glyphicons-halflings.png */,
+				51451CCB15C0830200E4C555 /* Default-Portrait.png */,
+				515AC8F315D2D39A00639789 /* background.jpg */,
+				51E549B916279BE900782EAF /* About Radar.jpg */,
+				388D0E8715ED16B700D15479 /* people.jpg */,
+				388D0E8515ED15A900D15479 /* corporate_logo.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		C3DFC2EC15B7C862005DE04B /* view */ = {

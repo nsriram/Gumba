@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wGV-6c-hR4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wGV-6c-hR4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Dashboard View Controller - Technology Radar-->
@@ -421,6 +421,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
             <relationships>
                 <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="references:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>

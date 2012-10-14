@@ -25,7 +25,6 @@
     [self.referencesWebView loadHTMLString:htmlFileContent baseURL:baseURL];
 }
 
-
 -(void) loadReferences {
     CGRect webViewFrame = self.referencesWebView.frame;
     [self.referencesWebView removeFromSuperview];
@@ -45,7 +44,7 @@
     if ([self.referencesWebView canGoBack]) {
         [self.referencesWebView goBack];
     } else {
-    [self loadReferences];
+        [self loadReferences];
     }
 }
 
@@ -62,5 +61,16 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 @end
