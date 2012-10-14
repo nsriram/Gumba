@@ -9,7 +9,6 @@
     return self;
 }
 
-
 - (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
     [self.navigationController popViewControllerAnimated:TRUE];
 }
@@ -23,9 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
-    NSString *myHTML = @"<html><body><ul><li><a href=\"http://martinfowler.com/articles/lmax.html\"> LMAX Disruptor </a></li><li><a href=\"http://martinfowler.com/bliki/PolyglotPersistence.html\"> Polyglot persistence </a></li><li><a href=\"http://microjs.com/\"> JavaScript microframeworks </a></li><li><a href=\"http://testingwithfrank.com/\"> Frank – IOS testing </a></li><li><a href=\"http://functionaljava.org/\"> Functional Java </a></li></ul></body></html>";
-    [referencesWebView setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [referencesWebView loadHTMLString:myHTML baseURL:nil];
+    NSString *htmlFileContent = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"radar_references" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath] isDirectory:YES];
+    [referencesWebView loadHTMLString:htmlFileContent baseURL:baseURL];
     [self bindSwipeRight];
 }
 
@@ -33,17 +32,7 @@
     [super viewDidUnload];
 }
 
--(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
-    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
-        [[UIApplication sharedApplication] openURL:[inRequest URL]];
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
