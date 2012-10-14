@@ -19,12 +19,31 @@
     [[self view] addGestureRecognizer:recognizer];
 }
 
+-(void) loadLocalFile {
+    NSString *htmlFileContent = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"radar_references" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath] isDirectory:YES];
+    [self.referencesWebView loadHTMLString:htmlFileContent baseURL:baseURL];
+}
+
+-(IBAction) back:(UIBarButtonItem *)barButtonItem {
+    if ([self.referencesWebView canGoBack]) {
+        [self.referencesWebView goBack];
+    } else {
+        CGRect webViewFrame = self.referencesWebView.frame;
+        [self.referencesWebView removeFromSuperview];
+        self.referencesWebView.delegate = nil;
+        self.referencesWebView = nil;
+        self.referencesWebView = [[UIWebView alloc]initWithFrame:webViewFrame];
+        self.referencesWebView.delegate = self;
+        [self.view addSubview:self.referencesWebView];
+        [self loadLocalFile];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
-    NSString *htmlFileContent = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"radar_references" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
-    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath] isDirectory:YES];
-    [referencesWebView loadHTMLString:htmlFileContent baseURL:baseURL];
+    [self loadLocalFile];
     [self bindSwipeRight];
 }
 
@@ -35,5 +54,4 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 @end

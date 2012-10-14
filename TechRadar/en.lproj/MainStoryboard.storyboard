@@ -120,11 +120,10 @@
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <webView opaque="NO" contentMode="scaleToFill" id="JcN-GC-eUi">
+                            <webView contentMode="scaleToFill" id="JcN-GC-eUi">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="4oB-R0-DCO" id="42E-BV-0JS"/>
                                 </connections>
@@ -135,6 +134,9 @@
                                 <items>
                                     <barButtonItem systemItem="rewind" id="kwb-kN-BTo">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="back:" destination="4oB-R0-DCO" id="m1J-Zx-k2S"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -412,6 +414,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
         <class className="ReferenceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
