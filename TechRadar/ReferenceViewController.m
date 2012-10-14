@@ -25,18 +25,27 @@
     [self.referencesWebView loadHTMLString:htmlFileContent baseURL:baseURL];
 }
 
+
+-(void) loadReferences {
+    CGRect webViewFrame = self.referencesWebView.frame;
+    [self.referencesWebView removeFromSuperview];
+    self.referencesWebView.delegate = nil;
+    self.referencesWebView = nil;
+    self.referencesWebView = [[UIWebView alloc]initWithFrame:webViewFrame];
+    self.referencesWebView.delegate = self;
+    [self.view addSubview:self.referencesWebView];
+    [self loadLocalFile];
+}
+
+-(IBAction) references:(UIBarButtonItem *)barButtonItem {
+    [self loadReferences];
+}
+
 -(IBAction) back:(UIBarButtonItem *)barButtonItem {
     if ([self.referencesWebView canGoBack]) {
         [self.referencesWebView goBack];
     } else {
-        CGRect webViewFrame = self.referencesWebView.frame;
-        [self.referencesWebView removeFromSuperview];
-        self.referencesWebView.delegate = nil;
-        self.referencesWebView = nil;
-        self.referencesWebView = [[UIWebView alloc]initWithFrame:webViewFrame];
-        self.referencesWebView.delegate = self;
-        [self.view addSubview:self.referencesWebView];
-        [self loadLocalFile];
+    [self loadReferences];
     }
 }
 

@@ -132,7 +132,12 @@
                                 <rect key="frame" x="0.0" y="916" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="kwb-kN-BTo">
+                                    <barButtonItem title="References" id="Qe5-Hp-IB8">
+                                        <connections>
+                                            <action selector="references:" destination="4oB-R0-DCO" id="36H-Pl-tjw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Back" id="kwb-kN-BTo">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="back:" destination="4oB-R0-DCO" id="m1J-Zx-k2S"/>
@@ -415,6 +420,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
             <relationships>
                 <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="references:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>

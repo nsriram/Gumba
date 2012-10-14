@@ -9,4 +9,5 @@
 @property (nonatomic,strong) IBOutlet UIToolbar *toolbar;
 @property (nonatomic,strong) IBOutlet UIBarButtonItem *backButton;
 -(IBAction) back:(UIBarButtonItem *)barButtonItem;
+-(IBAction) references:(UIBarButtonItem *)barButtonItem;
 @end
