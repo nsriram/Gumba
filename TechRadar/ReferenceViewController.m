@@ -51,6 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
+    [self.referencesWebView setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self loadLocalFile];
     [self bindSwipeRight];
 }
