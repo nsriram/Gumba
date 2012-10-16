@@ -12,7 +12,7 @@
     pageControlBeingUsed = NO;
 
     //TODO: Image of the size of a single page on the scrollview
-    NSArray *images = [NSArray arrayWithObjects:@"userguide1", @"people", @"people",nil];
+    NSArray *images = [NSArray arrayWithObjects:@"userguide1", @"about_radar", @"about_radar",nil];
 
     for (int i = 0; i < images.count; i++) {
         CGRect frame;
@@ -25,7 +25,6 @@
 
         UIImage *img = [UIImage imageWithContentsOfFile:fullpath];
         UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
-
         [subview addSubview:imgView];
         [self.scrollView addSubview:subview];
     }
@@ -38,9 +37,11 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
+	if (!pageControlBeingUsed) {
+        CGFloat pageWidth = self.scrollView.frame.size.width;
+        int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+        self.pageControl.currentPage = page;
+    }
 }
 
 - (IBAction)changePage {
