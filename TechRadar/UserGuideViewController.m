@@ -9,10 +9,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
     pageControlBeingUsed = NO;
 
-    NSArray *images = [NSArray arrayWithObjects:@"people", @"background", @"About Radar", nil];
+    //TODO: Image of the size of a single page on the scrollview
+    NSArray *images = [NSArray arrayWithObjects:@"people", @"people", @"people",nil];
 
     for (int i = 0; i < images.count; i++) {
         CGRect frame;
@@ -24,13 +24,13 @@
         NSString *fullpath = [[NSBundle mainBundle] pathForResource:[images objectAtIndex:i] ofType:@"jpg"];
 
         UIImage *img = [UIImage imageWithContentsOfFile:fullpath];
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:frame];
-        imgView.image=img;
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
 
         [subview addSubview:imgView];
         [self.scrollView addSubview:subview];
     }
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * images.count, self.scrollView.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * images.count,
+                                             self.scrollView.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
