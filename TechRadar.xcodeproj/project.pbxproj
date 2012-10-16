@@ -16,6 +16,8 @@
 		38E1AD1A162A60AC001FEBBC /* glyphicons-halflings.png in Resources */ = {isa = PBXBuildFile; fileRef = 38E1AD16162A60AC001FEBBC /* glyphicons-halflings.png */; };
 		38E1AD1B162A60AC001FEBBC /* radar_references.html in Resources */ = {isa = PBXBuildFile; fileRef = 38E1AD17162A60AC001FEBBC /* radar_references.html */; };
 		38EEBFB61590F41F00367FEA /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEBFB51590F41F00367FEA /* CircleView.m */; };
+		512FE79E162D166A00D0EEE5 /* about_radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 512FE79C162D166A00D0EEE5 /* about_radar.png */; };
+		512FE79F162D166A00D0EEE5 /* about_radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 512FE79D162D166A00D0EEE5 /* about_radar@2x.png */; };
 		51451CCC15C0830200E4C555 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 51451CCB15C0830200E4C555 /* Default-Portrait.png */; };
 		515AC8F415D2D39A00639789 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 515AC8F315D2D39A00639789 /* background.jpg */; };
 		516E58D215D1A4A600A2369D /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 516E58D115D1A4A600A2369D /* circle.png */; };
@@ -71,6 +73,8 @@
 		38E1AD17162A60AC001FEBBC /* radar_references.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = radar_references.html; sourceTree = "<group>"; };
 		38EEBFB41590F41F00367FEA /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleView.h; path = TechRadar/CircleView.h; sourceTree = "<group>"; };
 		38EEBFB51590F41F00367FEA /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleView.m; path = TechRadar/CircleView.m; sourceTree = "<group>"; };
+		512FE79C162D166A00D0EEE5 /* about_radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_radar.png; sourceTree = "<group>"; };
+		512FE79D162D166A00D0EEE5 /* about_radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_radar@2x.png"; sourceTree = "<group>"; };
 		51451CCB15C0830200E4C555 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		515AC8F315D2D39A00639789 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		516E58D115D1A4A600A2369D /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				C3E982E015C063EA00FD0DD3 /* c.png */,
 				C3BCFF301590D9A600502AD2 /* icon.png */,
 				C3E982DE15C063E200FD0DD3 /* t.png */,
+				512FE79C162D166A00D0EEE5 /* about_radar.png */,
+				512FE79D162D166A00D0EEE5 /* about_radar@2x.png */,
 				516E58D115D1A4A600A2369D /* circle.png */,
 				38E1AD15162A60AC001FEBBC /* glyphicons-halflings-white.png */,
 				51451CCB15C0830200E4C555 /* Default-Portrait.png */,
@@ -376,6 +382,8 @@
 				38E1AD19162A60AC001FEBBC /* glyphicons-halflings-white.png in Resources */,
 				38E1AD1A162A60AC001FEBBC /* glyphicons-halflings.png in Resources */,
 				38E1AD1B162A60AC001FEBBC /* radar_references.html in Resources */,
+				512FE79E162D166A00D0EEE5 /* about_radar.png in Resources */,
+				512FE79F162D166A00D0EEE5 /* about_radar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
