@@ -114,7 +114,7 @@
     NSMutableArray *circles = [_quadrant circles];
     for(Item *circle in circles){
         CGPoint point = [self adjustPoint:[circle raster]];
-        CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
+        CGRect someRect = CGRectMake(point.x-CIRCLE_RADIUS, point.y-CIRCLE_RADIUS, CIRCLE_RADIUS*2.0, CIRCLE_RADIUS*2.0);
         CircleView *circleView = [[CircleView alloc] initWithFrame:someRect Entry:[circle index] Tip:[circle tip]  Description:[circle description] Blip:[circle name] Type:@"c.png" Radius:[circle radius]];
         [self insertSubview:circleView atIndex:0];
     }
@@ -124,7 +124,7 @@
     NSMutableArray *triangles = [_quadrant triangles];    
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
-        CGRect someRect = CGRectMake(point.x-10.0, point.y-10.0, 20.0, 20.0);
+        CGRect someRect = CGRectMake(point.x-TRIANGLE_SIDE, point.y-TRIANGLE_SIDE, TRIANGLE_SIDE*2.0, TRIANGLE_SIDE*2.0);
         TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect Entry:[triangle index] Tip:[triangle tip] Description:[triangle description] Blip:[triangle name] Type:@"t.png" Radius:[triangle radius]];
         [self insertSubview:triangleView atIndex:0];
     }

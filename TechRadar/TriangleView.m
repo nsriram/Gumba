@@ -28,7 +28,7 @@
     CGContextFillPath(context);
     CGPathRelease(a_path);    
     if(!self.isMinized) {
-        UIFont *font = [UIFont systemFontOfSize:10.5];
+        UIFont *font = [UIFont fontWithName:@"Verdana" size:9.0];
         CGPoint textPoint = CGPointMake(0.0, height * 0.65);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:TRIANGLE_TEXT_ANGLE];
     }

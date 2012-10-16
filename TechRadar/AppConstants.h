@@ -10,6 +10,8 @@
 #define RADAR_RATIO 0.9
 #define Y_OFFSET 44.0
 #define NAVBAR_SIZE 44.0
+#define CIRCLE_RADIUS 10.0
+#define TRIANGLE_SIDE 10.0
 
 @interface AppConstants : NSObject
 +(UIColor*) backgroundColor;

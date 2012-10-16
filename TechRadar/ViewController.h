@@ -5,6 +5,7 @@
 @property (nonatomic,strong) NSString *searchTerm;
 @property (nonatomic,strong) UIBarButtonItem *selectedButton;
 @property (nonatomic,strong) UIColor *barButtonColor;
+-(IBAction) back:(UIBarButtonItem *)backButtobarButtonItem;
 -(IBAction) adopt:(UIBarButtonItem *)barButtonItem;
 -(IBAction) trial:(UIBarButtonItem *)barButtonItem;
 -(IBAction) assess:(UIBarButtonItem *)barButtonItem;

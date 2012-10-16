@@ -326,11 +326,11 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                                 <rect key="frame" x="20" y="59" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW">
-                                <rect key="frame" x="20" y="187" width="728" height="391"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="Vzt-76-3rW">
+                                <rect key="frame" x="20" y="187" width="728" height="456"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -391,9 +391,14 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                     <tabBarItem key="tabBarItem" title="Technology Radar" id="ecL-lX-AdC"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2yl-ic-qs0">
-                        <barButtonItem key="leftBarButtonItem" id="7tm-uD-yFR">
+                        <barButtonItem key="leftBarButtonItem" title="Technology Radar" id="GFU-Ek-EXz">
+                            <connections>
+                                <action selector="back:" destination="2" id="e64-Nb-4jp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="7tm-uD-yFR">
                             <searchBar key="customView" contentMode="redraw" text="" placeholder="Search Radar Items" id="gBk-52-3nN">
-                                <rect key="frame" x="7" y="0.0" width="748" height="44"/>
+                                <rect key="frame" x="141" y="0.0" width="620" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <scopeButtonTitles>
@@ -485,6 +490,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                 <relationship kind="action" name="adopt:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="all:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="assess:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="action" name="hold:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="trial:" candidateClass="UIBarButtonItem"/>

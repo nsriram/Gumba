@@ -95,6 +95,10 @@
     [selectedButton setTintColor:[UIColor darkGrayColor]];
 }
 
+-(IBAction) back:(UIBarButtonItem *)backButtobarButtonItem{
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
+
 -(IBAction) adopt:(UIBarButtonItem *)adoptButtobarButtonItem{
     [self highlightSelectedBarButton:adoptButtobarButtonItem];
     [self hideCircle:0.0 AndOuter:150.0*RADAR_RATIO];
@@ -119,6 +123,7 @@
     self.innerRadius = 0.0;
     self.outerRadius = 400.0;
     [self hideCircle:0.0 AndOuter:400.0*RADAR_RATIO];
+    [selectedButton setTintColor:barButtonColor];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
