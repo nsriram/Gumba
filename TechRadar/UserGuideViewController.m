@@ -12,7 +12,7 @@
     pageControlBeingUsed = NO;
 
     //TODO: Image of the size of a single page on the scrollview
-    NSArray *images = [NSArray arrayWithObjects:@"people", @"people", @"people",nil];
+    NSArray *images = [NSArray arrayWithObjects:@"userguide1", @"people", @"people",nil];
 
     for (int i = 0; i < images.count; i++) {
         CGRect frame;
@@ -21,7 +21,7 @@
         frame.size = self.scrollView.frame.size;
         
         UIView *subview = [[UIView alloc] initWithFrame:frame];
-        NSString *fullpath = [[NSBundle mainBundle] pathForResource:[images objectAtIndex:i] ofType:@"jpg"];
+        NSString *fullpath = [[NSBundle mainBundle] pathForResource:[images objectAtIndex:i] ofType:@"png"];
 
         UIImage *img = [UIImage imageWithContentsOfFile:fullpath];
         UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
