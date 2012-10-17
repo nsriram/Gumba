@@ -326,7 +326,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5zP-H1-jdh">
-                                <rect key="frame" x="20" y="59" width="48" height="48"/>
+                                <rect key="frame" x="20" y="59" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="Vzt-76-3rW">
@@ -400,7 +400,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="7tm-uD-yFR">
-                            <searchBar key="customView" contentMode="redraw" text="" placeholder="Search Radar Items" id="gBk-52-3nN">
+                            <searchBar key="customView" contentMode="redraw" text="" placeholder="Try 'testing'" id="gBk-52-3nN">
                                 <rect key="frame" x="141" y="0.0" width="620" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -412,6 +412,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                                     <outlet property="delegate" destination="2" id="s8p-rH-8vz"/>
                                 </connections>
                             </searchBar>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

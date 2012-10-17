@@ -143,6 +143,11 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     [self searchRadar:searchBar.text];
+    if([searchBar.text length] == 0) {
+        [searchBar performSelector: @selector(resignFirstResponder)
+                        withObject: nil
+                        afterDelay: 0.1];
+    }
 }
 
 - (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer  {

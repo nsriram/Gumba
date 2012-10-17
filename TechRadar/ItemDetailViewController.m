@@ -25,13 +25,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[AppConstants backgroundColor]];        
+    [self.view setBackgroundColor:[AppConstants backgroundColor]];
     [self bindSwipeRight];
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:descriptionText];
-    [self.description setFont:[UIFont fontWithName:@"Times New Roman" size:20]];
+    [self.description setFont:[UIFont fontWithName:@"Times New Roman" size:22]];
     [self.description setTextColor:[UIColor whiteColor]];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
 }
