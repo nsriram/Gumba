@@ -5,12 +5,16 @@
 #import "Radar.h"
 #import "AppConstants.h"
 #import "ItemDetailViewController.h"
+#import "WEPopoverController.h"
+#import "WEPopoverContentViewController.h"
+
 
 @interface ViewController()
 @property (nonatomic, assign) CGFloat lastScale;
 @property (nonatomic, assign) CGFloat newScale;
 @property (nonatomic, assign) NSInteger innerRadius;
 @property (nonatomic, assign) NSInteger outerRadius;
+@property (nonatomic, strong) WEPopoverController *popoverController;
 @end
 
 @implementation ViewController
@@ -21,6 +25,7 @@
 @synthesize innerRadius,outerRadius;
 @synthesize selectedButton;
 @synthesize barButtonColor;
+@synthesize popoverController;
 
 -(void) showAllItems {
     for(QuadrantView *quadrantView in self.quadrantViews){
@@ -175,12 +180,22 @@
     }
 }
 -(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
-    ItemDetailViewController *itemDetailViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];    
+//    ItemDetailViewController *itemDetailViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];    
     ItemView *itemView = (ItemView *)sender.view;
-    itemDetailViewController.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
-    itemDetailViewController.descriptionText = itemView.description;
-    itemDetailViewController.imageText = itemView.type;    
-    [self.navigationController pushViewController:itemDetailViewController animated:YES];    
+//    itemDetailViewController.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
+//    itemDetailViewController.descriptionText = itemView.description;
+//    itemDetailViewController.imageText = itemView.type;    
+//    [self.navigationController pushViewController:itemDetailViewController animated:YES];
+    
+    UIViewController *contentViewController = [[WEPopoverContentViewController alloc]
+                                               initWithStyle:UITableViewStylePlain
+                                               andBlipName:[NSString stringWithFormat:@"%@",itemView.blipName]
+                                               andDescription:itemView.description];
+    self.popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController];
+    [self.popoverController presentPopoverFromRect:CGRectMake(10,10,10,10)
+                                            inView:itemView
+                          permittedArrowDirections:UIPopoverArrowDirectionDown
+                                          animated:YES];
 }
 
 -(void) bindQuadrantTwoFingerPinch :(QuadrantView*)quadrantView {
