@@ -12,7 +12,7 @@
     pageControlBeingUsed = NO;
 
     //TODO: Image of the size of a single page on the scrollview
-    NSArray *images = [NSArray arrayWithObjects:@"userguide1", @"about_radar", @"about_radar",nil];
+    NSArray *images = [NSArray arrayWithObjects:@"userguide1", @"userguide2", @"userguide3",nil];
 
     for (int i = 0; i < images.count; i++) {
         CGRect frame;
