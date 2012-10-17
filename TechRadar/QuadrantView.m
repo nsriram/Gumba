@@ -124,7 +124,7 @@
     NSMutableArray *triangles = [_quadrant triangles];    
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
-        CGRect someRect = CGRectMake(point.x-TRIANGLE_SIDE, point.y-TRIANGLE_SIDE, TRIANGLE_SIDE*2.0, TRIANGLE_SIDE*2.0);
+        CGRect someRect = CGRectMake(point.x-TRIANGLE_SIDE, point.y-TRIANGLE_SIDE, TRIANGLE_SIDE*2.5, TRIANGLE_SIDE*2.5);
         TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect Entry:[triangle index] Tip:[triangle tip] Description:[triangle description] Blip:[triangle name] Type:@"t.png" Radius:[triangle radius]];
         [self insertSubview:triangleView atIndex:0];
     }
