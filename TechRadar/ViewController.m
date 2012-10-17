@@ -28,7 +28,7 @@
         for(ItemView *subView in subViews){
             NSInteger ratioRadius = RADAR_RATIO*subView.radius;
             if(subView.alpha == 0.0 && ratioRadius > innerRadius && ratioRadius < outerRadius){
-                [UIView animateWithDuration:0.3 animations:^() {
+                [UIView animateWithDuration:2.0 animations:^() {
                     subView.alpha = 1.0;
                 }];
             }
@@ -258,8 +258,8 @@
     [[self view] setClipsToBounds:YES];
     _quadrantViews = [[NSMutableArray alloc] init];
     [self addQuadrants];
-//    [self.view setBackgroundColor:[AppConstants backgroundColor]];
-//    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg.png"]];
+    [self showAllItems];
+    [self.view setBackgroundColor:[AppConstants backgroundColor]];
 }
 
 - (void)didReceiveMemoryWarning {
