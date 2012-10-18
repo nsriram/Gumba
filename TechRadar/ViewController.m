@@ -258,7 +258,7 @@
     [[self view] setClipsToBounds:YES];
     _quadrantViews = [[NSMutableArray alloc] init];
     [self addQuadrants];
-//    [self.view setBackgroundColor:[AppConstants backgroundColor]];
+    [self.view setBackgroundColor:[AppConstants backgroundColor]];
 //    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg.png"]];
 }
 
