@@ -28,16 +28,41 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
     [self bindSwipeRight];
+    self.title = @"Radar Notes";
+    
+    [self.itemType setImage:[UIImage imageNamed:imageText]];
+    
+    //Create outer glow
+    detail.layer.shadowColor = [UIColor whiteColor].CGColor;
+    detail.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    detail.layer.shadowRadius = 10.0;
+    detail.layer.shadowOpacity = 0.3;
+    detail.layer.masksToBounds = NO;
+    
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
-    [self.description setFont:[UIFont fontWithName:@"TrebuchetMS-Bold" size:40]];
+    
+    description.layer.shadowColor = [UIColor blackColor].CGColor;
+    description.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    description.layer.shadowRadius = 10.0;
+    description.layer.shadowOpacity = 0.5;
+    description.layer.masksToBounds = NO;
+   
+    
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self.description setText:descriptionText];
-    [self.description setFont:[UIFont fontWithName:@"TrebuchetMS" size:22]];
-    [self.description setTextColor:[UIColor whiteColor]];
-    [self.itemType setImage:[UIImage imageNamed:imageText]];
-    self.description.layer.cornerRadius = 5;
-    self.description.clipsToBounds=YES;
+    [self.description setText:[@"\n" stringByAppendingString:descriptionText]];
+    [self.description setFont:[UIFont fontWithName:@"TrebuchetMS" size:20]];
+    [self.description setTextColor:[UIColor blackColor]];
+    
+//    self.description.layer.cornerRadius = 5;
+//    self.description.clipsToBounds=YES;
+    
+    self.description.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"notebook_line.png"]];
+    
+    //auto-adjust height by content height
+    CGRect frame = self.description.frame;
+    frame.size.height = [self.description contentSize].height;
+    self.description.frame = frame;
 }
 
 
