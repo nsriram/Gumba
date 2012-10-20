@@ -13,7 +13,7 @@
         radius = radius * 0.6;
         UIImage *myImage = [UIImage imageNamed:@"circle_blip@2x.png"];
         [myImage drawInRect:enclosure];
-        UIFont *font = [UIFont fontWithName:@"TrebuchetMS" size:10.0];
+        UIFont *font = [UIFont fontWithName:@"AmericanTypewriter" size:13.0];
         CGFloat x=0.0;
         if(self.tip.length < 9){
             CGFloat textWidth = (self.tip.length * self.frame.size.width)/8.0;

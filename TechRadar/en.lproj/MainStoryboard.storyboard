@@ -123,7 +123,7 @@
 
 ThoughtWorks was founded by Roy Singham in a Chicago basement in 1993. Roy's formula for success from the start was "Attitude, Aptitude, and Integrity" – he built ThoughtWorks upon the firm belief that communities of talented, driven, and principled people could move mountains. Today we employ over 1700 people across the globe. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Cma-OU-uJt">
@@ -136,7 +136,7 @@ Software development with ThoughtWorks feels and looks different: it is fast, ev
 
 We are based in the United States, UK, Australia, Brazil, Canada, Germany, India and China and we work with clients from each location.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -245,7 +245,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW" customClass="MBTextView">
                                 <rect key="frame" x="20" y="129" width="728" height="456"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>

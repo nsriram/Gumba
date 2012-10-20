@@ -41,7 +41,8 @@
     
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
-    
+
+    //create drop-down shadow for text-view
     description.layer.shadowColor = [UIColor blackColor].CGColor;
     description.layer.shadowOffset = CGSizeMake(1.0, 1.0);
     description.layer.shadowRadius = 10.0;
@@ -54,12 +55,9 @@
     [self.description setFont:[UIFont fontWithName:@"TrebuchetMS" size:20]];
     [self.description setTextColor:[UIColor blackColor]];
     
-//    self.description.layer.cornerRadius = 5;
-//    self.description.clipsToBounds=YES;
-    
     self.description.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"notebook_line.png"]];
     
-    //auto-adjust height by content height
+    //auto-adjust text-view height by content height
     CGRect frame = self.description.frame;
     frame.size.height = [self.description contentSize].height;
     self.description.frame = frame;
