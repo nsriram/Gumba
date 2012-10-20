@@ -1,5 +1,6 @@
 #import "ItemDetailViewController.h"
 #import "AppConstants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ItemDetailViewController
 @synthesize detail,description, descriptionText, detailText,itemType,imageText;
@@ -29,11 +30,14 @@
     [self bindSwipeRight];
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
+    [self.description setFont:[UIFont fontWithName:@"TrebuchetMS-Bold" size:40]];
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:descriptionText];
-    [self.description setFont:[UIFont fontWithName:@"Times New Roman" size:22]];
+    [self.description setFont:[UIFont fontWithName:@"TrebuchetMS" size:22]];
     [self.description setTextColor:[UIColor whiteColor]];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
+    self.description.layer.cornerRadius = 5;
+    self.description.clipsToBounds=YES;
 }
 
 

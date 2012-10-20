@@ -202,7 +202,7 @@
     UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
     [quadrantView addGestureRecognizer:twoFingerPinch];
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)];
-    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTapsRequired = 2;
     [quadrantView addGestureRecognizer:singleTap];
 }
 
