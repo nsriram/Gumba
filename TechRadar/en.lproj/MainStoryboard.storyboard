@@ -439,68 +439,6 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
         <image name="corporate_logo.png" width="176" height="27"/>
         <image name="people.jpg" width="440" height="327"/>
     </resources>
-    <classes>
-        <class className="AboutRadarController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutRadarController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detail" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="DashboardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="aboutRadar:" candidateClass="UIButton"/>
-                <relationship kind="action" name="aboutTW:" candidateClass="UIButton"/>
-                <relationship kind="action" name="currentRadar:" candidateClass="UIButton"/>
-                <relationship kind="action" name="reference:" candidateClass="UIButton"/>
-                <relationship kind="action" name="userGuide:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ItemDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="detail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="itemType" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ReferenceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="references:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="TWViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TWViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="peopleImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UserGuideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserGuideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changePage"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="adopt:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="all:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="assess:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="action" name="hold:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="trial:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

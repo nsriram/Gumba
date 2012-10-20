@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+@class WEPopoverController;
+
 @interface ViewController : UIViewController<UIPopoverControllerDelegate, UISearchBarDelegate>
 @property (nonatomic,strong) NSMutableArray *quadrantViews;
 @property (nonatomic,strong) NSString *searchTerm;
