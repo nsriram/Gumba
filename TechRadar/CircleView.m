@@ -7,36 +7,24 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();     
     UIGraphicsPushContext(context);
-    CGContextBeginPath(context);
-    
     CGFloat radius = self.frame.size.width/2;
-    
-    CGRect enclosure = CGRectMake(3.0, 0.0, rect.size.width/1.25, rect.size.height/1.25);
-    
-//    CGFloat x = radius;
-    
+    CGRect enclosure = CGRectMake(0.125*self.frame.size.width, 0.0, rect.size.width * 0.75, rect.size.height * 0.75);
     if(!self.isMinized) {
         radius = radius * 0.6;
         UIImage *myImage = [UIImage imageNamed:@"circle_blip@2x.png"];
         [myImage drawInRect:enclosure];
+        UIFont *font = [UIFont fontWithName:@"TrebuchetMS" size:10.0];
+        CGFloat x=0.0;
+        if(self.tip.length < 9){
+            CGFloat textWidth = (self.tip.length * self.frame.size.width)/8.0;
+            x = (self.frame.size.width - textWidth)/2.0;
+        }
+        CGPoint textPoint = CGPointMake(x, radius*2.3);
+        [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:CIRCLE_TEXT_ANGLE];
     }
     else {
         UIImage *myImage = [UIImage imageNamed:@"circle_blip.png"];
         [myImage drawInRect:enclosure];
-    }
-    
-//    CGContextAddArc(context, x, radius*.9, radius*.8, 0, 2*M_PI, YES);
-//    CGContextSetFillColorWithColor(context, [[AppConstants blipColor] CGColor]);
-//    CGContextSetStrokeColorWithColor(context, [[AppConstants blipColor] CGColor]);
-//    CGContextDrawPath(context, kCGPathFillStroke);
-    if(!self.isMinized) {
-        UIFont *font = [UIFont fontWithName:@"TrebuchetMS" size:9.0];
-        CGFloat x=0.0;
-        if(self.tip.length < 9){
-            x = ((radius - self.tip.length)/2.0)*1.25;
-        }
-        CGPoint textPoint = CGPointMake(x, radius * 2.45);
-        [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:CIRCLE_TEXT_ANGLE];
     }
     UIGraphicsPopContext();
 }

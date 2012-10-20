@@ -326,7 +326,7 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5zP-H1-jdh">
-                                <rect key="frame" x="20" y="59" width="36" height="36"/>
+                                <rect key="frame" x="20" y="61" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW">
