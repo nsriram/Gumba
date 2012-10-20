@@ -8,7 +8,7 @@
 //    CGMutablePathRef a_path = CGPathCreateMutable();
     CGContextBeginPath(context);
     
-    CGRect enclosure = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width/1.1, rect.size.height/1.1);
+    CGRect enclosure = CGRectMake(3.0, 0.0, rect.size.width/1.35, rect.size.height/1.35);
     if(!self.isMinized) {
         UIImage *myImage = [UIImage imageNamed:@"triangle_blip@2x.png"];
         [myImage drawInRect:enclosure];
@@ -38,8 +38,12 @@
 //    CGContextFillPath(context);
 //    CGPathRelease(a_path);    
     if(!self.isMinized) {
-        UIFont *font = [UIFont fontWithName:@"Verdana" size:9.0];
-        CGPoint textPoint = CGPointMake(0.0, height * 0.75);
+        UIFont *font = [UIFont fontWithName:@"TrebuchetMS" size:9.0];
+        CGFloat x=0.0;
+        if(self.tip.length < 9){
+            x = (11 - self.tip.length)/1.5;
+        }
+        CGPoint textPoint = CGPointMake(x, height * 0.6);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:TRIANGLE_TEXT_ANGLE];
     }
 }
