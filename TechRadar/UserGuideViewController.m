@@ -30,6 +30,8 @@
     }
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * images.count,
                                              self.scrollView.frame.size.height);
+    
+    self.title = @"User Guide";
 }
 
 - (void)didReceiveMemoryWarning {
