@@ -9,13 +9,13 @@
     if(!self.isMinized) {
         UIImage *myImage = [UIImage imageNamed:@"triangle_blip@2x.png"];
         [myImage drawInRect:enclosure];
-        UIFont *font = [UIFont fontWithName:@"AmericanTypewriter" size:13.0];
+        UIFont *font = [UIFont fontWithName:@"AmericanTypewriter" size:12.0];
         CGFloat x=0.0;
-        if(self.tip.length < 9){
-            CGFloat textWidth = (self.tip.length * self.frame.size.width)/8.5;
+        if(self.tip.length < 7){
+            CGFloat textWidth = (self.tip.length * self.frame.size.width)/6.5;
             x = (self.frame.size.width - textWidth)/2.0;
         }
-        CGPoint textPoint = CGPointMake(x, self.frame.size.height*0.62);
+        CGPoint textPoint = CGPointMake(x, self.frame.size.height*0.61);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:TRIANGLE_TEXT_ANGLE];
     }
     else {

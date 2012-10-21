@@ -13,13 +13,13 @@
         radius = radius * 0.6;
         UIImage *myImage = [UIImage imageNamed:@"circle_blip@2x.png"];
         [myImage drawInRect:enclosure];
-        UIFont *font = [UIFont fontWithName:@"AmericanTypewriter" size:13.0];
+        UIFont *font = [UIFont fontWithName:@"AmericanTypewriter" size:12.0];
         CGFloat x=0.0;
-        if(self.tip.length < 9){
-            CGFloat textWidth = (self.tip.length * self.frame.size.width)/8.0;
+        if(self.tip.length < 7){
+            CGFloat textWidth = (self.tip.length * self.frame.size.width)/6.0;
             x = (self.frame.size.width - textWidth)/2.0;
         }
-        CGPoint textPoint = CGPointMake(x, radius*2.3);
+        CGPoint textPoint = CGPointMake(x, radius*2.15);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:CIRCLE_TEXT_ANGLE];
     }
     else {

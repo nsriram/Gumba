@@ -29,7 +29,6 @@
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
     [self bindSwipeRight];
     self.title = @"Radar Notes";
-    
     [self.itemType setImage:[UIImage imageNamed:imageText]];
     
     //Create outer glow

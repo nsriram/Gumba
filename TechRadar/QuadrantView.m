@@ -135,7 +135,7 @@
     for(Item *triangle in triangles){
         CGPoint point = [self adjustPoint:[triangle raster]];
         CGRect someRect = CGRectMake(point.x-TRIANGLE_SIDE, point.y-TRIANGLE_SIDE, TRIANGLE_SIDE*2.5, TRIANGLE_SIDE*2.5);
-        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect Entry:[triangle index] Tip:[triangle tip] Description:[triangle description] Blip:[triangle name] Type:@"triangle.png" Radius:[triangle radius]];
+        TriangleView *triangleView = [[TriangleView alloc] initWithFrame:someRect Entry:[triangle index] Tip:[triangle tip] Description:[triangle description] Blip:[triangle name] Type:@"triangle_blip@2x.png" Radius:[triangle radius]];
         triangleView.alpha = 0.0;
         [self insertSubview:triangleView atIndex:0];
 
