@@ -9,7 +9,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.scrollView setBackgroundColor:[AppConstants backgroundColor]];
+    
+    [self.scrollView setBackgroundColor:[UIColor colorWithRed: 19.0/255.0 green: 91.0/255.0 blue: 146.0/255.0 alpha: 1.0]];
+
     pageControlBeingUsed = NO;
 
     //TODO: Image of the size of a single page on the scrollview

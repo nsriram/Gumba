@@ -18,50 +18,50 @@
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
--(void) bindSwipeRight {
+-(void) bindBack {
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [[self view] addGestureRecognizer:recognizer];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view setBackgroundColor:[AppConstants backgroundColor]];
-    [self bindSwipeRight];
-    self.title = @"Radar Notes";
-    [self.itemType setImage:[UIImage imageNamed:imageText]];
-    
+- (void)paintRadarItemDetailHeader {
     //Create outer glow
     detail.layer.shadowColor = [UIColor whiteColor].CGColor;
     detail.layer.shadowOffset = CGSizeMake(0.0, 0.0);
     detail.layer.shadowRadius = 10.0;
     detail.layer.shadowOpacity = 0.3;
     detail.layer.masksToBounds = NO;
-    
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
+}
 
+- (void)paintRadarItemDescription {
     //create drop-down shadow for text-view
     description.layer.shadowColor = [UIColor blackColor].CGColor;
     description.layer.shadowOffset = CGSizeMake(1.0, 1.0);
     description.layer.shadowRadius = 10.0;
     description.layer.shadowOpacity = 0.5;
     description.layer.masksToBounds = NO;
-   
-    
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self.description setText:[@"\n" stringByAppendingString:descriptionText]];
+    [self.description setText:[@"\n" stringByAppendingString:self.descriptionText]];
     [self.description setFont:[UIFont fontWithName:@"TrebuchetMS" size:20]];
     [self.description setTextColor:[UIColor blackColor]];
-    
     self.description.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"notebook_line.png"]];
-    
     //auto-adjust text-view height by content height
     CGRect frame = self.description.frame;
     frame.size.height = [self.description contentSize].height;
     self.description.frame = frame;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view setBackgroundColor:[AppConstants backgroundColor]];
+    self.title = @"Radar Notes";
+    [self bindBack];
+    [self.itemType setImage:[UIImage imageNamed:imageText]];
+    [self paintRadarItemDetailHeader];
+    [self paintRadarItemDescription];
+}
 
 - (void)viewDidUnload {
     [super viewDidUnload];
