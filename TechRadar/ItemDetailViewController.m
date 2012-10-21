@@ -14,14 +14,19 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
+- (void)goBack:(UIPinchGestureRecognizer *)recognizer  {
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 -(void) bindBack {
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [[self view] addGestureRecognizer:recognizer];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
+    [swipe setDirection:(UISwipeGestureRecognizerDirectionRight)];
+
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)] ;
+    singleTap.numberOfTapsRequired = 1;
+    
+    [[self view] addGestureRecognizer:swipe];
+    [[self view] addGestureRecognizer:singleTap];
 }
 
 - (void)paintRadarItemDetailHeader {
