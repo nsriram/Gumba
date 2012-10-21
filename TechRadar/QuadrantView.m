@@ -147,7 +147,7 @@
     
     [self drawBackgroundGradient:context];
     
-    CGContextSetLineWidth(context, 2.0);
+    CGContextSetLineWidth(context, 1.5);
     [[UIColor whiteColor] setStroke];
     
     [self drawCircleAtPoint:self.center withRadius:150*RADAR_RATIO inContext:context];

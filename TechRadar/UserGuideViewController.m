@@ -18,7 +18,7 @@
 
 - (void)singleTap:(UIPinchGestureRecognizer *)recognizer  {
     if(self.pageControl.currentPage == 2) {
-        self.pageControl.currentPage = 0;
+        self.pageControl.currentPage -=1;
         [self changePage];
     }
     else if(self.pageControl.currentPage < 2) {

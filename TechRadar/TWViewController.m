@@ -36,7 +36,7 @@
     [l setCornerRadius:10.0];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg.png"]];
     [self bindSwipeRight];
-    self.title = @"About ThoughtWorks";
+    self.title = @"About Us";
 }
 
 - (void)viewDidUnload {
