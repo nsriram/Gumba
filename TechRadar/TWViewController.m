@@ -23,6 +23,10 @@
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [[self view] addGestureRecognizer:recognizer];
+
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)] ;
+    singleTap.numberOfTapsRequired = 1;
+    [[self view] addGestureRecognizer:singleTap];    
 }
 
 - (void)viewDidLoad {
