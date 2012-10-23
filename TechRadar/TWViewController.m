@@ -34,7 +34,7 @@
     CALayer *l = [self.peopleImage layer];
     [l setMasksToBounds:YES];
     [l setCornerRadius:10.0];
-    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg.png"]];
+    [self.view setBackgroundColor:[AppConstants backgroundColor]];
     [self bindSwipeRight];
     self.title = @"About Us";
 }
