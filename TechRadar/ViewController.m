@@ -50,10 +50,11 @@
             NSArray *subViews = quadrantView.subviews;
             for(ItemView *subView in subViews){
                 NSString *blipName = [subView blipName];
+                NSString *blipDesc = [subView description];
                 blipName = [blipName lowercaseString];
                 NSInteger ratioRadius = RADAR_RATIO*subView.radius;
                 if(ratioRadius > innerRadius && ratioRadius < outerRadius){
-                    if ([blipName rangeOfString:searchkey].location == NSNotFound) {
+                    if ([blipName rangeOfString:searchkey].location == NSNotFound && [blipDesc rangeOfString:searchkey].location == NSNotFound) {
                         [UIView animateWithDuration:0.3 animations:^() {
                             subView.alpha = 0.0;
                         }];
