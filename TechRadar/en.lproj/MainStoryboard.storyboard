@@ -118,24 +118,22 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="aVo-if-fHH">
                                 <rect key="frame" x="20" y="55" width="736" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <string key="text">ThoughtWorks is not your typical company. Talented, driven and principled people who are passionate about software, brought together because they want to do something amazing.
 
 ThoughtWorks was founded by Roy Singham in a Chicago basement in 1993. Roy's formula for success from the start was "Attitude, Aptitude, and Integrity" – he built ThoughtWorks upon the firm belief that communities of talented, driven, and principled people could move mountains. Today we employ over 1700 people across the globe. </string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.23921568630000001" green="0.49019607840000001" blue="0.58823529409999997" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Cma-OU-uJt">
                                 <rect key="frame" x="16" y="638" width="736" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <string key="text">Amazing work for our clients is the front line, revolutionizing the way the industry works is a gradual effect, improving society through software is our long term goal.
+                                <mutableString key="text">Amazing work for our clients is the front line, revolutionizing the way the industry works is a gradual effect, improving society through software is our long term goal.
 
 Software development with ThoughtWorks feels and looks different: it is fast, evolutionary, even fun. We take good ideas – best practices like collaboration, feedback, transparency, and testing – and we build them into the fabric of the way we work.
 
-We are based in the United States, UK, Australia, Brazil, Canada, Germany, India and China and we work with clients from each location.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+We are based in the United States, UK, Australia, Brazil, Canada, Germany, India and China and we work with clients from each location.</mutableString>
+                                <color key="textColor" red="0.23921568630000001" green="0.49019607840000001" blue="0.58823529409999997" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -263,14 +261,6 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                                 <rect key="frame" x="20" y="24" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sticky_tape_left.png" id="6VJ-PB-CjU">
-                                <rect key="frame" x="-5" y="101" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sticky_tape_right.png" id="tyh-UX-7DA">
-                                <rect key="frame" x="708" y="101" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -373,8 +363,6 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
         <image name="circle.png" width="768" height="707"/>
         <image name="corporate_logo.png" width="176" height="27"/>
         <image name="people.jpg" width="440" height="327"/>
-        <image name="sticky_tape_left.png" width="233" height="199"/>
-        <image name="sticky_tape_right.png" width="233" height="199"/>
     </resources>
     <classes>
         <class className="AboutRadarController" superclassName="UIViewController">

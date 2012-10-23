@@ -13,9 +13,9 @@
 - (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
     
     //a non-distracting color that gels with the background for arc titles
-    [[UIColor colorWithRed:42/255.0f green:94/255.0f blue:119/255.0f alpha:1] set];
+    [[UIColor colorWithRed:189/255.0f green:190/255.0f blue:192/255.0f alpha:1] set];
     
-    UIFont *font = [UIFont fontWithName:@"Georgia" size:18.0];
+    UIFont *font = [AppConstants labelTextFont];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x + width, self.center.y + distance);
     CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
@@ -71,10 +71,8 @@
     }
     
     UIGraphicsPushContext(context);
-    CGContextSetShadowWithColor( context, CGSizeMake( 0.0, 0.0 ), 5.0f, [UIColor blackColor].CGColor);
-
-    [[UIColor whiteColor] set];
-    UIFont *font = [UIFont fontWithName:@"Georgia" size:20.0];
+    [[AppConstants textColor] set];
+    UIFont *font = [AppConstants boldLabelTextFont];
     CGPoint textPoint = CGPointMake(labelX,labelY);
     [[_quadrant name] drawAtPoint:textPoint withFont:font];
     
@@ -148,17 +146,18 @@
     [self drawBackgroundGradient:context];
     
     CGContextSetLineWidth(context, 1.5);
-    [[UIColor whiteColor] setStroke];
+    [[UIColor colorWithRed:250.0/255.0f green:250.0/255.0f blue:250.0/255.0f alpha:1] setStroke];
+//    [[UIColor lightGrayColor] setStroke];
     
     [self drawCircleAtPoint:self.center withRadius:150*RADAR_RATIO inContext:context];
     [self drawCircleAtPoint:self.center withRadius:275*RADAR_RATIO inContext:context];
     [self drawCircleAtPoint:self.center withRadius:350*RADAR_RATIO inContext:context];    
     [self drawCircleAtPoint:self.center withRadius:400*RADAR_RATIO inContext:context];    
     
-    CGRect    myFrame = self.bounds;
+    CGRect myFrame = self.bounds;
     CGContextSetLineWidth(context, 1);
     CGRectInset(myFrame, 2, 2);
-    [[UIColor blackColor] set];
+    [[UIColor colorWithRed:250.0/255.0f green:250.0/255.0f blue:250.0/255.0f alpha:1] set];
     UIRectFrame(myFrame);
     
     [self drawArcTitles:context withTitle:@"Adopt" Width:80.0*RADAR_RATIO Height:130.0*RADAR_RATIO];

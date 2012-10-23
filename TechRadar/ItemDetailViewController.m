@@ -30,29 +30,18 @@
 }
 
 - (void)paintRadarItemDetailHeader {
-    //Create outer glow
-    detail.layer.shadowColor = [UIColor whiteColor].CGColor;
-    detail.layer.shadowOffset = CGSizeMake(0.0, 0.0);
-    detail.layer.shadowRadius = 10.0;
-    detail.layer.shadowOpacity = 0.3;
+    [self.detail setTextColor:[AppConstants textColor]];
     detail.layer.masksToBounds = NO;
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
 }
 
 - (void)paintRadarItemDescription {
-    //create drop-down shadow for text-view
-    description.layer.shadowColor = [UIColor blackColor].CGColor;
-    description.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-    description.layer.shadowRadius = 10.0;
-    description.layer.shadowOpacity = 0.5;
     description.layer.masksToBounds = NO;
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:[@"\n" stringByAppendingString:self.descriptionText]];
-    [self.description setFont:[UIFont fontWithName:@"Georgia" size:20]];
-    [self.description setTextColor:[UIColor blackColor]];
-    self.description.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"notebook_line.png"]];
-    //auto-adjust text-view height by content height
+    [self.description setFont:[AppConstants labelTextFont]];
+    [self.description setTextColor:[AppConstants textColor]];
     CGRect frame = self.description.frame;
     frame.size.height = [self.description contentSize].height;
     self.description.frame = frame;

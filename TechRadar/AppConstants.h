@@ -18,5 +18,10 @@
 +(UIColor*) detailBackgroundColor;
 +(UIColor*) blipColor;
 +(UIColor*) barButtonColor;
++(UIColor*) textColor;
 +(CGGradientRef) backgroundGradient;
++(UIFont*) detailTextFont;
++(UIFont*) labelTextFont;
++(UIFont*) blipTextFont;
++(UIFont*) boldLabelTextFont;
 @end

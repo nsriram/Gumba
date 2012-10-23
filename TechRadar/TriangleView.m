@@ -9,7 +9,7 @@
     if(!self.isMinized) {
         UIImage *myImage = [UIImage imageNamed:@"triangle_blip@2x.png"];
         [myImage drawInRect:enclosure];
-        UIFont *font = [UIFont fontWithName:@"Georgia" size:12.0];
+        UIFont *font =  [AppConstants blipTextFont];
         CGFloat x=0.0;
         if(self.tip.length < 7){
             CGFloat textWidth = (self.tip.length * self.frame.size.width)/6.5;
