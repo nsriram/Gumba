@@ -15,7 +15,7 @@
     //a non-distracting color that gels with the background for arc titles
     [[UIColor colorWithRed:42/255.0f green:94/255.0f blue:119/255.0f alpha:1] set];
     
-    UIFont *font = [UIFont systemFontOfSize:18];
+    UIFont *font = [UIFont fontWithName:@"Georgia" size:18.0];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x + width, self.center.y + distance);
     CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
