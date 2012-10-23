@@ -74,7 +74,7 @@
     CGContextSetShadowWithColor( context, CGSizeMake( 0.0, 0.0 ), 5.0f, [UIColor blackColor].CGColor);
 
     [[UIColor whiteColor] set];
-    UIFont *font = [UIFont systemFontOfSize:20];
+    UIFont *font = [UIFont fontWithName:@"Georgia" size:20.0];
     CGPoint textPoint = CGPointMake(labelX,labelY);
     [[_quadrant name] drawAtPoint:textPoint withFont:font];
     

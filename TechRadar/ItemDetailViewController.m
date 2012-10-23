@@ -49,7 +49,7 @@
     description.layer.masksToBounds = NO;
     [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:[@"\n" stringByAppendingString:self.descriptionText]];
-    [self.description setFont:[UIFont fontWithName:@"TrebuchetMS" size:20]];
+    [self.description setFont:[UIFont fontWithName:@"Georgia" size:20]];
     [self.description setTextColor:[UIColor blackColor]];
     self.description.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"notebook_line.png"]];
     //auto-adjust text-view height by content height
