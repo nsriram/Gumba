@@ -169,6 +169,14 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView contentMode="scaleToFill" id="Z0A-Kf-20R">
+                                <rect key="frame" x="0.0" y="44" width="768" height="911"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="m7G-R5-Hdl" kind="embed" id="jeq-wQ-bPA"/>
+                                </connections>
+                            </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Qyy-Nq-jz5">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -229,6 +237,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="radarView" destination="Z0A-Kf-20R" id="CDy-8O-hXG"/>
                         <outlet property="searchDisplayController" destination="Ajd-Qp-EzT" id="70L-Ye-ldw"/>
                         <segue destination="ezK-1n-fqb" kind="modal" identifier="radar-to-details" id="0DK-TZ-XFY"/>
                     </connections>
@@ -244,6 +253,20 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-684" y="-2494"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nmM-7u-JoR">
+            <objects>
+                <viewController id="m7G-R5-Hdl" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="28e-Or-Tuy">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFV-Ln-OR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
@@ -289,6 +312,7 @@
                 <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="action" name="hold:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="trial:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="radarView" candidateClass="UIView"/>
             </relationships>
         </class>
     </classes>

@@ -25,7 +25,7 @@
     CGContextRestoreGState(context);
 }
 
-- (void) resize {
+- (void) resize:(CGRect)fullScreen {
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
@@ -34,9 +34,8 @@
                            forView:self
                              cache:NO];
     CGRect resized;
-    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
+    CGFloat screenWidth = fullScreen.size.width;
+    CGFloat screenHeight = fullScreen.size.height;
     if(self.frame.size.height == screenHeight){
         for(CircleView *subView in self.subviews){
             [subView minimize];
@@ -48,7 +47,7 @@
             [subView maximize];
             [subView setNeedsDisplay];
         }
-        resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
+        resized = CGRectMake(0, 0, screenWidth, screenHeight);
         [self.superview bringSubviewToFront:self];
     }
     self.frame = resized;	
@@ -62,7 +61,7 @@
     float labelYDeltaBottom = 60.0;
     float labelY=0;
     
-    if(self.frameOrigin.y == Y_OFFSET){
+    if(self.frameOrigin.y == 0){
         labelY = labelYDeltaTop;
     } else {
         labelY = self.frame.size.height - labelYDeltaBottom;

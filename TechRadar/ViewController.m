@@ -24,6 +24,7 @@
 @synthesize selectedButton;
 @synthesize barButtonColor;
 @synthesize itemView;
+@synthesize radarView;
 
 -(void) showAllItems {
     for(QuadrantView *quadrantView in self.quadrantViews){
@@ -175,7 +176,7 @@
     
     if([recognizer state] == UIGestureRecognizerStateEnded) {
         QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        [quadrantView resize];
+        [quadrantView resize:self.radarView.frame];
     }
 }
 
@@ -213,7 +214,7 @@
 }
 
 -(QuadrantView*) quadrantOriginX:(CGFloat)x Y:(CGFloat)y Quadrant:(Quadrant*)quadrant{
-    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+    CGRect screenRect = self.radarView.frame;
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     CGPoint origin = CGPointMake(x, y);
@@ -238,17 +239,17 @@
     Radar *radar = [Radar radarFromFile:@"radar"];
     NSMutableArray *allQuadrants = [radar quadrants];
     
-    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+    CGRect screenRect = self.radarView.frame;
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
     CGFloat midPointX = screenWidth/2;
     CGFloat midPointY = screenHeight/2;
     
-    [self.view insertSubview:[self quadrantOriginX:0.0 Y:0 Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:midPointX Y:0 Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:midPointX Y:midPointY Quadrant:[allQuadrants objectAtIndex:3]] atIndex:1];
+    [self.radarView insertSubview:[self quadrantOriginX:0.0 Y:0 Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
+    [self.radarView insertSubview:[self quadrantOriginX:midPointX Y:0 Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
+    [self.radarView insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
+    [self.radarView insertSubview:[self quadrantOriginX:midPointX Y:midPointY Quadrant:[allQuadrants objectAtIndex:3]] atIndex:1];
 } 
 
 - (void)viewDidLoad {
