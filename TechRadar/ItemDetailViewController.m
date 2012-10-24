@@ -30,7 +30,6 @@
 }
 
 - (void)paintRadarItemDetailHeader {
-    [self.detail setTextColor:[AppConstants textColor]];
     detail.layer.masksToBounds = NO;
     [self.detail setText:detailText];
     [self.detail setNumberOfLines:0];
@@ -38,10 +37,8 @@
 
 - (void)paintRadarItemDescription {
     description.layer.masksToBounds = NO;
-    [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:[@"\n" stringByAppendingString:self.descriptionText]];
     [self.description setFont:[AppConstants labelTextFont]];
-    [self.description setTextColor:[AppConstants textColor]];
     CGRect frame = self.description.frame;
     frame.size.height = [self.description contentSize].height;
     self.description.frame = frame;

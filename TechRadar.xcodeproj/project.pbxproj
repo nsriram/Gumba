@@ -107,6 +107,8 @@
 		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
 		C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */; };
 		C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */; };
+		F7A722601637EB9F002A241F /* simple_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7225E1637EB9F002A241F /* simple_background.png */; };
+		F7A722611637EB9F002A241F /* simple_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7225F1637EB9F002A241F /* simple_background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -249,6 +251,8 @@
 		C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRadarController.h; sourceTree = "<group>"; };
 		C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRadarController.m; sourceTree = "<group>"; };
+		F7A7225E1637EB9F002A241F /* simple_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simple_background.png; sourceTree = "<group>"; };
+		F7A7225F1637EB9F002A241F /* simple_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple_background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +444,8 @@
 		C3973F52162AE450006DF48B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F7A7225E1637EB9F002A241F /* simple_background.png */,
+				F7A7225F1637EB9F002A241F /* simple_background@2x.png */,
 				519104411633F65C0013D678 /* Icon-Small-50.png */,
 				519104421633F65C0013D678 /* Icon-Small-50@2x.png */,
 				5191043F1633F5400013D678 /* icon-72@2x.png */,
@@ -613,6 +619,8 @@
 				515A4A3E1635FA710022BEED /* userguide3@2x.png in Resources */,
 				515A4A421635FBAB0022BEED /* background.png in Resources */,
 				5183EFA51635FC6C003E7059 /* background.jpg in Resources */,
+				F7A722601637EB9F002A241F /* simple_background.png in Resources */,
+				F7A722611637EB9F002A241F /* simple_background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
