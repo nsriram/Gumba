@@ -155,29 +155,9 @@
     }
 }
 
-- (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer  {
-    const CGFloat kMaxScale = 2.0;
-    const CGFloat kMinScale = 1.0;
-    
-    if([recognizer state] == UIGestureRecognizerStateBegan) {
-        self.lastScale = [recognizer scale];
-    }
-    
-    if ([recognizer state] == UIGestureRecognizerStateBegan ||
-        [recognizer state] == UIGestureRecognizerStateChanged) {
-        
-        CGFloat currentScale = [[[recognizer view].layer valueForKeyPath:@"transform.scale"] floatValue];
-        
-        self.newScale = 1 -  (self.lastScale - [recognizer scale]);
-        self.newScale = MIN(self.newScale, kMaxScale / currentScale);
-        self.newScale = MAX(self.newScale, kMinScale / currentScale);        
-        self.lastScale = [recognizer scale];
-    }
-    
-    if([recognizer state] == UIGestureRecognizerStateEnded) {
-        QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        [quadrantView resize:self.radarView.frame];
-    }
+- (void)singleTap:(UITapGestureRecognizer *)recognizer  {
+    QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
+    [quadrantView resize:self.radarView.frame];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -195,11 +175,9 @@
     [self performSegueWithIdentifier:@"radar-to-details" sender:self];
 }
 
--(void) bindQuadrantTwoFingerPinch :(QuadrantView*)quadrantView {
-    UIPinchGestureRecognizer *twoFingerPinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)] ;
-    [quadrantView addGestureRecognizer:twoFingerPinch];
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPinch:)];
-    singleTap.numberOfTapsRequired = 2;
+-(void) bindQuadrantSingleTap:(QuadrantView*)quadrantView {
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+    singleTap.numberOfTapsRequired = 1;
     [quadrantView addGestureRecognizer:singleTap];
 }
 
@@ -228,7 +206,7 @@
                                                         AndQuadrant:quadrant];
     [quadrantView addCircleViews];
     [quadrantView addTriangleViews];
-    [self bindQuadrantTwoFingerPinch:quadrantView];
+    [self bindQuadrantSingleTap:quadrantView];
     [self bindItemTap:quadrantView];
     
     [_quadrantViews addObject:quadrantView];
