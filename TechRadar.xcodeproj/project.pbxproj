@@ -10,14 +10,11 @@
 		388D0E8315ED14B400D15479 /* TWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D0E8215ED14B400D15479 /* TWViewController.m */; };
 		388D0E8815ED16B700D15479 /* people.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 388D0E8715ED16B700D15479 /* people.jpg */; };
 		388D0E8B15ED32BD00D15479 /* ReferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388D0E8A15ED32BD00D15479 /* ReferenceViewController.m */; };
-		38E1AD18162A60AC001FEBBC /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = 38E1AD14162A60AC001FEBBC /* bootstrap.css */; };
-		38E1AD1B162A60AC001FEBBC /* radar_references.html in Resources */ = {isa = PBXBuildFile; fileRef = 38E1AD17162A60AC001FEBBC /* radar_references.html */; };
 		38EEBFB61590F41F00367FEA /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EEBFB51590F41F00367FEA /* CircleView.m */; };
 		515A4A351635FA710022BEED /* about_radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 515A4A2B1635FA710022BEED /* about_radar.png */; };
 		515A4A361635FA710022BEED /* about_radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 515A4A2C1635FA710022BEED /* about_radar@2x.png */; };
 		515A4A371635FA710022BEED /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 515A4A2D1635FA710022BEED /* Default-Portrait.png */; };
 		515A4A381635FA710022BEED /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 515A4A2E1635FA710022BEED /* Default-Portrait@2x.png */; };
-		5184BDFA1633574300B92AB3 /* mbtextview.m in Sources */ = {isa = PBXBuildFile; fileRef = 5184BDF91633574300B92AB3 /* mbtextview.m */; };
 		C301ABD1150B12B700272284 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C301ABD0150B12B700272284 /* QuartzCore.framework */; };
 		C310A8D115011447003BF6B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D015011447003BF6B7 /* UIKit.framework */; };
 		C310A8D315011447003BF6B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310A8D215011447003BF6B7 /* Foundation.framework */; };
@@ -72,16 +69,12 @@
 		388D0E8715ED16B700D15479 /* people.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = people.jpg; sourceTree = "<group>"; };
 		388D0E8915ED32BD00D15479 /* ReferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceViewController.h; sourceTree = "<group>"; };
 		388D0E8A15ED32BD00D15479 /* ReferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceViewController.m; sourceTree = "<group>"; };
-		38E1AD14162A60AC001FEBBC /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.css; sourceTree = "<group>"; };
-		38E1AD17162A60AC001FEBBC /* radar_references.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = radar_references.html; sourceTree = "<group>"; };
 		38EEBFB41590F41F00367FEA /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleView.h; path = TechRadar/CircleView.h; sourceTree = "<group>"; };
 		38EEBFB51590F41F00367FEA /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleView.m; path = TechRadar/CircleView.m; sourceTree = "<group>"; };
 		515A4A2B1635FA710022BEED /* about_radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_radar.png; sourceTree = "<group>"; };
 		515A4A2C1635FA710022BEED /* about_radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_radar@2x.png"; sourceTree = "<group>"; };
 		515A4A2D1635FA710022BEED /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		515A4A2E1635FA710022BEED /* Default-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x.png"; sourceTree = "<group>"; };
-		5184BDF81633574300B92AB3 /* mbtextview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mbtextview.h; path = TechRadar/mbtextview.h; sourceTree = "<group>"; };
-		5184BDF91633574300B92AB3 /* mbtextview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mbtextview.m; path = TechRadar/mbtextview.m; sourceTree = "<group>"; };
 		C301ABD0150B12B700272284 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C310A8CC15011447003BF6B7 /* Tech Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Radar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310A8D015011447003BF6B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -175,16 +168,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5184BDFB163357F900B92AB3 /* fixed_height_text_view */ = {
-			isa = PBXGroup;
-			children = (
-				5184BDF81633574300B92AB3 /* mbtextview.h */,
-				5184BDF91633574300B92AB3 /* mbtextview.m */,
-			);
-			name = fixed_height_text_view;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		C310A8C115011446003BF6B7 = {
 			isa = PBXGroup;
 			children = (
@@ -216,12 +199,9 @@
 		C310A8D615011447003BF6B7 /* TechRadar */ = {
 			isa = PBXGroup;
 			children = (
-				38E1AD14162A60AC001FEBBC /* bootstrap.css */,
-				38E1AD17162A60AC001FEBBC /* radar_references.html */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
 				C3500CEA15B5B8A3006465C5 /* radar.json */,
 				C3500CE615B5AD19006465C5 /* model */,
-				5184BDFB163357F900B92AB3 /* fixed_height_text_view */,
 				C3DFC2EC15B7C862005DE04B /* view */,
 				C310A8D715011447003BF6B7 /* Supporting Files */,
 				C376024E151CC63700D26B46 /* json-framework */,
@@ -401,8 +381,6 @@
 				C310A8E415011447003BF6B7 /* MainStoryboard.storyboard in Resources */,
 				C3500CEB15B5B8A3006465C5 /* radar.json in Resources */,
 				388D0E8815ED16B700D15479 /* people.jpg in Resources */,
-				38E1AD18162A60AC001FEBBC /* bootstrap.css in Resources */,
-				38E1AD1B162A60AC001FEBBC /* radar_references.html in Resources */,
 				515A4A351635FA710022BEED /* about_radar.png in Resources */,
 				515A4A361635FA710022BEED /* about_radar@2x.png in Resources */,
 				515A4A371635FA710022BEED /* Default-Portrait.png in Resources */,
@@ -458,7 +436,6 @@
 				388D0E8315ED14B400D15479 /* TWViewController.m in Sources */,
 				388D0E8B15ED32BD00D15479 /* ReferenceViewController.m in Sources */,
 				C3973F56162B02EE006DF48B /* UserGuideViewController.m in Sources */,
-				5184BDFA1633574300B92AB3 /* mbtextview.m in Sources */,
 				F74F5F72163822E50018F77C /* PreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
