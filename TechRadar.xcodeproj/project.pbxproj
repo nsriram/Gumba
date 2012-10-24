@@ -59,6 +59,9 @@
 		F74F5F631637FC030018F77C /* technology-radar-icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F621637FC030018F77C /* technology-radar-icon144.png */; };
 		F74F5F6A1637FC5B0018F77C /* radar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F681637FC5B0018F77C /* radar_icon.png */; };
 		F74F5F6B1637FC5B0018F77C /* radar_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F691637FC5B0018F77C /* radar_icon@2x.png */; };
+		F74F5F6E163812A40018F77C /* references.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F6C163812A40018F77C /* references.png */; };
+		F74F5F6F163812A40018F77C /* references@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F6D163812A40018F77C /* references@2x.png */; };
+		F74F5F72163822E50018F77C /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F5F71163822E50018F77C /* PreviewViewController.m */; };
 		F7A722601637EB9F002A241F /* simple_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7225E1637EB9F002A241F /* simple_background.png */; };
 		F7A722611637EB9F002A241F /* simple_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7225F1637EB9F002A241F /* simple_background@2x.png */; };
 /* End PBXBuildFile section */
@@ -149,6 +152,10 @@
 		F74F5F621637FC030018F77C /* technology-radar-icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "technology-radar-icon144.png"; path = "../technology-radar-icon144.png"; sourceTree = "<group>"; };
 		F74F5F681637FC5B0018F77C /* radar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radar_icon.png; sourceTree = "<group>"; };
 		F74F5F691637FC5B0018F77C /* radar_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radar_icon@2x.png"; sourceTree = "<group>"; };
+		F74F5F6C163812A40018F77C /* references.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = references.png; sourceTree = "<group>"; };
+		F74F5F6D163812A40018F77C /* references@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "references@2x.png"; sourceTree = "<group>"; };
+		F74F5F70163822E50018F77C /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
+		F74F5F71163822E50018F77C /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
 		F7A7225E1637EB9F002A241F /* simple_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simple_background.png; sourceTree = "<group>"; };
 		F7A7225F1637EB9F002A241F /* simple_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple_background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,11 +239,13 @@
 				C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */,
 				C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */,
 				388D0E8115ED14B400D15479 /* TWViewController.h */,
+				C3973F54162B02EE006DF48B /* UserGuideViewController.h */,
 				388D0E8215ED14B400D15479 /* TWViewController.m */,
 				388D0E8915ED32BD00D15479 /* ReferenceViewController.h */,
 				388D0E8A15ED32BD00D15479 /* ReferenceViewController.m */,
-				C3973F54162B02EE006DF48B /* UserGuideViewController.h */,
 				C3973F55162B02EE006DF48B /* UserGuideViewController.m */,
+				F74F5F70163822E50018F77C /* PreviewViewController.h */,
+				F74F5F71163822E50018F77C /* PreviewViewController.m */,
 			);
 			path = TechRadar;
 			sourceTree = "<group>";
@@ -300,6 +309,8 @@
 		C3973F52162AE450006DF48B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F74F5F6C163812A40018F77C /* references.png */,
+				F74F5F6D163812A40018F77C /* references@2x.png */,
 				F74F5F681637FC5B0018F77C /* radar_icon.png */,
 				F74F5F691637FC5B0018F77C /* radar_icon@2x.png */,
 				F74F5F621637FC030018F77C /* technology-radar-icon144.png */,
@@ -406,6 +417,8 @@
 				F74F5F631637FC030018F77C /* technology-radar-icon144.png in Resources */,
 				F74F5F6A1637FC5B0018F77C /* radar_icon.png in Resources */,
 				F74F5F6B1637FC5B0018F77C /* radar_icon@2x.png in Resources */,
+				F74F5F6E163812A40018F77C /* references.png in Resources */,
+				F74F5F6F163812A40018F77C /* references@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +459,7 @@
 				388D0E8B15ED32BD00D15479 /* ReferenceViewController.m in Sources */,
 				C3973F56162B02EE006DF48B /* UserGuideViewController.m in Sources */,
 				5184BDFA1633574300B92AB3 /* mbtextview.m in Sources */,
+				F74F5F72163822E50018F77C /* PreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

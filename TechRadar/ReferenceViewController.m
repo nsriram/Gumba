@@ -1,59 +1,50 @@
 #import "ReferenceViewController.h"
+#import "PreviewViewController.h"
 #import "AppConstants.h"
 
+static NSMutableDictionary *referenceLinks = nil;
+ 
 @implementation ReferenceViewController
-@synthesize referencesWebView,toolbar,backButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     return self;
 }
 
-- (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
-    [self.navigationController popViewControllerAnimated:TRUE];
-}
-
--(void) bindSwipeRight {
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [[self view] addGestureRecognizer:recognizer];
-}
-
--(void) loadLocalFile {
-    NSString *htmlFileContent = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"radar_references" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
-    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath] isDirectory:YES];
-    [self.referencesWebView loadHTMLString:htmlFileContent baseURL:baseURL];
-}
-
--(void) loadReferences {
-    CGRect webViewFrame = self.referencesWebView.frame;
-    [self.referencesWebView removeFromSuperview];
-    self.referencesWebView.delegate = nil;
-    self.referencesWebView = nil;
-    self.referencesWebView = [[UIWebView alloc]initWithFrame:webViewFrame];
-    self.referencesWebView.delegate = self;
-    [self.view addSubview:self.referencesWebView];
-    [self loadLocalFile];
-}
-
--(IBAction) references:(UIBarButtonItem *)barButtonItem {
-    [self loadReferences];
-}
-
--(IBAction) back:(UIBarButtonItem *)barButtonItem {
-    if ([self.referencesWebView canGoBack]) {
-        [self.referencesWebView goBack];
-    } else {
-        [self loadReferences];
+-(IBAction) link:(UIButton*)button {
+    NSString *label = button.currentTitle;
+    NSString *urlString = [referenceLinks objectForKey:label];
+    if (urlString) {
+        self.currentURL = urlString;
+        [self performSegueWithIdentifier:@"ref-to-preview" sender:self];
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"ref-to-preview"]) {
+    	PreviewViewController *controller = (PreviewViewController*)segue.destinationViewController;
+        controller.url = self.currentURL;
+	}
+}
+
 - (void)viewDidLoad {
+    if (!referenceLinks) {
+        referenceLinks = [NSMutableDictionary dictionaryWithCapacity:20];
+        [referenceLinks setObject:@"http://alice.org" forKey:@"Alice"];
+        [referenceLinks setObject:@"http://pig.apache.org" forKey:@"Apache Pig"];
+        [referenceLinks setObject:@"http://calatrava.github.com" forKey:@"Calatrava"];
+        [referenceLinks setObject:@"http://d3js.org" forKey:@"D3"];
+        [referenceLinks setObject:@"http://dropwizard.codahale.com" forKey:@"Dropwizard"];
+        [referenceLinks setObject:@"http://kodowa.com" forKey:@"Light Table"];
+        [referenceLinks setObject:@"http://locust.io" forKey:@"Locust"];
+        [referenceLinks setObject:@"http://lua.org" forKey:@"Lua"];
+        [referenceLinks setObject:@"http://aphyr.github.com/riemann/" forKey:@"Riemann"];
+        [referenceLinks setObject:@"http://scratch.mit.edu" forKey:@"Scratch"];
+        [referenceLinks setObject:@"http://silverbackapp.com" forKey:@"Silverback"];
+        [referenceLinks setObject:@"http://zucchiniframework.org" forKey:@"Zucchini"];
+    }
     [super viewDidLoad];
-    [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self.referencesWebView setBackgroundColor:[AppConstants detailBackgroundColor]];
-    [self loadLocalFile];
-    [self bindSwipeRight];
 }
 
 - (void)viewDidUnload {
@@ -63,15 +54,5 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-}
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
 @end

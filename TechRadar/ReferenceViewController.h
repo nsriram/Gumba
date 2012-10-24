@@ -1,13 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface ReferenceViewController : UIViewController<UIWebViewDelegate>{
-    IBOutlet UIWebView *referencesWebView;
-    UIToolbar *toolbar;
-    UIBarButtonItem *backButton;
+@interface ReferenceViewController : UIViewController {
 }
-@property (nonatomic,strong) IBOutlet UIWebView *referencesWebView;
-@property (nonatomic,strong) IBOutlet UIToolbar *toolbar;
-@property (nonatomic,strong) IBOutlet UIBarButtonItem *backButton;
--(IBAction) back:(UIBarButtonItem *)barButtonItem;
--(IBAction) references:(UIBarButtonItem *)barButtonItem;
+@property NSString *currentURL;
 @end
