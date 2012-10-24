@@ -14,19 +14,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)goBack:(UIPinchGestureRecognizer *)recognizer  {
-    [self.navigationController popViewControllerAnimated:TRUE];
-}
-
--(void) bindBack {
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
-    [swipe setDirection:(UISwipeGestureRecognizerDirectionRight)];
-
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)] ;
-    singleTap.numberOfTapsRequired = 1;
-    
-    [[self view] addGestureRecognizer:swipe];
-    [[self view] addGestureRecognizer:singleTap];
+- (IBAction)dismissDetails:(id)sender {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)paintRadarItemDetailHeader {
@@ -48,7 +37,6 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
     self.title = @"Radar Notes";
-    [self bindBack];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
     [self paintRadarItemDetailHeader];
     [self paintRadarItemDescription];

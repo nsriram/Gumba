@@ -32,7 +32,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"about_radar.png"]];
     [self bindSwipeRight];
-    self.title = @"About Technology Radar";
 }
 
 - (void)viewDidUnload {

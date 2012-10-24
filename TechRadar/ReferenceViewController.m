@@ -50,7 +50,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Radar References";
     [self.view setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.referencesWebView setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self loadLocalFile];

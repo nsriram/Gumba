@@ -5,8 +5,6 @@
 #import "Radar.h"
 #import "AppConstants.h"
 #import "ItemDetailViewController.h"
-#import "WEPopoverController.h"
-#import "WEPopoverContentViewController.h"
 
 
 @interface ViewController()
@@ -14,7 +12,7 @@
 @property (nonatomic, assign) CGFloat newScale;
 @property (nonatomic, assign) NSInteger innerRadius;
 @property (nonatomic, assign) NSInteger outerRadius;
-@property (nonatomic, strong) WEPopoverController *popoverController;
+@property (nonatomic, strong) ItemView *itemView;
 @end
 
 @implementation ViewController
@@ -25,7 +23,7 @@
 @synthesize innerRadius,outerRadius;
 @synthesize selectedButton;
 @synthesize barButtonColor;
-@synthesize popoverController;
+@synthesize itemView;
 
 -(void) showAllItems {
     for(QuadrantView *quadrantView in self.quadrantViews){
@@ -177,26 +175,23 @@
     
     if([recognizer state] == UIGestureRecognizerStateEnded) {
         QuadrantView *quadrantView = (QuadrantView *)recognizer.view;
-        [quadrantView resize:self.navigationItem];
+        [quadrantView resize];
     }
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"radar-to-details"]) {
+    	ItemDetailViewController *itemDetailViewController = (ItemDetailViewController*)segue.destinationViewController;
+        itemDetailViewController.detailText = [NSString stringWithFormat:@"%@",self.itemView.blipName];
+        itemDetailViewController.descriptionText = self.itemView.description;
+        itemDetailViewController.imageText = self.itemView.type;
+	}
+}
+
 -(IBAction) displayItemDetails:(UIGestureRecognizer*)sender {
-    ItemDetailViewController *itemDetailViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];    
-    ItemView *itemView = (ItemView *)sender.view;
-    itemDetailViewController.detailText = [NSString stringWithFormat:@"%@",itemView.blipName];
-    itemDetailViewController.descriptionText = itemView.description;
-    itemDetailViewController.imageText = itemView.type;    
-    [self.navigationController pushViewController:itemDetailViewController animated:YES];
-    
-//    UIViewController *contentViewController = [[WEPopoverContentViewController alloc]
-//                                               initWithStyle:UITableViewStylePlain
-//                                               andBlipName:[NSString stringWithFormat:@"%@",itemView.blipName]
-//                                               andDescription:itemView.description];
-//    self.popoverController = [[WEPopoverController alloc] initWithContentViewController:contentViewController];
-//    [self.popoverController presentPopoverFromRect:CGRectMake(10,10,10,10)
-//                                            inView:itemView
-//                          permittedArrowDirections:UIPopoverArrowDirectionDown
-//                                          animated:YES];
+    self.itemView = (ItemView *)sender.view;
+    [self performSegueWithIdentifier:@"radar-to-details" sender:self];
 }
 
 -(void) bindQuadrantTwoFingerPinch :(QuadrantView*)quadrantView {
@@ -222,10 +217,10 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     CGPoint origin = CGPointMake(x, y);
-    CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
+    CGRect frame = CGRectMake(origin.x, origin.y, screenWidth/2, screenHeight/2);
     
     CGFloat centerX = (x > 0.0 ? 0.0 : screenWidth/2);
-    CGFloat centerY = (y > Y_OFFSET ? 0.0 : ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2));
+    CGFloat centerY = (y > 0 ? 0.0 : screenHeight/2);
     
     QuadrantView *quadrantView = [[QuadrantView alloc]initWithFrame:frame
                                                          WithCenter:CGPointMake(centerX,centerY)
@@ -248,27 +243,16 @@
     CGFloat screenHeight = screenRect.size.height;
     
     CGFloat midPointX = screenWidth/2;
-    CGFloat midPointY = ((screenHeight-Y_OFFSET-self.navigationController.navigationBar.frame.size.height)/2)+Y_OFFSET;
+    CGFloat midPointY = screenHeight/2;
     
-    [self.view insertSubview:[self quadrantOriginX:0.0 Y:Y_OFFSET Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
-    [self.view insertSubview:[self quadrantOriginX:midPointX Y:Y_OFFSET Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
+    [self.view insertSubview:[self quadrantOriginX:0.0 Y:0 Quadrant:[allQuadrants objectAtIndex:0]] atIndex:1];
+    [self.view insertSubview:[self quadrantOriginX:midPointX Y:0 Quadrant:[allQuadrants objectAtIndex:1]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:0.0 Y:midPointY Quadrant:[allQuadrants objectAtIndex:2]] atIndex:1];
     [self.view insertSubview:[self quadrantOriginX:midPointX Y:midPointY Quadrant:[allQuadrants objectAtIndex:3]] atIndex:1];
 } 
 
-- (void)swipeRight:(UIPinchGestureRecognizer *)recognizer  {
-    [self.navigationController popViewControllerAnimated:TRUE];
-}
-
--(void) bindSwipeRight {
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [[self view] addGestureRecognizer:recognizer];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self bindSwipeRight];
     self.innerRadius=0.0;
     self.outerRadius=400.0;
     [[self view] setClipsToBounds:YES];
