@@ -18,7 +18,7 @@
     UIFont *font = [AppConstants labelTextFont];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x + width, self.center.y + distance);
-    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.50/2.0);
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(self.center.x + width), -(self.center.y+ distance));
     [label drawAtPoint:CGPointMake(self.center.x + width, self.center.y + distance) withFont:font];
