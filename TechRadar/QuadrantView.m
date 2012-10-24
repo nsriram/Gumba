@@ -148,7 +148,8 @@
     
     [self drawCircleAtPoint:self.center withRadius:150*RADAR_RATIO inContext:context];
     [self drawCircleAtPoint:self.center withRadius:275*RADAR_RATIO inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:350*RADAR_RATIO inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:345*RADAR_RATIO inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:350*RADAR_RATIO inContext:context];
     [self drawCircleAtPoint:self.center withRadius:400*RADAR_RATIO inContext:context];    
     
     CGRect myFrame = self.bounds;
