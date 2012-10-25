@@ -39,7 +39,11 @@
 }
 
 +(UIFont*) blipTextFont{
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:11.0];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:10.5];
+}
+
++(UIFont*) blipTextFontSmall{
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:10.0];
 }
 
 +(CGGradientRef) backgroundGradient {

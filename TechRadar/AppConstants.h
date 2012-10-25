@@ -22,5 +22,6 @@
 +(UIFont*) circleTextFont;
 +(UIFont*) titleTextFont;
 +(UIFont*) blipTextFont;
++(UIFont*) blipTextFontSmall;
 +(UIFont*) boldLabelTextFont;
 @end

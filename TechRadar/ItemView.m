@@ -1,4 +1,5 @@
 #import "ItemView.h"
+#import "AppConstants.h"
 @implementation ItemView
 
 @synthesize entry = _entry, blipName =_blipName, type = _type, isMinized = _isMinized, radius = _radius, tip=_tip, description = _description;
@@ -10,8 +11,12 @@
     CGAffineTransform textTransform = CGAffineTransformMakeRotation(angle);
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(point.x), -(point.y));
-    [text drawAtPoint:point withFont:font];
-    CGContextRestoreGState(context);    
+    UIFont *fontt = [AppConstants blipTextFontSmall];
+    if([text length] < 14){
+        fontt =[AppConstants blipTextFont];
+    }
+    [text drawInRect:CGRectMake(0.0, point.y, self.frame.size.width, self.frame.size.height) withFont:fontt lineBreakMode:NSLineBreakByTruncatingMiddle alignment:NSTextAlignmentLeft];
+    CGContextRestoreGState(context);
 }
 
 -(void) minimize{

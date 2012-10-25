@@ -5,17 +5,13 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect enclosure = CGRectMake(0.125*self.frame.size.width, 0.0, rect.size.width * 0.75, rect.size.height * 0.75);
+    CGRect enclosure = CGRectMake(0.125*self.frame.size.width, 0.0, rect.size.width * 0.6, rect.size.height * 0.45);
     if(!self.isMinized) {
+        enclosure = CGRectMake(0.0, 0.0, rect.size.width * 0.25, rect.size.height * 0.2);
         UIImage *myImage = [UIImage imageNamed:@"triangle_blip@2x.png"];
         [myImage drawInRect:enclosure];
         UIFont *font =  [AppConstants blipTextFont];
-        CGFloat x=0.0;
-        if(self.tip.length < 7){
-            CGFloat textWidth = (self.tip.length * self.frame.size.width)/6.5;
-            x = (self.frame.size.width - textWidth)/2.0;
-        }
-        CGPoint textPoint = CGPointMake(x, self.frame.size.height*0.69);
+        CGPoint textPoint = CGPointMake(0.0, self.frame.size.height*0.175);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:TRIANGLE_TEXT_ANGLE];
     }
     else {
