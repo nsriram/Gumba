@@ -5,7 +5,7 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect enclosure = CGRectMake(0.125*self.frame.size.width, 0.0, rect.size.width * 0.6, rect.size.height * 0.45);
+    CGRect enclosure = CGRectMake(0.125*self.frame.size.width, 0.0, rect.size.width * 0.5, rect.size.height * 0.375);
     if(!self.isMinized) {
         enclosure = CGRectMake(0.0, 0.0, rect.size.width * 0.25, rect.size.height * 0.2);
         UIImage *myImage = [UIImage imageNamed:@"triangle_blip@2x.png"];
