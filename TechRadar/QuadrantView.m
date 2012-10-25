@@ -56,7 +56,7 @@
 
 
 -(void) drawQuadrantLabelInContext:(CGContextRef)context{
-    float labelX = self.frame.size.width/3.0;
+    float labelX = self.frame.size.width/10.0;
     float labelYDeltaTop = 20.0;
     float labelYDeltaBottom = 60.0;
     float labelY=0;
