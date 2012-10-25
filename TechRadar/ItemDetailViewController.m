@@ -21,6 +21,7 @@
 - (void)paintRadarItemDetailHeader {
     detail.layer.masksToBounds = NO;
     [self.detail setText:detailText];
+    [self.description setFont:[AppConstants titleTextFont]];
     [self.detail setNumberOfLines:0];
 }
 

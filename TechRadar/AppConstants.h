@@ -18,8 +18,9 @@
 +(UIColor*) barButtonColor;
 +(UIColor*) textColor;
 +(CGGradientRef) backgroundGradient;
-+(UIFont*) detailTextFont;
 +(UIFont*) labelTextFont;
++(UIFont*) circleTextFont;
++(UIFont*) titleTextFont;
 +(UIFont*) blipTextFont;
 +(UIFont*) boldLabelTextFont;
 @end
