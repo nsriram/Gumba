@@ -22,20 +22,24 @@
     return [UIColor colorWithRed: 255/255.0 green: 255.0/255.0 blue: 244.0/255.0 alpha: 1.0];
 }
 
-+(UIFont*) detailTextFont{
-    return [UIFont fontWithName:@"Georgia" size:12.0];
++(UIFont*) titleTextFont{
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:48.0];
 }
 
 +(UIFont*) labelTextFont{
-    return [UIFont fontWithName:@"Georgia" size:20.0];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:15.0];
+}
+
++(UIFont*) circleTextFont{
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:15.0];
 }
 
 +(UIFont*) boldLabelTextFont{
-    return [UIFont fontWithName:@"Georgia-Bold" size:20.0];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:20.0];
 }
 
 +(UIFont*) blipTextFont{
-    return [UIFont fontWithName:@"Georgia" size:11.0];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:11.0];
 }
 
 +(CGGradientRef) backgroundGradient {

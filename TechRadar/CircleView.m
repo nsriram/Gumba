@@ -19,7 +19,7 @@
             CGFloat textWidth = (self.tip.length * self.frame.size.width)/6.0;
             x = (self.frame.size.width - textWidth)/2.0;
         }
-        CGPoint textPoint = CGPointMake(x, radius*2.15);
+        CGPoint textPoint = CGPointMake(x, radius*2.21);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:CIRCLE_TEXT_ANGLE];
     }
     else {

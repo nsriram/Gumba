@@ -14,34 +14,21 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)goBack:(UIPinchGestureRecognizer *)recognizer  {
-    [self.navigationController popViewControllerAnimated:TRUE];
-}
-
--(void) bindBack {
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)];
-    [swipe setDirection:(UISwipeGestureRecognizerDirectionRight)];
-
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goBack:)] ;
-    singleTap.numberOfTapsRequired = 1;
-    
-    [[self view] addGestureRecognizer:swipe];
-    [[self view] addGestureRecognizer:singleTap];
+- (IBAction)dismissDetails:(id)sender {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)paintRadarItemDetailHeader {
-    [self.detail setTextColor:[AppConstants textColor]];
     detail.layer.masksToBounds = NO;
     [self.detail setText:detailText];
+    [self.description setFont:[AppConstants titleTextFont]];
     [self.detail setNumberOfLines:0];
 }
 
 - (void)paintRadarItemDescription {
     description.layer.masksToBounds = NO;
-    [self.description setBackgroundColor:[AppConstants detailBackgroundColor]];
     [self.description setText:[@"\n" stringByAppendingString:self.descriptionText]];
     [self.description setFont:[AppConstants labelTextFont]];
-    [self.description setTextColor:[AppConstants textColor]];
     CGRect frame = self.description.frame;
     frame.size.height = [self.description contentSize].height;
     self.description.frame = frame;
@@ -51,7 +38,6 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
     self.title = @"Radar Notes";
-    [self bindBack];
     [self.itemType setImage:[UIImage imageNamed:imageText]];
     [self paintRadarItemDetailHeader];
     [self paintRadarItemDescription];

@@ -7,7 +7,5 @@
 @property (nonatomic, strong) Quadrant* quadrant;
 
 - (id)initWithFrame:(CGRect)frame WithCenter:(CGPoint)point AndQuadrant:(Quadrant*)quadrant;
-- (void) resize:(UINavigationItem*)navigationItem;
-- (void)addCircleViews;
-- (void)addTriangleViews;
+- (void) resize:(CGRect)fullScreen;
 @end
