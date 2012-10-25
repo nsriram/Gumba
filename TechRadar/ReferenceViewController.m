@@ -5,6 +5,7 @@
 static NSMutableDictionary *referenceLinks = nil;
  
 @implementation ReferenceViewController
+@synthesize references;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +30,9 @@ static NSMutableDictionary *referenceLinks = nil;
 }
 
 - (void)viewDidLoad {
+    for (UIButton* reference in self.references) {
+        reference.titleLabel.font = [AppConstants labelTextFont];
+    }
     if (!referenceLinks) {
         referenceLinks = [NSMutableDictionary dictionaryWithCapacity:20];
         [referenceLinks setObject:@"http://alice.org" forKey:@"Alice"];
@@ -43,6 +47,7 @@ static NSMutableDictionary *referenceLinks = nil;
         [referenceLinks setObject:@"http://scratch.mit.edu" forKey:@"Scratch"];
         [referenceLinks setObject:@"http://silverbackapp.com" forKey:@"Silverback"];
         [referenceLinks setObject:@"http://zucchiniframework.org" forKey:@"Zucchini"];
+        [referenceLinks setObject:@"http://www.thoughtworks.com/contact-us" forKey:@"get in touch."];
     }
     [super viewDidLoad];
 }
