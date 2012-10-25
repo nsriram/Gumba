@@ -15,17 +15,17 @@
     //a non-distracting color that gels with the background for arc titles
     [[UIColor colorWithRed:189/255.0f green:190/255.0f blue:192/255.0f alpha:1] set];
     
-    UIFont *font = [AppConstants labelTextFont];
+    UIFont *font = [AppConstants circleTextFont];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x + width, self.center.y + distance);
-    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.57/2.0);
+    CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.50/2.0);
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(self.center.x + width), -(self.center.y+ distance));
     [label drawAtPoint:CGPointMake(self.center.x + width, self.center.y + distance) withFont:font];
     CGContextRestoreGState(context);
 }
 
-- (void) resize:(UINavigationItem*)navigationItem{
+- (void) resize:(CGRect)fullScreen {
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:animationIDfinished:finished:context:)];
 	[UIView beginAnimations:nil context:nil];
@@ -34,23 +34,20 @@
                            forView:self
                              cache:NO];
     CGRect resized;
-    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height-Y_OFFSET-NAVBAR_SIZE;
+    CGFloat screenWidth = fullScreen.size.width;
+    CGFloat screenHeight = fullScreen.size.height;
     if(self.frame.size.height == screenHeight){
-        navigationItem.hidesBackButton=NO;
         for(CircleView *subView in self.subviews){
             [subView minimize];
             [subView setNeedsDisplay];
         }
         resized = CGRectMake(self.frameOrigin.x, self.frameOrigin.y, screenWidth/2, screenHeight/2);
     } else {
-        navigationItem.hidesBackButton=YES;
         for(CircleView *subView in self.subviews){
             [subView maximize];
             [subView setNeedsDisplay];
         }
-        resized = CGRectMake(0, Y_OFFSET, screenWidth, screenHeight);
+        resized = CGRectMake(0, 0, screenWidth, screenHeight);
         [self.superview bringSubviewToFront:self];
     }
     self.frame = resized;	
@@ -59,12 +56,12 @@
 
 
 -(void) drawQuadrantLabelInContext:(CGContextRef)context{
-    float labelX = self.frame.size.width/3.0;
+    float labelX = self.frame.size.width/10.0;
     float labelYDeltaTop = 20.0;
     float labelYDeltaBottom = 60.0;
     float labelY=0;
     
-    if(self.frameOrigin.y == Y_OFFSET){
+    if(self.frameOrigin.y == 0){
         labelY = labelYDeltaTop;
     } else {
         labelY = self.frame.size.height - labelYDeltaBottom;
@@ -111,6 +108,8 @@
         self.frameOrigin=self.frame.origin;
         self.center = point;
         _quadrant = quadrant;
+        [self addCircleViews];
+        [self addTriangleViews];
     }
     return self;
 }
@@ -151,7 +150,8 @@
     
     [self drawCircleAtPoint:self.center withRadius:150*RADAR_RATIO inContext:context];
     [self drawCircleAtPoint:self.center withRadius:275*RADAR_RATIO inContext:context];
-    [self drawCircleAtPoint:self.center withRadius:350*RADAR_RATIO inContext:context];    
+    [self drawCircleAtPoint:self.center withRadius:345*RADAR_RATIO inContext:context];
+    [self drawCircleAtPoint:self.center withRadius:350*RADAR_RATIO inContext:context];
     [self drawCircleAtPoint:self.center withRadius:400*RADAR_RATIO inContext:context];    
     
     CGRect myFrame = self.bounds;

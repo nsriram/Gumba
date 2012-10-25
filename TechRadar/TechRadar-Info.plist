@@ -2,16 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Frkgotn.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Technology Radar</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>icon-72.png</string>
-		<string>icon-72@2x.png</string>
+		<string>technology-radar-icon72.png</string>
+		<string>technology-radar-icon144.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -19,8 +23,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>icon-72.png</string>
-				<string>icon-72@2x.png</string>
+				<string>technology-radar-icon72.png</string>
+				<string>technology-radar-icon144.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>

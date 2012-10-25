@@ -1,160 +1,211 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wGV-6c-hR4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="d0v-mH-cXS">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
-        <!--Dashboard View Controller - Technology Radar-->
-        <scene sceneID="0jb-IF-ERZ">
+        <!--Tab Bar Controller-->
+        <scene sceneID="ngX-as-7UP">
             <objects>
-                <viewController id="DH0-nB-Mfb" customClass="DashboardViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mLc-kK-Se6">
-                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <userGuides>
-                            <userLayoutGuide location="384" affinity="minX"/>
-                            <userLayoutGuide location="384" affinity="minX"/>
-                        </userGuides>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="circle.png" id="LIm-VN-aPE">
-                                <rect key="frame" x="26" y="148" width="740" height="681"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Technology Radar" id="3wp-fe-4ez"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                <tabBarController definesPresentationContext="YES" id="d0v-mH-cXS" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kEc-tB-ZdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="INV-kP-SBJ">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="6aT-JX-Njy"/>
+                        <segue destination="4oB-R0-DCO" kind="relationship" relationship="viewControllers" id="ghM-1q-knH"/>
+                        <segue destination="6mS-1w-1wn" kind="relationship" relationship="viewControllers" id="rC0-D5-Uzz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQl-B7-MYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-172" y="-1334"/>
+            <point key="canvasLocation" x="-1832" y="-1368"/>
         </scene>
-        <!--Reference View Controller-->
+        <!--Reference View Controller - References-->
         <scene sceneID="0Wc-D2-pJ6">
             <objects>
-                <viewController storyboardIdentifier="ReferenceViewController" id="4oB-R0-DCO" customClass="ReferenceViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReferenceViewController" title="References" id="4oB-R0-DCO" customClass="ReferenceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LJW-bs-t9b">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="References" textAlignment="center" id="ntr-T9-NPb">
-                                <rect key="frame" x="20" y="20" width="728" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="references.png" id="8ZI-VQ-dKx">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="955"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H6x-jb-22N">
+                                <rect key="frame" x="163" y="497" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <webView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="JcN-GC-eUi">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FS8-YS-LVg">
+                                <rect key="frame" x="64" y="314" width="400" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Alice">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="4oB-R0-DCO" id="42E-BV-0JS"/>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="3Yc-RV-vb8"/>
                                 </connections>
-                            </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="fU1-SX-eJ3">
-                                <rect key="frame" x="0.0" y="916" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="References" id="Qe5-Hp-IB8">
-                                        <connections>
-                                            <action selector="references:" destination="4oB-R0-DCO" id="36H-Pl-tjw"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Back" id="kwb-kN-BTo">
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="back:" destination="4oB-R0-DCO" id="m1J-Zx-k2S"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1at-h5-RbR">
+                                <rect key="frame" x="64" y="378" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Calatrava">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="6Wa-5H-JeV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xIo-5B-JC3">
+                                <rect key="frame" x="64" y="346" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Apache Pig">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="myZ-9T-I8b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tWf-bW-vUJ">
+                                <rect key="frame" x="64" y="569" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Riemann">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="WBf-L2-jZ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zCF-uH-EUz">
+                                <rect key="frame" x="64" y="537" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Lua">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="h9R-KW-r7c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WJO-8f-98Z">
+                                <rect key="frame" x="64" y="506" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Locust">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="V6P-Mv-pEd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lef-Mb-rhM">
+                                <rect key="frame" x="64" y="410" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="D3">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="YPi-aw-Ejy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v4U-b9-Uyl">
+                                <rect key="frame" x="64" y="474" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Light Table">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="IiH-Xy-ot1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cbs-Gr-70V">
+                                <rect key="frame" x="64" y="442" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Dropwizard">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="YKE-22-NWT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p5N-Zi-ZVk">
+                                <rect key="frame" x="64" y="633" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Silverback">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="tMk-yc-6Ke"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2VI-4o-2Yo">
+                                <rect key="frame" x="64" y="669" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Zucchini">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="01h-e2-n1Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1X4-UY-i9w">
+                                <rect key="frame" x="64" y="601" width="400" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <state key="normal" title="Scratch">
+                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="link:" destination="4oB-R0-DCO" eventType="touchUpInside" id="RJE-FP-4oY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBarItem key="tabBarItem" title="References" id="wHd-mu-PmS"/>
                     <connections>
-                        <outlet property="backButton" destination="kwb-kN-BTo" id="Sow-jk-x0Z"/>
-                        <outlet property="referencesWebView" destination="JcN-GC-eUi" id="Etd-2c-iJF"/>
-                        <outlet property="toolbar" destination="fU1-SX-eJ3" id="kk3-p2-WYZ"/>
+                        <segue destination="vgd-VN-KPi" kind="modal" identifier="ref-to-preview" id="m3g-5b-aDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYP-f5-KW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="-1322"/>
+            <point key="canvasLocation" x="-658" y="-1368"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="3F8-Yj-pIf">
-            <objects>
-                <viewController storyboardIdentifier="TWViewController" id="4Cu-yI-pZi" customClass="TWViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RQv-Go-Fpg">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="corporate_logo.png" id="TFk-4j-FWp">
-                                <rect key="frame" x="279" y="20" width="176" height="27"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="people.jpg" id="dcy-4G-cyA">
-                                <rect key="frame" x="164" y="303" width="440" height="327"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="© 2012 ThoughtWorks, Inc. | Privacy policy" textAlignment="center" id="SZB-Jf-JCr">
-                                <rect key="frame" x="247" y="914" width="240" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="aVo-if-fHH">
-                                <rect key="frame" x="20" y="55" width="736" height="238"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">ThoughtWorks is not your typical company. Talented, driven and principled people who are passionate about software, brought together because they want to do something amazing.
-
-ThoughtWorks was founded by Roy Singham in a Chicago basement in 1993. Roy's formula for success from the start was "Attitude, Aptitude, and Integrity" – he built ThoughtWorks upon the firm belief that communities of talented, driven, and principled people could move mountains. Today we employ over 1700 people across the globe. </string>
-                                <color key="textColor" red="0.23921568630000001" green="0.49019607840000001" blue="0.58823529409999997" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Cma-OU-uJt">
-                                <rect key="frame" x="16" y="638" width="736" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">Amazing work for our clients is the front line, revolutionizing the way the industry works is a gradual effect, improving society through software is our long term goal.
-
-Software development with ThoughtWorks feels and looks different: it is fast, evolutionary, even fun. We take good ideas – best practices like collaboration, feedback, transparency, and testing – and we build them into the fabric of the way we work.
-
-We are based in the United States, UK, Australia, Brazil, Canada, Germany, India and China and we work with clients from each location.</mutableString>
-                                <color key="textColor" red="0.23921568630000001" green="0.49019607840000001" blue="0.58823529409999997" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="peopleImage" destination="dcy-4G-cyA" id="8uN-sg-4aL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hc3-fK-hqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="772" y="-2542"/>
-        </scene>
-        <!--About Radar Controller-->
+        <!--About Radar Controller - About-->
         <scene sceneID="2Wt-aq-6M8">
             <objects>
-                <viewController storyboardIdentifier="AboutRadarController" id="6mS-1w-1wn" customClass="AboutRadarController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutRadarController" title="About" id="6mS-1w-1wn" customClass="AboutRadarController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PSa-6w-rh0">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="© 2012 ThoughtWorks, Inc. | Privacy policy" textAlignment="center" id="JSr-0l-ZmN">
@@ -168,72 +219,12 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="About" id="sM7-G6-PIa"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibr-OG-tnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-184" y="-190"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Tba-iB-rAx">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="wGV-6c-hR4" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="RLD-Un-c9c">
-                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SSK-N2-JoB">
-                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="DH0-nB-Mfb" kind="relationship" relationship="rootViewController" id="8GA-0b-AIp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nqj-7l-ye8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1099" y="-1322"/>
-        </scene>
-        <!--User Guide View Controller-->
-        <scene sceneID="6hb-Ry-AbX">
-            <objects>
-                <viewController storyboardIdentifier="UserGuideViewController" id="axw-AT-UJP" customClass="UserGuideViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KbA-WW-IOh">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="aGU-N9-JfP">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="axw-AT-UJP" id="a5v-uB-e3d"/>
-                                </connections>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="Stx-hv-xEB">
-                                <rect key="frame" x="0.0" y="924" width="768" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="changePage" destination="axw-AT-UJP" eventType="valueChanged" id="HYR-h2-di9"/>
-                                </connections>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="pageControl" destination="Stx-hv-xEB" id="qWU-qH-5C8"/>
-                        <outlet property="scrollView" destination="aGU-N9-JfP" id="v7N-NL-mAP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gl-fp-cZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="783" y="-170"/>
+            <point key="canvasLocation" x="-684" y="-228"/>
         </scene>
         <!--Item Detail View Controller-->
         <scene sceneID="KvD-YT-BRS">
@@ -243,24 +234,40 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW" customClass="MBTextView">
-                                <rect key="frame" x="20" y="129" width="728" height="456"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="simple_background.png" id="KtP-44-KSZ">
+                                <rect key="frame" x="0.0" y="44" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                            </imageView>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="Vzt-76-3rW">
+                                <rect key="frame" x="86" y="426" width="597" height="515"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" text="Radar Item" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" minimumFontSize="10" adjustsFontSizeToFit="NO" id="jUJ-ys-wnV">
-                                <rect key="frame" x="107" y="0.0" width="597" height="111"/>
+                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" text="Radar items" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" minimumFontSize="19" adjustsLetterSpacingToFitWidth="YES" id="jUJ-ys-wnV">
+                                <rect key="frame" x="95" y="393" width="579" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="38"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5zP-H1-jdh">
-                                <rect key="frame" x="20" y="24" width="64" height="64"/>
+                                <rect key="frame" x="20" y="388" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="BEz-rb-kkY">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cbC-Vk-Io5"/>
+                                    <barButtonItem systemItem="done" id="BoQ-U6-bIj">
+                                        <connections>
+                                            <action selector="dismissDetails:" destination="ezK-1n-fqb" id="bYc-1C-wvs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -272,43 +279,34 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRg-2D-5Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1099" y="-2542"/>
+            <point key="canvasLocation" x="305" y="-2494"/>
         </scene>
-        <!--View Controller - Technology Radar-->
-        <scene sceneID="4">
+        <!--Preview View Controller-->
+        <scene sceneID="LAq-My-8Jq">
             <objects>
-                <viewController storyboardIdentifier="CurrentRadarController" title="Technology Radar" id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController id="vgd-VN-KPi" customClass="PreviewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXw-t8-NHF">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Qyy-Nq-jz5">
+                            <webView contentMode="scaleToFill" id="bgz-nI-BXg">
+                                <rect key="frame" x="0.0" y="44" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="D5O-3F-MDS">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Adopt" width="140" id="SdZ-tG-KLz">
+                                    <barButtonItem systemItem="action" id="h3V-X2-YmX">
                                         <connections>
-                                            <action selector="adopt:" destination="2" id="5h4-0J-j9K"/>
+                                            <action selector="openInSafari:" destination="vgd-VN-KPi" id="Ufb-if-s4b"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Trial" width="140" id="lPg-AW-326">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jrp-Ro-Wda"/>
+                                    <barButtonItem systemItem="done" id="yDl-7b-dz0">
                                         <connections>
-                                            <action selector="trial:" destination="2" id="tq2-LB-aZ6"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Assess" width="140" id="0eW-Cz-bkz">
-                                        <connections>
-                                            <action selector="assess:" destination="2" id="CQP-Ac-6CQ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Hold" width="140" id="G4h-xF-GLd">
-                                        <connections>
-                                            <action selector="hold:" destination="2" id="sKZ-iX-plZ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="All" width="140" id="b6f-52-0bq">
-                                        <connections>
-                                            <action selector="all:" destination="2" id="z2h-Ix-GGl"/>
+                                            <action selector="dismissDetails:" destination="vgd-VN-KPi" id="16c-sZ-kKg"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -316,7 +314,78 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Technology Radar" id="ecL-lX-AdC"/>
+                    <connections>
+                        <outlet property="webView" destination="bgz-nI-BXg" id="ejB-WS-SzC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZk-MW-Bwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="-1368"/>
+        </scene>
+        <!--View Controller - Technology Radar-->
+        <scene sceneID="4">
+            <objects>
+                <viewController storyboardIdentifier="CurrentRadarController" title="Technology Radar" id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" id="Z0A-Kf-20R" customClass="RadarView">
+                                <rect key="frame" x="0.0" y="44" width="768" height="911"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Qyy-Nq-jz5">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Adopt" width="65" id="SdZ-tG-KLz">
+                                        <connections>
+                                            <action selector="adopt:" destination="2" id="5h4-0J-j9K"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Trial" width="65" id="lPg-AW-326">
+                                        <connections>
+                                            <action selector="trial:" destination="2" id="tq2-LB-aZ6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Assess" width="65" id="0eW-Cz-bkz">
+                                        <connections>
+                                            <action selector="assess:" destination="2" id="CQP-Ac-6CQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Hold" width="65" id="G4h-xF-GLd">
+                                        <connections>
+                                            <action selector="hold:" destination="2" id="sKZ-iX-plZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="All" width="65" id="b6f-52-0bq">
+                                        <connections>
+                                            <action selector="all:" destination="2" id="z2h-Ix-GGl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="laQ-TL-CIV"/>
+                                    <barButtonItem id="7tm-uD-yFR">
+                                        <searchBar key="customView" contentMode="redraw" text="" placeholder="Try 'testing'" id="gBk-52-3nN">
+                                            <rect key="frame" x="425" y="0.0" width="336" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            <scopeButtonTitles>
+                                                <string>Title</string>
+                                                <string>Title</string>
+                                            </scopeButtonTitles>
+                                            <connections>
+                                                <outlet property="delegate" destination="2" id="s8p-rH-8vz"/>
+                                            </connections>
+                                        </searchBar>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Radar" image="radar_icon.png" id="ecL-lX-AdC"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2yl-ic-qs0">
                         <barButtonItem key="leftBarButtonItem" title="Technology Radar" id="GFU-Ek-EXz">
@@ -324,26 +393,11 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                                 <action selector="back:" destination="2" id="e64-Nb-4jp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="7tm-uD-yFR">
-                            <searchBar key="customView" contentMode="redraw" text="" placeholder="Try 'testing'" id="gBk-52-3nN">
-                                <rect key="frame" x="141" y="0.0" width="620" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="2" id="s8p-rH-8vz"/>
-                                </connections>
-                            </searchBar>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="radarView" destination="Z0A-Kf-20R" id="CDy-8O-hXG"/>
                         <outlet property="searchDisplayController" destination="Ajd-Qp-EzT" id="70L-Ye-ldw"/>
+                        <segue destination="ezK-1n-fqb" kind="modal" identifier="radar-to-details" id="0DK-TZ-XFY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -356,79 +410,14 @@ We are based in the United States, UK, Australia, Brazil, Canada, Germany, India
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-184" y="-2542"/>
+            <point key="canvasLocation" x="-684" y="-2494"/>
         </scene>
     </scenes>
     <resources>
-        <image name="circle.png" width="768" height="707"/>
-        <image name="corporate_logo.png" width="176" height="27"/>
-        <image name="people.jpg" width="440" height="327"/>
+        <image name="radar_icon.png" width="30" height="30"/>
+        <image name="references.png" width="768" height="1024"/>
+        <image name="simple_background.png" width="768" height="1024"/>
     </resources>
-    <classes>
-        <class className="AboutRadarController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutRadarController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detail" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="DashboardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="aboutRadar:" candidateClass="UIButton"/>
-                <relationship kind="action" name="aboutTW:" candidateClass="UIButton"/>
-                <relationship kind="action" name="currentRadar:" candidateClass="UIButton"/>
-                <relationship kind="action" name="reference:" candidateClass="UIButton"/>
-                <relationship kind="action" name="userGuide:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ItemDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="detail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="itemType" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MBTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MBTextView.h"/>
-        </class>
-        <class className="ReferenceViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="references:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="referencesWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="TWViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TWViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="peopleImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UserGuideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserGuideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changePage"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="adopt:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="all:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="assess:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="back:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="action" name="hold:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="trial:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
