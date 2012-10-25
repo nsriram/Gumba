@@ -203,7 +203,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="References" id="wHd-mu-PmS"/>
+                    <tabBarItem key="tabBarItem" title="References" image="references-radar.png" id="wHd-mu-PmS"/>
                     <connections>
                         <outletCollection property="references" destination="FS8-YS-LVg" id="tKV-KF-jNR"/>
                         <outletCollection property="references" destination="xIo-5B-JC3" id="jlz-Rg-2JE"/>
@@ -240,7 +240,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" id="sM7-G6-PIa"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about-radar.png" id="sM7-G6-PIa"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibr-OG-tnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +382,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Introduction" id="s0a-dg-oUO"/>
+                    <tabBarItem key="tabBarItem" title="Introduction" image="intro-radar.png" id="s0a-dg-oUO"/>
                     <connections>
                         <segue destination="vgd-VN-KPi" kind="modal" identifier="intro-to-preview" id="K2X-l9-hg2"/>
                     </connections>
@@ -454,7 +454,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Radar" image="radar_icon.png" id="ecL-lX-AdC"/>
+                    <tabBarItem key="tabBarItem" title="Radar" image="radar-icon.png" id="ecL-lX-AdC"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2yl-ic-qs0">
                         <barButtonItem key="leftBarButtonItem" title="Technology Radar" id="GFU-Ek-EXz">
@@ -483,9 +483,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about-radar.png" width="30" height="30"/>
         <image name="about_radar.png" width="768" height="1024"/>
+        <image name="intro-radar.png" width="30" height="30"/>
         <image name="introduction.png" width="768" height="1024"/>
-        <image name="radar_icon.png" width="30" height="30"/>
+        <image name="radar-icon.png" width="30" height="30"/>
+        <image name="references-radar.png" width="30" height="30"/>
         <image name="references.png" width="768" height="1024"/>
         <image name="simple_background.png" width="768" height="1024"/>
     </resources>
@@ -522,6 +525,9 @@
         </class>
         <class className="RadarView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RadarView.h"/>
+            <relationships>
+                <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
+            </relationships>
         </class>
         <class className="ReferenceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
