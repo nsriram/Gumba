@@ -355,28 +355,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="955"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OIu-H9-rQX">
-                                <rect key="frame" x="244" y="525" width="163" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="OIu-H9-rQX">
+                                <rect key="frame" x="243" y="538" width="163" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="thoughtworks.com/radar">
-                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="thoughtworks.com/radar">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="radar:" destination="BUg-vH-Esb" eventType="touchUpInside" id="Izk-4n-sgT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JZ7-RO-1uP">
-                                <rect key="frame" x="288" y="554" width="65" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="JZ7-RO-1uP">
+                                <rect key="frame" x="287" y="567" width="65" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Radar FAQ">
-                                    <color key="titleColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Radar FAQ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.66666668653488159" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                                <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="faq:" destination="BUg-vH-Esb" eventType="touchUpInside" id="5I5-6E-eaZ"/>
@@ -487,7 +496,7 @@
     </scenes>
     <resources>
         <image name="about_radar.png" width="768" height="1024"/>
-        <image name="introduction.png" width="1536" height="2048"/>
+        <image name="introduction.png" width="768" height="1024"/>
         <image name="radar_icon.png" width="30" height="30"/>
         <image name="references.png" width="768" height="1024"/>
         <image name="simple_background.png" width="768" height="1024"/>
