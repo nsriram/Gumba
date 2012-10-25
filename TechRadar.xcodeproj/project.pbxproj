@@ -53,8 +53,8 @@
 		F714BA691639776300078E43 /* simple_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F714BA671639776200078E43 /* simple_background.png */; };
 		F714BA6A1639776300078E43 /* simple_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F714BA681639776300078E43 /* simple_background@2x.png */; };
 		F714BA701639811700078E43 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714BA6F1639811700078E43 /* IntroductionViewController.m */; };
-		F714BA73163981E700078E43 /* introduction.png in Resources */ = {isa = PBXBuildFile; fileRef = F714BA71163981E600078E43 /* introduction.png */; };
-		F714BA74163981E700078E43 /* introduction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F714BA72163981E700078E43 /* introduction@2x.png */; };
+		F714BA7C16398E7E00078E43 /* introduction.png in Resources */ = {isa = PBXBuildFile; fileRef = F714BA7A16398E7E00078E43 /* introduction.png */; };
+		F714BA7D16398E7E00078E43 /* introduction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F714BA7B16398E7E00078E43 /* introduction@2x.png */; };
 		F74F5F581637FBC80018F77C /* circle_blip.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F521637FBC70018F77C /* circle_blip.png */; };
 		F74F5F591637FBC80018F77C /* circle_blip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F531637FBC70018F77C /* circle_blip@2x.png */; };
 		F74F5F5C1637FBC80018F77C /* triangle_blip.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F561637FBC70018F77C /* triangle_blip.png */; };
@@ -150,8 +150,8 @@
 		F714BA681639776300078E43 /* simple_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple_background@2x.png"; sourceTree = "<group>"; };
 		F714BA6E1639811600078E43 /* IntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroductionViewController.h; path = ../IntroductionViewController.h; sourceTree = "<group>"; };
 		F714BA6F1639811700078E43 /* IntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroductionViewController.m; path = ../IntroductionViewController.m; sourceTree = "<group>"; };
-		F714BA71163981E600078E43 /* introduction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introduction.png; sourceTree = "<group>"; };
-		F714BA72163981E700078E43 /* introduction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introduction@2x.png"; sourceTree = "<group>"; };
+		F714BA7A16398E7E00078E43 /* introduction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introduction.png; sourceTree = "<group>"; };
+		F714BA7B16398E7E00078E43 /* introduction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introduction@2x.png"; sourceTree = "<group>"; };
 		F74F5F521637FBC70018F77C /* circle_blip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_blip.png; sourceTree = "<group>"; };
 		F74F5F531637FBC70018F77C /* circle_blip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle_blip@2x.png"; sourceTree = "<group>"; };
 		F74F5F561637FBC70018F77C /* triangle_blip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_blip.png; sourceTree = "<group>"; };
@@ -305,8 +305,8 @@
 		C3973F52162AE450006DF48B /* images */ = {
 			isa = PBXGroup;
 			children = (
-				F714BA71163981E600078E43 /* introduction.png */,
-				F714BA72163981E700078E43 /* introduction@2x.png */,
+				F714BA7A16398E7E00078E43 /* introduction.png */,
+				F714BA7B16398E7E00078E43 /* introduction@2x.png */,
 				F714BA611639738600078E43 /* about_radar@2x.png */,
 				F714BA621639738600078E43 /* about_radar.png */,
 				F714BA5D1639700500078E43 /* Default-Portrait@2x~ipad.png */,
@@ -419,8 +419,8 @@
 				F714BA641639738600078E43 /* about_radar.png in Resources */,
 				F714BA691639776300078E43 /* simple_background.png in Resources */,
 				F714BA6A1639776300078E43 /* simple_background@2x.png in Resources */,
-				F714BA73163981E700078E43 /* introduction.png in Resources */,
-				F714BA74163981E700078E43 /* introduction@2x.png in Resources */,
+				F714BA7C16398E7E00078E43 /* introduction.png in Resources */,
+				F714BA7D16398E7E00078E43 /* introduction@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

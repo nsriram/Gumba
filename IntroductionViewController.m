@@ -7,6 +7,7 @@
 //
 
 #import "IntroductionViewController.h"
+#import "PreviewViewController.h"
 
 @interface IntroductionViewController ()
 
@@ -21,6 +22,22 @@
         // Custom initialization
     }
     return self;
+}
+
+-(IBAction) faq:(UIButton*)button {
+    [self performSegueWithIdentifier:@"intro-to-preview" sender:@"http://martinfowler.com/articles/radar-faq.html"];
+}
+
+-(IBAction) radar:(UIButton*)button {
+    [self performSegueWithIdentifier:@"intro-to-preview" sender:@"http://www.thoughtworks.com/radar"];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSString*)url
+{
+	if ([segue.identifier isEqualToString:@"intro-to-preview"]) {
+    	PreviewViewController *controller = (PreviewViewController*)segue.destinationViewController;
+        controller.url = url;
+	}
 }
 
 - (void)viewDidLoad
