@@ -48,6 +48,7 @@
 		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
 		C3E982E615C06DF300FD0DD3 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */; };
 		C3E982F615C09DD100FD0DD3 /* AboutRadarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */; };
+		F714BA331639174900078E43 /* RadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F714BA321639174900078E43 /* RadarView.m */; };
 		F74F5F581637FBC80018F77C /* circle_blip.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F521637FBC70018F77C /* circle_blip.png */; };
 		F74F5F591637FBC80018F77C /* circle_blip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F531637FBC70018F77C /* circle_blip@2x.png */; };
 		F74F5F5C1637FBC80018F77C /* triangle_blip.png in Resources */ = {isa = PBXBuildFile; fileRef = F74F5F561637FBC70018F77C /* triangle_blip.png */; };
@@ -137,6 +138,9 @@
 		C3E982E515C06DF300FD0DD3 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		C3E982F415C09DD000FD0DD3 /* AboutRadarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRadarController.h; sourceTree = "<group>"; };
 		C3E982F515C09DD100FD0DD3 /* AboutRadarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRadarController.m; sourceTree = "<group>"; };
+		F714BA311639174900078E43 /* RadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarView.h; sourceTree = "<group>"; };
+		F714BA321639174900078E43 /* RadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarView.m; sourceTree = "<group>"; };
+		F714BA351639239300078E43 /* RadarViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadarViewDelegate.h; sourceTree = "<group>"; };
 		F74F5F521637FBC70018F77C /* circle_blip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_blip.png; sourceTree = "<group>"; };
 		F74F5F531637FBC70018F77C /* circle_blip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle_blip@2x.png"; sourceTree = "<group>"; };
 		F74F5F561637FBC70018F77C /* triangle_blip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_blip.png; sourceTree = "<group>"; };
@@ -321,6 +325,9 @@
 				38EEBFB51590F41F00367FEA /* CircleView.m */,
 				C3E0ACEC159E2FEF00F051C9 /* TriangleView.h */,
 				C3E0ACED159E2FEF00F051C9 /* TriangleView.m */,
+				F714BA311639174900078E43 /* RadarView.h */,
+				F714BA321639174900078E43 /* RadarView.m */,
+				F714BA351639239300078E43 /* RadarViewDelegate.h */,
 			);
 			name = view;
 			path = ..;
@@ -437,6 +444,7 @@
 				388D0E8B15ED32BD00D15479 /* ReferenceViewController.m in Sources */,
 				C3973F56162B02EE006DF48B /* UserGuideViewController.m in Sources */,
 				F74F5F72163822E50018F77C /* PreviewViewController.m in Sources */,
+				F714BA331639174900078E43 /* RadarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

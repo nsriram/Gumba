@@ -108,6 +108,8 @@
         self.frameOrigin=self.frame.origin;
         self.center = point;
         _quadrant = quadrant;
+        [self addCircleViews];
+        [self addTriangleViews];
     }
     return self;
 }

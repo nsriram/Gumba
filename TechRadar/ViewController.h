@@ -1,14 +1,11 @@
 #import <UIKit/UIKit.h>
+#import "RadarViewDelegate.h"
+@class RadarView;
 
-@class WEPopoverController;
-
-@interface ViewController : UIViewController<UIPopoverControllerDelegate, UISearchBarDelegate>
-@property (nonatomic,strong) NSMutableArray *quadrantViews;
-@property (nonatomic,strong) NSString *searchTerm;
+@interface ViewController : UIViewController<RadarViewDelegate, UISearchBarDelegate>
 @property (nonatomic,strong) UIBarButtonItem *selectedButton;
 @property (nonatomic,strong) UIColor *barButtonColor;
-@property (nonatomic,strong) IBOutlet UIView *radarView;
--(IBAction) back:(UIBarButtonItem *)backButtobarButtonItem;
+@property (nonatomic,strong) IBOutlet RadarView *radarView;
 -(IBAction) adopt:(UIBarButtonItem *)barButtonItem;
 -(IBAction) trial:(UIBarButtonItem *)barButtonItem;
 -(IBAction) assess:(UIBarButtonItem *)barButtonItem;
