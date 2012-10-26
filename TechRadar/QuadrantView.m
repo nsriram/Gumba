@@ -12,16 +12,18 @@
 
 - (void) drawArcTitles :(CGContextRef) context withTitle:(NSString*)label Width:(CGFloat)width Height:(CGFloat)distance{
     
-    //a non-distracting color that gels with the background for arc titles
-    [[UIColor colorWithRed:189/255.0f green:190/255.0f blue:192/255.0f alpha:1] set];
-    
     UIFont *font = [AppConstants circleTextFont];
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, self.center.x + width, self.center.y + distance);
     CGAffineTransform textTransform = CGAffineTransformMakeRotation(-1.50/2.0);
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(self.center.x + width), -(self.center.y+ distance));
-    [label drawAtPoint:CGPointMake(self.center.x + width, self.center.y + distance) withFont:font];
+    CGPoint point = CGPointMake(self.center.x + width, self.center.y + distance);
+    CGSize size = [label sizeWithFont:font];
+    [[UIColor colorWithRed:220.0/255.0f green:221.0/255.0f blue:222.0/255.0f alpha:1] set];
+    CGContextFillRect(context, CGRectMake(point.x-2, point.y, size.width+4, size.height));
+    [[UIColor colorWithRed:189/255.0f green:190/255.0f blue:192/255.0f alpha:1] set];
+    [label drawAtPoint:point withFont:font];
     CGContextRestoreGState(context);
 }
 
@@ -160,10 +162,10 @@
     [[UIColor colorWithRed:250.0/255.0f green:250.0/255.0f blue:250.0/255.0f alpha:1] set];
     UIRectFrame(myFrame);
     
-    [self drawArcTitles:context withTitle:@"Adopt" Width:80.0*RADAR_RATIO Height:130.0*RADAR_RATIO];
-    [self drawArcTitles:context withTitle:@"Trial" Width:165.0*RADAR_RATIO Height:225.0*RADAR_RATIO];
-    [self drawArcTitles:context withTitle:@"Assess" Width:210.0*RADAR_RATIO Height:280.0*RADAR_RATIO];
-    [self drawArcTitles:context withTitle:@"Hold" Width:250.0*RADAR_RATIO Height:315.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Adopt" Width:80.0*RADAR_RATIO Height:114.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Trial" Width:165.0*RADAR_RATIO Height:207.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Assess" Width:210.0*RADAR_RATIO Height:263.0*RADAR_RATIO];
+    [self drawArcTitles:context withTitle:@"Hold" Width:250.0*RADAR_RATIO Height:298.0*RADAR_RATIO];
     
     [self drawQuadrantLabelInContext:context];
 }
