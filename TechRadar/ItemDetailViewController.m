@@ -21,7 +21,7 @@
 - (void)paintRadarItemDetailHeader {
     detail.layer.masksToBounds = NO;
     [self.detail setText:detailText];
-    [self.description setFont:[AppConstants titleTextFont]];
+    [self.detail setFont:[AppConstants titleTextFont]];
     [self.detail setNumberOfLines:0];
 }
 
@@ -38,7 +38,12 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[AppConstants backgroundColor]];
     self.title = @"Radar Notes";
-    [self.itemType setImage:[UIImage imageNamed:imageText]];
+    if ([self.imageText isEqualToString:@"triangle"]) {
+        [self.itemType setImage:[UIImage imageNamed:@"large-triangle.png"]];
+    }
+    if ([self.imageText isEqualToString:@"circle"]) {
+        [self.itemType setImage:[UIImage imageNamed:@"large-circle.png"]];
+    }
     [self paintRadarItemDetailHeader];
     [self paintRadarItemDescription];
 }
