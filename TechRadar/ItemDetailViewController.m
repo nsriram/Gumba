@@ -23,6 +23,9 @@
     [self.detail setText:detailText];
     [self.detail setFont:[AppConstants titleTextFont]];
     [self.detail setNumberOfLines:0];
+    if([detailText length] > 28){
+        [self.detail sizeToFit];
+    }
 }
 
 - (void)paintRadarItemDescription {
