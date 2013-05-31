@@ -34,16 +34,28 @@
     return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:15.0];
 }
 
+
 +(UIFont*) boldLabelTextFont{
     return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:20.0];
 }
 
-+(UIFont*) blipTextFont{
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:10.5];
++(UIFont*)blipTextLargeFont {
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:12.5];
 }
 
-+(UIFont*) blipTextFontSmall{
++ (UIFont *)blipTextMediumFont {
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:11.0];
+}
+
++ (UIFont *)blipTextSemiMediumFont {
     return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:10.0];
+}
+
++(UIFont*)blipTextSmallFont {
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:9.25];
+}
++ (UIFont *)blipTextTinyFont {
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:8.75];
 }
 
 +(CGGradientRef) backgroundGradient {

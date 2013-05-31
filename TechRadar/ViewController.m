@@ -87,7 +87,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.radarView.delegate = self;
-    [self.radarView updateWithRadar: [Radar radarFromFile:@"radar"]];
+    [self.radarView updateWithRadar: [Radar radarFromFile:@"may2013"]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
