@@ -28,7 +28,7 @@
         font = [AppConstants blipTextSmallFont];
     }
     [text drawInRect:CGRectMake(0.0, y, self.frame.size.width, height) withFont:font
-       lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
+       lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentLeft];
     CGContextRestoreGState(context);
 }
 

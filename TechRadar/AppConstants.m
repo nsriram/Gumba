@@ -52,7 +52,7 @@
 }
 
 +(UIFont*)blipTextSmallFont {
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:8.9];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:9.0];
 }
 + (UIFont *)blipTextTinyFont {
     return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:8.9];
