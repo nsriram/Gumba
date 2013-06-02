@@ -13,11 +13,11 @@
     CGContextConcatCTM(context, textTransform);
     CGContextTranslateCTM(context, -(point.x), -(point.y));
     CGFloat y = point.y;
-    CGFloat height = self.frame.size.height * 0.8;
-    if ([text length] < 7) {
+    CGFloat height = self.frame.size.height * 0.82;
+    if ([text length] < 8) {
         font = [AppConstants blipTextLargeFont];
-        y = self.frame.size.height * 0.35;
-        height = self.frame.size.height * 0.45;
+        y = self.frame.size.height * 0.25;
+        height = self.frame.size.height * 0.55;
     } else if ([text length] < 10) {
         font = [AppConstants blipTextMediumFont];
         y = self.frame.size.height * 0.15;

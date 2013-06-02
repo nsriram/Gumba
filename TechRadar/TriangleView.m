@@ -11,7 +11,7 @@
         UIFont *font = [AppConstants blipTextTinyFont];
         CGPoint textPoint = CGPointMake(0.0, 0.0);
         [self drawTextWithContext:context Text:self.tip Font:font At:textPoint Angle:TRIANGLE_TEXT_ANGLE];
-        enclosure = CGRectMake(rect.size.width*0.4, rect.size.height*0.8,rect.size.width*0.2,rect.size.height*0.2);
+        enclosure = CGRectMake(rect.size.width*0.4, rect.size.height*0.82,rect.size.width*0.18,rect.size.height*0.18);
         UIImage *myImage = [UIImage imageNamed:@"triangle_blip.png"];
         [myImage drawInRect:enclosure];
     }

@@ -77,7 +77,7 @@
                 "t": 95
             },
             "movement": "t",
-            "description": "Mature tools such as PowerShell, together with newer options such as Chef and Puppet, lead us to highlight Windows infrastructure automation on this edition of the Technology Radar. Manual configuration using a mouse and menu options is slow and leads to misconfiguration and “snowflake” machines in an unknown state. We recommend command-line tools for their clarity and scriptability.",
+            "description": "Previously, support for Windows in tools like Chef and Puppet was lacking, leading to large amounts of Powershell scripting to achieve simple infrastructure automation tasks. Achieving the same level of automation for Windows was more challenging than for Unix. In the last 12 months however, both Chef and Puppet support for Windows has improved drastically.  That support, combined with the inherent power of Powershell makes Windows infrastructure automation extremely viable.",
             "tip": "Windows infrastructure automation"
         },
         {
@@ -298,7 +298,7 @@
             },
             "movement": "t",
             "description": "For problems that fit the document databases model, MongoDB provides easy programmability, a query interface, high availability with automated failover, and automated sharding capabilities. It allows for a smooth transition to NoSQL data stores from the RDBMS model, with the inclusion of familiar concepts, such as the ability to define indexes.",
-            "tip": "MongoDB"
+            "tip": "Mongo\nDB"
         },
         {
             "name": "Neo4J",
@@ -337,8 +337,8 @@
                 "t": 225
             },
             "movement": "t",
-            "description": "Google’s BigQuery brings data analytics to the cloud. Rather than loading data into an expensive data-warehouse with predefined indexes, BigQuery allows you to upload and investigate a data set through ad-hoc SQL-like queries. This is a great way to create a cheap proof-of-concept or even a complete application, as processing of hundreds of gigabytes of data by thousands of servers happens in seconds.",
-            "tip": "BigQuery"
+            "description": "The amount of data that even a relatively low volume website can generate is huge.  Once you add in analytics, business metrics, demographics, user profiles and multiple devices, it can become overwhelming.\n\nMany organizations use data warehouses as a repository with data being sucked in from all parts of the organization.  The challenge here is that these often turn into \"Data Fortresses.\" Even getting timely business metrics becomes a challenge, let alone running exploratory queries across the entire data set. Technologies like the cloud based BigQuery help.  The pay-as-you-go model and the ability to do ad hoc queries lets you gain insight without buying specialist hardware and software.\n\nA data-driven business should put data in the hands of the decision makers, not hidden behind technological barriers and bureaucracy.",
+            "tip": "Big\nQuery"
         },
         {
             "name": "Continuous integration in the cloud",
@@ -358,7 +358,7 @@
             },
             "movement": "c",
             "description": "Couchbase is a persistent cache with auto-sharding features, master-less clusters and replicated data to avoid cache-misses. Because it supports the Memcached protocol, it allows drop-in replacement for Memcached based systems.",
-            "tip": "Couchbase"
+            "tip": "Couch\nbase"
         },
         {
             "name": "Hadoop 2.0",
@@ -377,7 +377,7 @@
                 "t": 205
             },
             "movement": "t",
-            "description": "For many years JavaScript was predominantly used as a client side Web programming language, but a lightweight language such as JavaScript can easily be embedded in different environments, including the server side. Node.js allows developers to write applications in JavaScript on both client and server sides. Since most servers spend the majority of their time waiting for I/O operations, Node.js’ event driven non-blocking architecture is very efficient. Unlike thread-based solutions, Node.js does not need to wait for I/O operations to complete while processing incoming requests, making it a good choice when implementing high performance services.",
+            "description": "Node.js is a lightweight web container that is a strong option for development of micro services and as a server to mobile and single-page web applications. Due to the asynchronous nature of node.js, developers are turning to promise libraries to simplify their application code. As the use of promises mature within the node.js community, we expect to see more applications developed for node.js. For those teams that are reluctant to try node.js in production, it is still worthwhile to consider node.js for development tasks like running JavaScript tests outside of the browser or generating static web content from tools like CoffeeScript, SASS, and LESS.",
             "tip": "Node.js"
         },
         {
@@ -387,7 +387,7 @@
                 "t": 250
             },
             "movement": "t",
-            "tip": "OpenStack",
+            "tip": "Open\nStack",
             "description": "The open source OpenStack project is gathering steam, and in recent months is becoming a more viable platform for deploying your own private clouds. Many issues which made OpenStack hard to get up and running have been addressed, and new features are being added all the time. It is clear that the OpenStack consortium and its members like Rackspace, Redhat, and HP are committed to the project as the basis for their own OpenStack-based cloud services."
         },
         {
@@ -428,7 +428,7 @@
             },
             "movement": "c",
             "description": "We have previously been skeptical of claims of reusable code working across platforms. Our experience with many tools in the market has been mixed and we advise caution to our clients who are looking at these types of solutions. Taking an approach that carefully navigates these dangerous waters, we feel Calatrava is worth evaluating for mobile application development. The framework neatly follows the separation of business and presentation logic, maximising reuse where there is commonality, and providing native access where speed or device-specific idioms are to be followed.",
-            "tip": "Calatrava"
+            "tip": "Cala\ntrava"
         },
         {
             "name": "Datomic",
@@ -497,7 +497,7 @@
                 "t": 232
             },
             "movement": "c",
-            "description": "Sometimes, architectural decisions lead you to incorporate infrastructure items that you can only afford one of, such as mainframes or search appliances. This is a terrible idea. It severely restricts testing and deployment flexibility. We strongly favor infrastructure you can easily set up and tear down. Singleton infrastructure belongs to misguided vendor-driven architectures of the past.",
+            "description": "Sometimes, architectural decisions lead you to incorporate infrastructure items that you can only afford one of, such as mainframes or search appliances. This is a terrible idea. It severely restricts testing and deployment flexibility. We strongly favor infrastructure you can easily set up and tear down. Singleton infrastructure belongs to misguided vendor-driven architectures of the past.\n\nMany teams encounter problems that are caused by their test environment missing an expensive hardware component that is only present in production. While a pre-production environment in many cases cannot approach the scale of a production environment, all of its components should be present. We recommend not buying solutions you can only afford one of, such as SAN, firewalls or load balancers, as this prevents realistic testing anywhere but in production.",
             "tip": "Singleton infrastructure"
         },
         {
@@ -517,18 +517,18 @@
                 "t": 60
             },
             "movement": "t",
-            "description": "D3 is a JavaScript library for binding datasets into the DOM, and then declaratively transforming the document to create rich visualizations - ranging from graphs to heatmaps. With support for HTML, CSS and SVG, and an extensible plug-in model, we like the fact that this library allows us to deliver information in more intuitive ways.",
+            "description": "D3 continues to gain traction as a library for creating rich visualisations in the browser. Previously, it was somewhat low-level, requiring more work for the creation of commonly used visualisations than less sophisticated, more targeted libraries. Since the last radar, libraries like Rickshaw for charting and Crossfilter for in-browser dataset exploration have helped make D3 even more accessible than before.",
             "tip": "D3"
         },
         {
             "name": "Embedded servlet containers",
+            "tip": "Embedded servlet containers",
             "pc": {
                 "r": 60,
                 "t": 65
             },
             "movement": "t",
-            "description": "We have talked much already about embedded servlet containers - and these are now widely adopted on our projects. Tools such as SimpleWeb and Webbit take the simple, embedded approach further and offer raw HTTP server functionality without implementing the Java Servlet specification. We are pleased to see a corresponding reduction in the complexity of test code that takes advantage of this.",
-            "tip": "Embedded servlet containers"
+            "description": "In previous radars we have talked about embedded servlet containers, and these are now widely adopted on our projects. Tools such as SimpleWeb and Webbit take the simple, embedded approach further and offer raw HTTP server functionality without implementing the Java Servlet specification. At the same time, Tomcat, the most popular Java application server, is increasingly used in embedded setups and Microsoft provides self-hosted servers for the .NET framework, lending further weight to this trend."
         },
         {
             "name": "Frank",
@@ -547,7 +547,7 @@
                 "t": 80
             },
             "movement": "t",
-            "description": "Two things have caused fatigue with XML-based build tools like Ant and Maven: too many angry pointy braces and the coarseness of plug-in architectures. While syntax issues can be dealt with through generation, plug-in architectures severely limit the ability for build tools to grow gracefully as projects become more complex. We have come to feel that plug-ins are the wrong level of abstraction, and prefer language-based tools like Gradle and Rake instead, because they offer finer-grained abstractions and more flexibility long term.",
+            "description": "Language-based build tools like Gradle and Rake continue to offer finer-grained abstractions and more flexibility long term than XML and plug-in based tools like Ant and Maven. This allows them to grow gracefully as projects become more complex.",
             "tip": "Gradle"
         },
         {
@@ -577,7 +577,7 @@
                 "t": 27
             },
             "movement": "t",
-            "description": "Package management systems are a widely accepted practice for incorporating third party libraries. Tools such as RubyGems, Maven and APT are available at both language and system level. NuGet is such a system for .Net. It consists of a Visual Studio IDE extension and a PowerShell module that opens the possibility for further improving build automation on the .Net platform.",
+            "description": "Package systems for third-party library management continue to gain acceptance and features across all platforms. We called out NuGet as a recent entry, and the addition of Chocolatey NuGet exemplifies the advances and capabilities springing up around this essential agile engineering practice.",
             "tip": "NuGet"
         },
         {
@@ -647,7 +647,7 @@
                 "t": 50
             },
             "movement": "t",
-            "tip": "PhantomJS",
+            "tip": "Phantom\nJS",
             "description": "We see interest on ThoughtWorks projects around PhantomJS, a headless web testing tool that allows functional testing against a realistic target."
         },
         {
@@ -701,7 +701,7 @@
             "description": "Managing dependencies in distributed systems can become complicated, and is a problem more people are facing with the move to finer-grained micro services. Hystrix is a library for the JVM from Netflix that implements patterns for dealing with downstream failure, offers real-time monitoring of connections, and caching and batching mechanisms to make inter-service dependencies more efficient."
         },
         {
-            "name": "Icon fonts",
+            "name": "Icon\nfonts",
             "pc": {
                 "r": 312,
                 "t": 35
@@ -748,7 +748,7 @@
             },
             "movement": "c",
             "description": "Riemann is an open source server that aggregates and relays events in real time. Written in Clojure, and based on Netty, it is capable of handling thousands of concurrent connections per node. Riemann uses a simple Protobuf protocol for events, which allows it to aggregate everything from CPU and memory use to orders placed to error rates. It forwards to systems like Graphite, triggers email alerts, and provides a dashboard for monitoring these metrics. Riemann is an important part of the movement towards handling data as generic streams of events in real-time, as opposed to using specialized systems for different types of data.",
-            "tip": "Riemann"
+            "tip": "Rie\nmann"
         },
         {
             "name": "Snowplow Analytics",
@@ -837,7 +837,7 @@
                 "t": 300
             },
             "movement": "c",
-            "description": "In a previous radar we had two JVM-based functional programming languages, Clojure and Scala, in our “Assess” category. We had expressed a slight preference for Clojure because it is the smaller and more focused language. Since that radar we have realized that the wider applicability of Scala makes it more approachable for enterprise developers, and we have witnessed great successes in the adoption of Scala. Pay careful attention to the idiomatic use of Scala if it is introduced to a new team to avoid “Java without semicolons” or Perl styles. We have now used both languages on a number of projects, and have moved them both into “Adopt”, appropriately.",
+            "description": "In a previous radars we had two JVM-based functional programming languages, Clojure and Scala, in our “Assess” category. We had expressed a slight preference for Clojure because it is the smaller and more focused language. Since that radar we have realized that the wider applicability of Scala makes it more approachable for enterprise developers, and we have witnessed great successes in the adoption of Scala. Pay careful attention to the idiomatic use of Scala if it is introduced to a new team to avoid “Java without semicolons” or Perl styles. We have now used both languages on a number of projects, and have moved them both into “Adopt”, appropriately.",
             "tip": "Scala"
         },
         {
@@ -847,7 +847,7 @@
                 "t": 315
             },
             "movement": "t",
-            "description": "Micro-frameworks are emerging as a way to handle increasing complexity in applications both on client- and server-side. Sinatra was one of the early precursors of that trend in server-side space, exposing a lightweight DSL to build fast services that can be easily composed. Flask, Scalatra and Compojure are similar offerings for Python, Scala and Clojure respectively.",
+            "description": "Micro-frameworks are emerging as a way to handle increasing complexity in applications both on client- and server-side. Sinatra was one of the early precursors of that trend in server-side space, exposing a lightweight DSL to build fast services that can be easily composed. Similar offerings are available for other languages, including Spark for Java, Flask for Python, Sclatra for Scala, Compojure for Clojure and Nancy for .NET .",
             "tip": "Sinatra"
         },
         {
@@ -868,7 +868,7 @@
             },
             "movement": "c",
             "description": "Dropwizard is an opinionated combination of several lightweight Java tools and frameworks, many of which would merit mention in their own right. The package embodies many of our favorite techniques, including an embedded HTTP server, support for RESTful endpoints, built-in operational metrics and health-checks, and straightforward deployments. Dropwizard makes it easy to do the right thing, allowing you to concentrate on the essential complexity of a problem rather than the plumbing.",
-            "tip": "Dropwizard"
+            "tip": "Drop\nwizard"
         },
         {
             "name": "HTML5 for offline applications",
@@ -938,7 +938,7 @@
             },
             "movement": "c",
             "description": "ClojureScript illustrates just how cross-platform the core of Clojure really is: they ported the primary parts to run on JavaScript. It is missing some of the whizz-bang features of Clojure on the JVM and CLR, like software transactional memory, but has a surprisingly high fidelity with its more sophisticated cousins. One interesting option afforded by ClojureScript is the ability to send data structures à la JSON using ClojureScript as the data structure. Because Clojure is a Lisp, this means that you can also send “real” code.",
-            "tip": "ClojureScript"
+            "tip": "Clojure\nScript"
         },
         {
             "name": "Gremlin",
@@ -997,7 +997,7 @@
                 "t": 310
             },
             "movement": "c",
-            "description": "With JavaScript development on the rise, there is a growing need for reusable, extensible UI tooling. Twitter Bootstrap builds on the best offerings in the space, to provide a powerful set of patterns and components that help developers create responsive and adaptive applications with pleasant aesthetics.",
+            "description": "Twitter Bootstrap is a popular CSS framework which allows you to quickly produce a good looking website with fluid and responsive layouts. In this edition of the radar, Bootstrap moves back from Trial to Assess based on our experiences using it over time. If you wish to replace or extensively customize the look and feel of your application, Bootstrap can present a challenge due to its deep integration with HTML markup. This doesn't necessarily make it a bad choice but it is worth keeping these limitations in mind when choosing it over available alternatives.",
             "tip": "Twitter Bootstrap"
         },
         {

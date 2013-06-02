@@ -40,7 +40,7 @@
 }
 
 +(UIFont*)blipTextLargeFont {
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:12.5];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:11.0];
 }
 
 + (UIFont *)blipTextMediumFont {
@@ -48,14 +48,14 @@
 }
 
 + (UIFont *)blipTextSemiMediumFont {
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:10.0];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:9.5];
 }
 
 +(UIFont*)blipTextSmallFont {
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:9.25];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:8.9];
 }
 + (UIFont *)blipTextTinyFont {
-    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:8.75];
+    return [UIFont fontWithName:@"FranklinGothicITCbyBT-Book" size:8.9];
 }
 
 +(CGGradientRef) backgroundGradient {
