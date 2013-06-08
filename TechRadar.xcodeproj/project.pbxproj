@@ -40,6 +40,7 @@
 		C3760272151CC66D00D26B46 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760265151CC66D00D26B46 /* SBJsonUTF8Stream.m */; };
 		C3760273151CC66D00D26B46 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3760267151CC66D00D26B46 /* SBJsonWriter.m */; };
 		C3973F56162B02EE006DF48B /* UserGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3973F55162B02EE006DF48B /* UserGuideViewController.m */; };
+		C39F58351762E3D7001D4201 /* trends.html in Resources */ = {isa = PBXBuildFile; fileRef = C39F58341762E3D7001D4201 /* trends.html */; };
 		C3DFC2E815B712A2005DE04B /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2E715B712A2005DE04B /* AppConstants.m */; };
 		C3DFC2EB15B7C5FD005DE04B /* ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFC2EA15B7C5FD005DE04B /* ItemView.m */; };
 		C3E0ACEE159E2FEF00F051C9 /* TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0ACED159E2FEF00F051C9 /* TriangleView.m */; };
@@ -140,6 +141,7 @@
 		C3760267151CC66D00D26B46 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		C3973F54162B02EE006DF48B /* UserGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuideViewController.h; sourceTree = "<group>"; };
 		C3973F55162B02EE006DF48B /* UserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuideViewController.m; sourceTree = "<group>"; };
+		C39F58341762E3D7001D4201 /* trends.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = trends.html; path = ../trends.html; sourceTree = "<group>"; };
 		C3DFC2E615B712A2005DE04B /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		C3DFC2E715B712A2005DE04B /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstants.m; sourceTree = "<group>"; };
 		C3DFC2E915B7C5FC005DE04B /* ItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemView.h; path = TechRadar/ItemView.h; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		C310A8D615011447003BF6B7 /* TechRadar */ = {
 			isa = PBXGroup;
 			children = (
+				C39F58341762E3D7001D4201 /* trends.html */,
 				F714BA651639753600078E43 /* Frkgotn.ttf */,
 				C310A8E215011447003BF6B7 /* MainStoryboard.storyboard */,
 				C3500CEA15B5B8A3006465C5 /* radar.json */,
@@ -465,6 +468,7 @@
 				F749DCF6163ACC7900A1E280 /* large-circle@2x.png in Resources */,
 				F749DCF7163ACC7900A1E280 /* large-circle.png in Resources */,
 				365E2F46833F8C4971436E74 /* may2013.json in Resources */,
+				C39F58351762E3D7001D4201 /* trends.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
