@@ -725,15 +725,12 @@
         <class className="IntroductionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IntroductionViewController.h"/>
             <relationships>
-                <relationship kind="action" name="faq:" candidateClass="UIButton"/>
-                <relationship kind="action" name="radar:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="trendsWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="ItemDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="dismissDetails:"/>
                 <relationship kind="outlet" name="description" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="detail" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="itemType" candidateClass="UIImageView"/>
@@ -742,21 +739,16 @@
         <class className="PreviewViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PreviewViewController.h"/>
             <relationships>
-                <relationship kind="action" name="dismissDetails:"/>
                 <relationship kind="action" name="openInSafari:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="RadarView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RadarView.h"/>
-            <relationships>
-                <relationship kind="action" name="displayItemDetails:" candidateClass="UIGestureRecognizer"/>
-            </relationships>
         </class>
         <class className="ReferenceViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReferenceViewController.h"/>
             <relationships>
-                <relationship kind="action" name="link:" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="references" candidateClass="UIButton"/>
             </relationships>
         </class>
